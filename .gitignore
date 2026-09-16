@@ -1,0 +1,11 @@
+# Image backup directory
+assets/img_backup/
+
+# OS & Temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Node dependencies (if applicable)
+node_modules/

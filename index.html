@@ -22,6 +22,8 @@
   <meta property="og:description"
     content="Vendor corporate gift, souvenir perusahaan premium, merchandise kantor eksklusif untuk branding dan promosi perusahaan Anda.">
   <meta property="og:image" content="https://corporategifts.id/assets/img/about/hero.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
   <meta property="og:locale" content="id_ID">
   <meta property="og:site_name" content="CorporateGifts.ID">
 
@@ -44,8 +46,9 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Preloads for LCP Hero and Critical Icon Font -->
-  <link rel="preload" as="image" href="assets/img/about/hero.webp" type="image/webp" fetchpriority="high">
+  <!-- Preloads for LCP Hero (Desktop/Mobile) and Critical Icon Font -->
+  <link rel="preload" as="image" href="assets/img/about/hero.webp" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/services/vendor-souvenir-perusahaan.webp" type="image/webp" media="(max-width: 991px)" fetchpriority="high">
   <link rel="preload" href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a" as="font" type="font/woff2" crossorigin>
 
   <!-- Fonts Preconnect & DNS-Prefetch -->
@@ -159,8 +162,7 @@
       "https://wa.me/62895639068080",
       "https://www.instagram.com/corporategifts.id",
       "https://www.facebook.com/corporategiftsid",
-      "https://www.tiktok.com/@corporategifts.id",
-      "https://corporategifts.id",
+      "https://www.tiktok.com/@corporategifts.id"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -410,7 +412,7 @@
 
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="assets/img/logo-header.png" alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan"
-          style="max-height:40px;width:auto;" width="214" height="40">
+          style="max-height:40px;width:auto;" width="214" height="40" decoding="async">
       </a>
 
       <nav id="navmenu" class="navmenu mx-xl-auto">
@@ -486,7 +488,7 @@
             <div class="hero-media">
               <figure class="media-main">
                 <img src="assets/img/about/hero.webp" class="img-fluid"
-                  alt="Corporate Gift Premium - Souvenir Perusahaan Eksklusif" width="440" height="440" fetchpriority="high">
+                  alt="Corporate Gift Premium - Souvenir Perusahaan Eksklusif" width="440" height="440" fetchpriority="high" decoding="async">
               </figure>
             </div>
           </div>
@@ -499,17 +501,15 @@
     <!-- Tentang Kami Section -->
     <section id="tentang" class="about-section section light-background">
 
-
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
         <div class="row g-5 align-items-center">
 
           <!-- Image Column -->
-          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+          <div class="col-lg-5">
             <div class="about-img-wrap position-relative">
               <img src="assets/img/services/vendor-souvenir-perusahaan.webp" alt="Profil Vendor CorporateGifts.ID"
-                class="img-fluid" loading="lazy" width="600" height="400">
+                class="img-fluid" width="600" height="400" fetchpriority="high" decoding="async">
               <div class="about-badge-card">
                 <div class="badge-icon"><i class="bi bi-shield-check"></i></div>
                 <div>
@@ -521,7 +521,7 @@
           </div>
 
           <!-- Content Column -->
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+          <div class="col-lg-7">
             <div class="about-profile-content">
               <span class="profile-tag">PROFIL CORPORATEGIFTS.ID</span>
               <h2 class="profile-title">Mitra Pengadaan Seminar Kit, Souvenir Kantor &amp; Corporate Gift Terpercaya
@@ -537,7 +537,7 @@
               <!-- 3 Numbered Feature Items -->
               <div class="profile-features">
 
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="350">
+                <div class="feature-item">
                   <div class="item-num">01</div>
                   <div class="item-text">
                     <h3>Preview Mockup Desain &amp; Revisi Gratis</h3>
@@ -546,7 +546,7 @@
                   </div>
                 </div>
 
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-item">
                   <div class="item-num">02</div>
                   <div class="item-text">
                     <h3>Fleksibilitas Pembayaran, SPK &amp; Faktur Pajak</h3>
@@ -555,7 +555,7 @@
                   </div>
                 </div>
 
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
+                <div class="feature-item">
                   <div class="item-num">03</div>
                   <div class="item-text">
                     <h3>Jaminan Tepat Waktu &amp; Garansi QC 100%</h3>
@@ -578,7 +578,7 @@
         </div>
 
         <!-- Metric Counters Row -->
-        <div class="row g-3 g-md-4 counters mt-4 mt-lg-5 pt-1 pt-lg-3" data-aos="fade-up" data-aos-delay="500">
+        <div class="row g-3 g-md-4 counters mt-4 mt-lg-5 pt-1 pt-lg-3" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-3 col-6">
             <div class="counter-box">
               <div class="counter-num">
@@ -823,7 +823,7 @@
             <div class="row g-4 align-items-center">
               <div class="col-lg-6"><a href="/portofolio" class="shot"><img
                     src="assets/img/portfolio/souvenir-set.webp" alt="Souvenir Kantor Custom untuk BUMN"
-                    class="img-fluid" loading="lazy" width="600" height="396"></a></div>
+                    class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
               <div class="col-lg-6">
                 <div class="copy"><span class="cat">Souvenir Kantor · BUMN</span>
                   <h3>Paket Souvenir Custom BUMN</h3>
@@ -839,7 +839,7 @@
             <div class="row g-4 align-items-center">
               <div class="col-lg-6 order-lg-2"><a href="/portofolio" class="shot"><img
                     src="assets/img/portfolio/Hampers-Eksklusif-Desain-Spesial.webp"
-                    alt="Hampers Lebaran Perusahaan Perbankan" class="img-fluid" loading="lazy" width="600" height="396"></a></div>
+                    alt="Hampers Lebaran Perusahaan Perbankan" class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
               <div class="col-lg-6 order-lg-1">
                 <div class="copy"><span class="cat">Hampers Premium · Perbankan</span>
                   <h3>Hampers Lebaran Bank Swasta Nasional</h3>
@@ -855,7 +855,7 @@
             <div class="row g-4 align-items-center">
               <div class="col-lg-6"><a href="/portofolio" class="shot"><img
                     src="assets/img/portfolio/Goodie-Bag-Seminar-Pameran.webp" alt="Seminar Kit Instansi Pendidikan"
-                    class="img-fluid" loading="lazy" width="600" height="396"></a></div>
+                    class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
               <div class="col-lg-6">
                 <div class="copy"><span class="cat">Seminar Kit · Pendidikan</span>
                   <h3>Seminar Kit Universitas Negeri</h3>
@@ -927,7 +927,7 @@
                   terlihat sangat profesional dan elegan. Tim CorporateGifts.ID sangat responsif dan amanah.
                 </blockquote>
                 <figcaption><img src="assets/img/person/person-f-3.webp" alt="Rina Kusuma - HRD Manager"
-                    class="img-fluid" width="52" height="52" loading="lazy">
+                    class="img-fluid" width="52" height="52" loading="lazy" decoding="async">
                   <div><span class="name">Rina Kusuma</span><span class="role">HRD Manager, PT. Maju Bersama</span>
                   </div>
                 </figcaption>
@@ -941,7 +941,7 @@
                 <blockquote>Sudah 3 kali order hampers Lebaran di sini dan selalu puas. Packaging-nya rapih, isi
                   berkualitas, dan pengiriman tepat waktu ke seluruh cabang kami. Recommended!</blockquote>
                 <figcaption><img src="assets/img/person/person-m-5.webp" alt="Budi Santoso - Marketing Director"
-                    class="img-fluid" width="52" height="52" loading="lazy">
+                    class="img-fluid" width="52" height="52" loading="lazy" decoding="async">
                   <div><span class="name">Budi Santoso</span><span class="role">Marketing Director, Bank
                       Nusantara</span>
                   </div>
@@ -956,7 +956,7 @@
                 <blockquote>Seminar kit yang kami pesan untuk 1.500 peserta konferensi hasilnya memuaskan. Desain
                   custom-nya keren dan harga sangat kompetitif. Pasti akan order lagi!</blockquote>
                 <figcaption><img src="assets/img/person/person-f-8.webp" alt="Dr. Sari Dewi - Kepala Biro"
-                    class="img-fluid" width="52" height="52" loading="lazy">
+                    class="img-fluid" width="52" height="52" loading="lazy" decoding="async">
                   <div><span class="name">Dr. Sari Dewi</span><span class="role">Kepala Biro, Universitas
                       Indonesia</span>
                   </div>
@@ -998,7 +998,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-kantor">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Botol-Minum-Custom-Logo.webp" class="img-fluid"
-                  alt="Tumbler Custom Logo Perusahaan" loading="lazy" width="400" height="260">
+                  alt="Tumbler Custom Logo Perusahaan" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Tumbler Stainless Custom</h3>
                   <p>Laser engraving logo perusahaan</p>
@@ -1011,7 +1011,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-merchandise">
               <div class="gallery-item">
                 <img src="assets/img/gallery/merchandise-perusahaan.webp" class="img-fluid"
-                  alt="Merchandise Jaket &amp; Kaos Perusahaan" loading="lazy" width="400" height="260">
+                  alt="Merchandise Jaket &amp; Kaos Perusahaan" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Merchandise Perusahaan</h3>
                   <p>Polo shirt &amp; apparel bordir custom</p>
@@ -1024,7 +1024,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-hampers">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Hampers-Eksklusif-Desain-Spesial.webp" class="img-fluid"
-                  alt="Paket Hampers Lebaran Eksklusif" loading="lazy" width="400" height="260">
+                  alt="Paket Hampers Lebaran Eksklusif" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Exclusive Gift Box</h3>
                   <p>Hampers lebaran &amp; akhir tahun</p>
@@ -1037,7 +1037,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-seminar">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Goodie-Bag-Seminar-Pameran.webp" class="img-fluid"
-                  alt="Goodie Bag &amp; Tas Seminar" loading="lazy" width="400" height="260">
+                  alt="Goodie Bag &amp; Tas Seminar" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Goodie Bag &amp; Tas Seminar</h3>
                   <p>Tas spunbond &amp; kanvas custom</p>
@@ -1050,7 +1050,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-kantor">
               <div class="gallery-item">
                 <img src="assets/img/gallery/notebook.webp" class="img-fluid" alt="Notebook Kulit Agenda Custom"
-                  loading="lazy" width="400" height="260">
+                  loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Leather Agenda Notebook</h3>
                   <p>Emboss logo perusahaan</p>
@@ -1063,7 +1063,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-merchandise">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Powerbank-Promosi-Logo.webp" class="img-fluid"
-                  alt="Powerbank Custom Branding" loading="lazy" width="400" height="260">
+                  alt="Powerbank Custom Branding" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Powerbank Promosi</h3>
                   <p>Fast charging custom logo</p>
@@ -1076,7 +1076,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-hampers">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Gift-Set-Premium-untuk-Karyawan.webp" class="img-fluid"
-                  alt="Gift Set Premium Karyawan" loading="lazy" width="400" height="260">
+                  alt="Gift Set Premium Karyawan" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Gift Set Karyawan</h3>
                   <p>Paket onboarding &amp; apresiasi</p>
@@ -1089,7 +1089,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-seminar">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Lanyard-Custom-Logo.webp" class="img-fluid" alt="Lanyard Custom Logo"
-                  loading="lazy" width="400" height="260">
+                  loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Lanyard &amp; ID Card</h3>
                   <p>Printing lanyard full-color</p>
@@ -1102,7 +1102,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-kantor">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Kalender-Meja-Promosi.webp" class="img-fluid" alt="Kalender Meja Promosi"
-                  loading="lazy" width="400" height="260">
+                  loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Kalender Meja Promosi</h3>
                   <p>Desain eksklusif tahunan kantor</p>
@@ -1115,7 +1115,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-merchandise">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Topi-Promosi-Logo.webp" class="img-fluid" alt="Topi Promosi Bordir"
-                  loading="lazy" width="400" height="260">
+                  loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Topi Promosi Bordir</h3>
                   <p>Custom bordir komputer rapi</p>
@@ -1128,7 +1128,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-hampers">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Mug-Keramik-Logo.webp" class="img-fluid" alt="Mug Keramik Custom Logo"
-                  loading="lazy" width="400" height="260">
+                  loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Mug Keramik Custom</h3>
                   <p>Printing tahan lama &amp; food-grade</p>
@@ -1141,7 +1141,7 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-seminar">
               <div class="gallery-item">
                 <img src="assets/img/gallery/Paket-Stationery-Eksklusif.webp" class="img-fluid"
-                  alt="Paket Stationery Seminar" loading="lazy" width="400" height="260">
+                  alt="Paket Stationery Seminar" loading="lazy" width="400" height="260" decoding="async">
                 <div class="gallery-caption">
                   <h3>Paket Seminar Kit</h3>
                   <p>Pulpen, blocknote &amp; pouch</p>
@@ -1424,7 +1424,7 @@
           <a href="/" class="logo d-inline-flex align-items-center bg-white py-2 px-3 rounded mb-3">
             <img src="assets/img/logo-header.png"
               alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan"
-              style="max-height:36px;width:auto;" width="193" height="36" loading="lazy">
+              style="max-height:36px;width:auto;" width="193" height="36" loading="lazy" decoding="async">
           </a>
           <p>Vendor corporate gift, souvenir perusahaan premium, dan merchandise kantor eksklusif untuk branding dan
             promosi bisnis Anda. Melayani seluruh Indonesia.</p>
