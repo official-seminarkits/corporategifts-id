@@ -143,24 +143,44 @@
    */
   function initIsotopeLayout() {
     document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-      if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') return;
+      if (typeof Isotope === 'undefined') return;
       let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
       let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
       let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
+      let container = isotopeItem.querySelector('.isotope-container');
+      if (!container) return;
+
       let initIsotope;
-      imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-        initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+      function startIsotope() {
+        if (initIsotope) return;
+        initIsotope = new Isotope(container, {
           itemSelector: '.isotope-item',
           layoutMode: layout,
           filter: filter,
           sortBy: sort
         });
-      });
+      }
+
+      if ('IntersectionObserver' in window) {
+        let observer = new IntersectionObserver(function(entries, obs) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              startIsotope();
+              obs.disconnect();
+            }
+          });
+        }, { rootMargin: '200px' });
+        observer.observe(isotopeItem);
+      } else {
+        startIsotope();
+      }
 
       isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
         filters.addEventListener('click', function() {
-          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          startIsotope();
+          let activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
+          if (activeFilter) activeFilter.classList.remove('filter-active');
           this.classList.add('filter-active');
           if (initIsotope) {
             initIsotope.arrange({
@@ -176,10 +196,10 @@
   }
 
   if (document.readyState === 'complete') {
-    setTimeout(initIsotopeLayout, 200);
+    setTimeout(initIsotopeLayout, 100);
   } else {
     window.addEventListener("load", function() {
-      setTimeout(initIsotopeLayout, 200);
+      setTimeout(initIsotopeLayout, 100);
     });
   }
 
