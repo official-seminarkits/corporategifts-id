@@ -367,5 +367,5 @@ Untuk setiap artikel yang dimigrasikan, tambahkan baris redirect pada **3 lokasi
 | Nama Penulis di Excel | Target Anchor di `/penulis` | Jabatan Standar | Avatar Lokal |
 | :--- | :--- | :--- | :--- |
 | **Arinda Zakia** | `/penulis#arinda-zakia` | Senior Corporate Gifting Specialist & Content Strategist | `../assets/img/penulis/arinda-zakia.webp` |
-| **Amelia** | `/penulis#amelia` | Creative Product Designer & Bespoke Packaging Consultant | `../assets/img/penulis/amelia.webp` |
+| **Sholikhatun Nikmah** | `/penulis#sholikhatun-nikmah` | Creative Product Designer & Bespoke Packaging Consultant | `../assets/img/penulis/sholikhatun-nikmah.webp` |
 | **Vendor Souvenir Kantor** | `/penulis#vendor-souvenir-kantor` | Editorial Team & Merchandise Production Specialist | `../assets/img/penulis/vendor-souvenir-kantor.png` |

@@ -275,6 +275,88 @@
       font-weight: 500;
       letter-spacing: 0.2px;
     }
+
+    /* Interactive Blog Search Styles */
+    .blog-search-wrapper {
+      max-width: 580px;
+    }
+    .blog-search-wrapper .input-group {
+      transition: all 0.25s ease;
+      border-color: #e2e8f0 !important;
+      background: #ffffff;
+    }
+    .blog-search-wrapper .input-group:focus-within {
+      border-color: var(--accent-color, #15803d) !important;
+      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.12) !important;
+    }
+    .blog-search-wrapper input::placeholder {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    .author-redaksi-pill {
+      font-size: 0.84rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+    }
+    #blog-no-results {
+      padding: 3rem 1rem;
+    }
+    #blog-no-results .empty-icon {
+      font-size: 3rem;
+      color: #cbd5e1;
+    }
+
+    /* Mobile Responsive Optimizations */
+    @media (max-width: 767.98px) {
+      .page-title .heading {
+        padding: 24px 0 14px 0 !important;
+      }
+      .page-title h1 {
+        font-size: 1.45rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 0.5rem !important;
+      }
+      .page-title p {
+        font-size: 0.82rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 0.75rem !important;
+      }
+      .author-redaksi-pill {
+        font-size: 0.76rem !important;
+        padding: 4px 10px !important;
+        gap: 4px !important;
+      }
+      .blog-search-wrapper {
+        margin-top: 0.75rem !important;
+      }
+      .blog-search-wrapper .input-group {
+        padding: 3px !important;
+      }
+      .blog-search-wrapper .input-group-text {
+        padding: 0 0.35rem 0 0.6rem !important;
+      }
+      .blog-search-wrapper .input-group-text i {
+        font-size: 0.95rem !important;
+      }
+      .blog-search-wrapper input {
+        font-size: 0.8rem !important;
+        padding: 0.35rem 0.25rem !important;
+      }
+      .blog-search-wrapper input::placeholder {
+        font-size: 0.78rem !important;
+      }
+      .blog-search-wrapper .btn-search-submit {
+        padding: 5px 14px !important;
+        font-size: 0.8rem !important;
+      }
+      .page-title .breadcrumbs {
+        padding: 8px 0 !important;
+      }
+      .page-title .breadcrumbs ol {
+        font-size: 0.8rem !important;
+      }
+    }
   </style>
 </head>
 
@@ -333,14 +415,29 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <span class="badge px-3 py-2 rounded-pill fw-semibold mb-3" style="background: rgba(22, 163, 74, 0.1); color: var(--accent-color, #16a34a); font-size: 0.85rem;">
-                <i class="bi bi-journal-bookmark-fill me-1"></i> Artikel &amp; Wawasan Pengadaan B2B
-              </span>
               <h1>Blog &amp; Panduan <span>Corporate Gift</span></h1>
               <p class="mb-3">Rekomendasi, tips pengadaan barang promosi, inspirasi souvenir kantor eksklusif, dan panduan lengkap cinderamata institusi untuk memperkuat relasi bisnis Anda di Indonesia.</p>
-              <div class="d-inline-flex align-items-center gap-2 p-2 px-3 rounded-pill bg-white shadow-sm border">
-                <span class="small text-muted"><i class="bi bi-people-fill text-success me-1"></i> Ditulis oleh Dewan Redaksi:</span>
-                <a href="/penulis" class="small fw-bold text-success text-decoration-none">Kenali Tim Penulis Kami <i class="bi bi-arrow-right"></i></a>
+              <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill author-redaksi-pill shadow-sm">
+                <span class="text-muted"><i class="bi bi-people-fill text-success me-1"></i> Redaksi:</span>
+                <a href="/penulis" class="fw-bold text-success text-decoration-none">Kenali Tim Penulis <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+              <!-- Live Multi-Criteria Search Bar -->
+              <div class="blog-search-wrapper mt-3 mx-auto">
+                <form id="blog-search-form" class="position-relative" onsubmit="event.preventDefault();">
+                  <div class="input-group shadow-sm rounded-pill overflow-hidden border bg-white p-1">
+                    <span class="input-group-text bg-transparent border-0 ps-3 text-muted">
+                      <i class="bi bi-search text-success fs-5"></i>
+                    </span>
+                    <input type="text" id="blog-search-input" class="form-control border-0 bg-transparent py-2 shadow-none" placeholder="Cari judul artikel, topik, souvenir..." aria-label="Cari artikel blog">
+                    <button type="button" id="blog-search-clear" class="btn bg-transparent border-0 text-muted px-2 d-none" aria-label="Hapus pencarian">
+                      <i class="bi bi-x-circle-fill text-secondary"></i>
+                    </button>
+                    <button type="submit" class="btn btn-success btn-search-submit rounded-pill px-4 fw-semibold d-inline-flex align-items-center gap-1 shadow-sm" style="background: var(--accent-color, #15803d); border-color: var(--accent-color, #15803d);">
+                      Cari
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -1602,12 +1699,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-10-19">19 Oktober 2025</time></p>
                   </div>
                 </div>
@@ -1701,12 +1798,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-10-08">8 Oktober 2025</time></p>
                   </div>
                 </div>
@@ -1734,12 +1831,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-10-07">7 Oktober 2025</time></p>
                   </div>
                 </div>
@@ -1833,12 +1930,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-09-29">29 September 2025</time></p>
                   </div>
                 </div>
@@ -1866,12 +1963,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-09-29">29 September 2025</time></p>
                   </div>
                 </div>
@@ -1932,12 +2029,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-09-24">24 September 2025</time></p>
                   </div>
                 </div>
@@ -1965,12 +2062,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-09-22">22 September 2025</time></p>
                   </div>
                 </div>
@@ -2031,12 +2128,12 @@
               </p>
               <div class="post-footer d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                  <a href="/penulis#amelia" class="d-inline-flex me-2">
-                    <img src="assets/img/penulis/amelia.webp" alt="Amelia - CorporateGifts.ID"
+                  <a href="/penulis#sholikhatun-nikmah" class="d-inline-flex me-2">
+                    <img src="assets/img/penulis/sholikhatun-nikmah.webp" alt="Sholikhatun Nikmah - CorporateGifts.ID"
                       class="img-fluid post-author-img flex-shrink-0 rounded-circle" loading="lazy" width="36" height="36" style="object-fit:cover;">
                   </a>
                   <div class="post-meta">
-                    <p class="post-author mb-0"><a href="/penulis#amelia" class="text-dark fw-bold text-decoration-none">Amelia</a></p>
+                    <p class="post-author mb-0"><a href="/penulis#sholikhatun-nikmah" class="text-dark fw-bold text-decoration-none">Sholikhatun Nikmah</a></p>
                     <p class="post-date"><time datetime="2025-09-19">19 September 2025</time></p>
                   </div>
                 </div>
@@ -2407,7 +2504,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+                <div class="col-lg-2 col-6 footer-links">
           <h3>Halaman</h3>
           <ul>
             <li><a href="/">Beranda</a></li>
@@ -2416,8 +2513,8 @@
             <li><a href="/katalog">Katalog</a></li>
             <li><a href="/portofolio">Portofolio</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="/penulis">Tim Penulis</a></li>
             <li><a href="/galeri">Galeri</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
           </ul>
         </div>
 
@@ -2448,21 +2545,19 @@
       </div>
     </div>
 
-    <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
+        <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
       <p class="text-center mb-2" style="font-size:.85rem;opacity:.7;font-weight:600;">Partner Network</p>
       <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
-        <a href="https://www.souvenirkantor.biz.id" target="_blank" rel="noopener"
+        <a href="https://seminarkits.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
+        <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
+        <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener"
           style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
-        <a href="https://corporategifts.biz.id" target="_blank" rel="noopener"
-          style="color:rgba(255,255,255,.65);">Vendor Merchandise Perusahaan</a>
-        <a href="https://www.seminarkit.id" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Supplier
-          Seminar Kit</a>
-        <a href="https://www.tumblersouvenir.com" target="_blank" rel="noopener"
-          style="color:rgba(255,255,255,.65);">Vendor Tumbler Souvenir</a>
-        <a href="https://www.portalwawasan.web.id" target="_blank" rel="noopener"
-          style="color:rgba(255,255,255,.65);">Portal Wawasan</a>
-        <a href="https://www.umkmgodigital.web.id" target="_blank" rel="noopener"
-          style="color:rgba(255,255,255,.65);">UMKM Go Digital</a>
+        <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Hampers Malang</a>
+        <a href="https://vendorsouvenir.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Souvenir</a>
       </div>
     </div>
 
@@ -2501,22 +2596,53 @@
   <!-- Blog Posts Dynamic Client-Side Pagination Script -->
   <script>
     (function() {
-      function initBlogPagination() {
+      function initBlogSearchAndPagination() {
         var postsContainer = document.querySelector("#blog-posts .container");
         var postsGrid = document.querySelector("#blog-posts .row.gy-4");
         if (!postsContainer || !postsGrid) return;
 
         // Select all direct article column cards
-        var items = Array.prototype.filter.call(postsGrid.children, function(el) {
+        var rawItems = Array.prototype.filter.call(postsGrid.children, function(el) {
           return el.classList.contains("col-lg-4") || el.classList.contains("col-md-6");
         });
 
-        var totalItems = items.length;
-        if (totalItems === 0) return;
+        if (rawItems.length === 0) return;
 
-        var itemsPerPage = 30; // 30 artikel per halaman
-        var totalPages = Math.ceil(totalItems / itemsPerPage);
+        // Pre-compute searchable text for high performance
+        var itemData = rawItems.map(function(el) {
+          var titleEl = el.querySelector(".title a") || el.querySelector(".title") || el.querySelector("h2");
+          var titleText = titleEl ? titleEl.textContent : "";
+          var catEl = el.querySelector(".post-category");
+          var catText = catEl ? catEl.textContent : "";
+          var badgeEl = el.querySelector(".post-badge");
+          var badgeText = badgeEl ? badgeEl.textContent : "";
+          var excerptEl = el.querySelector(".post-excerpt");
+          var excerptText = excerptEl ? excerptEl.textContent : "";
+          var authorEl = el.querySelector(".post-author");
+          var authorText = authorEl ? authorEl.textContent : "";
+
+          var combined = (titleText + " " + catText + " " + badgeText + " " + excerptText + " " + authorText).toLowerCase();
+          return {
+            element: el,
+            title: titleText.toLowerCase(),
+            category: (catText + " " + badgeText).toLowerCase(),
+            combined: combined
+          };
+        });
+
+        var currentFilteredItems = itemData.slice();
+        var itemsPerPage = 30;
         var currentPage = 1;
+
+        // Create empty state element
+        var emptyState = document.createElement("div");
+        emptyState.className = "col-12 text-center py-5 d-none";
+        emptyState.id = "blog-no-results";
+        emptyState.innerHTML = '<div class="empty-icon mb-3"><i class="bi bi-search"></i></div>' +
+          '<h3 class="h5 fw-bold text-dark mb-2">Artikel Tidak Ditemukan</h3>' +
+          '<p class="text-muted mb-4" id="empty-state-text">Maaf, kami tidak menemukan artikel yang sesuai dengan pencarian Anda.</p>' +
+          '<button type="button" class="btn btn-outline-success rounded-pill px-4 fw-semibold" id="btn-reset-search"><i class="bi bi-arrow-counterclockwise me-1"></i> Reset Pencarian</button>';
+        postsGrid.appendChild(emptyState);
 
         // Create pagination wrapper
         var paginationWrapper = document.createElement("div");
@@ -2535,26 +2661,85 @@
         paginationWrapper.appendChild(paginationInfo);
         postsContainer.appendChild(paginationWrapper);
 
+        var searchInput = document.getElementById("blog-search-input");
+        var searchClearBtn = document.getElementById("blog-search-clear");
+        var searchForm = document.getElementById("blog-search-form");
+
+        function applySearch() {
+          var query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+          
+          if (searchClearBtn) {
+            if (query.length > 0) {
+              searchClearBtn.classList.remove("d-none");
+            } else {
+              searchClearBtn.classList.add("d-none");
+            }
+          }
+
+          if (query.length === 0) {
+            currentFilteredItems = itemData.slice();
+          } else {
+            var words = query.split(/\s+/).filter(Boolean);
+            currentFilteredItems = itemData.filter(function(item) {
+              return words.every(function(word) {
+                return item.combined.indexOf(word) !== -1;
+              });
+            });
+          }
+
+          renderPage(1, false);
+        }
+
         function renderPage(page, scrollToTop) {
           currentPage = page;
+          var totalItems = currentFilteredItems.length;
+          var totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+          if (totalItems === 0) {
+            // Hide all items
+            itemData.forEach(function(item) {
+              item.element.style.display = "none";
+              item.element.classList.add("d-none");
+            });
+            emptyState.classList.remove("d-none");
+            var query = searchInput ? searchInput.value.trim() : "";
+            var emptyDesc = 'Tidak ada artikel yang cocok dengan kata kunci "<strong>' + escapeHtml(query) + '</strong>".';
+            var emptyTextEl = document.getElementById("empty-state-text");
+            if (emptyTextEl) emptyTextEl.innerHTML = emptyDesc;
+            paginationWrapper.style.display = "none";
+            return;
+          }
+
+          emptyState.classList.add("d-none");
+          paginationWrapper.style.display = "";
+
           var start = (page - 1) * itemsPerPage;
           var end = start + itemsPerPage;
 
-          items.forEach(function(item, index) {
-            if (index >= start && index < end) {
-              item.style.display = "";
-              item.classList.remove("d-none");
+          // Collect visible elements
+          var visibleSet = new Set(currentFilteredItems.slice(start, end).map(function(d) { return d.element; }));
+
+          itemData.forEach(function(item) {
+            if (visibleSet.has(item.element)) {
+              item.element.style.display = "";
+              item.element.classList.remove("d-none");
             } else {
-              item.style.display = "none";
-              item.classList.add("d-none");
+              item.element.style.display = "none";
+              item.element.classList.add("d-none");
             }
           });
 
           var displayStart = start + 1;
           var displayEnd = Math.min(end, totalItems);
-          paginationInfo.textContent = "Menampilkan " + displayStart + " - " + displayEnd + " dari " + totalItems + " artikel";
+          
+          var query = searchInput ? searchInput.value.trim() : "";
+          var infoText = "Menampilkan " + displayStart + " - " + displayEnd + " dari " + totalItems + " artikel";
+          if (query) {
+            infoText += " (hasil pencarian)";
+          }
+          paginationInfo.textContent = infoText;
 
-          renderNavButtons();
+          renderNavButtons(totalPages);
 
           if (scrollToTop) {
             var sectionTarget = document.getElementById("blog-posts");
@@ -2565,8 +2750,14 @@
           }
         }
 
-        function renderNavButtons() {
+        function renderNavButtons(totalPages) {
           paginationNav.innerHTML = "";
+
+          if (totalPages <= 1) {
+            paginationNav.style.display = "none";
+            return;
+          }
+          paginationNav.style.display = "flex";
 
           // Prev Button
           var prevBtn = document.createElement("button");
@@ -2634,14 +2825,56 @@
           paginationNav.appendChild(nextBtn);
         }
 
-        // Initialize Page 1
+        function escapeHtml(str) {
+          return str.replace(/[&<>"']/g, function(m) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+          });
+        }
+
+        // Event Listeners for Search
+        var debounceTimer;
+        if (searchInput) {
+          searchInput.addEventListener("input", function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function() {
+              applySearch();
+            }, 200);
+          });
+        }
+
+        if (searchForm) {
+          searchForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            clearTimeout(debounceTimer);
+            applySearch();
+          });
+        }
+
+        if (searchClearBtn) {
+          searchClearBtn.addEventListener("click", function() {
+            if (searchInput) {
+              searchInput.value = "";
+              searchInput.focus();
+            }
+            applySearch();
+          });
+        }
+
+        document.addEventListener("click", function(e) {
+          if (e.target && (e.target.id === "btn-reset-search" || e.target.closest("#btn-reset-search"))) {
+            if (searchInput) searchInput.value = "";
+            applySearch();
+          }
+        });
+
+        // Initialize First Render
         renderPage(1, false);
       }
 
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initBlogPagination);
+        document.addEventListener("DOMContentLoaded", initBlogSearchAndPagination);
       } else {
-        initBlogPagination();
+        initBlogSearchAndPagination();
       }
     })();
   </script>
