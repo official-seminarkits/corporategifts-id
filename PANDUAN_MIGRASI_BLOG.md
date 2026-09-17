@@ -321,11 +321,89 @@ Tag body wajib menggunakan class:
 </section>
 ```
 
+### 13. Footer Standar Lengkap & Partner Network
+```html
+<footer id="footer" class="footer dark-background">
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="/" class="logo d-flex align-items-center">
+          <img src="../assets/img/logo-header.png" alt="CorporateGifts.ID Logo" style="max-height:40px;width:auto;" width="214" height="40" loading="lazy">
+        </a>
+        <p>Vendor terpercaya penyedia solusi corporate gift eksklusif, merchandise custom perusahaan, dan paket seminar kit terpadu untuk instansi B2B di seluruh Indonesia.</p>
+        <div class="social-links d-flex mt-4">
+          <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" aria-label="WhatsApp CorporateGifts.ID"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.instagram.com/corporategifts.id" target="_blank" rel="noopener" aria-label="Instagram CorporateGifts.ID"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/corporategiftsid" target="_blank" rel="noopener" aria-label="Facebook CorporateGifts.ID"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.tiktok.com/@corporategifts.id" target="_blank" rel="noopener" aria-label="TikTok CorporateGifts.ID"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h3>Halaman</h3>
+        <ul>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/tentang-kami">Tentang Kami</a></li>
+          <li><a href="/layanan">Layanan</a></li>
+          <li><a href="/katalog">Katalog</a></li>
+          <li><a href="/portofolio">Portofolio</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/galeri">Galeri</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h3>Kategori Produk</h3>
+        <ul>
+          <li><a href="/produk/souvenir-kantor">Souvenir Kantor</a></li>
+          <li><a href="/produk/souvenir-custom">Souvenir Custom</a></li>
+          <li><a href="/produk/merchandise">Merchandise</a></li>
+          <li><a href="/produk/seminar-kit">Seminar Kit</a></li>
+          <li><a href="/produk/hampers">Hampers &amp; Parcel</a></li>
+          <li><a href="/produk/souvenir-promosi">Souvenir Promosi</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h3>Hubungi Kami</h3>
+        <p>Gedung Maspion Square, Lt. 1</p>
+        <p>Jl. Ahmad Yani No. 73, Margorejo, Wonocolo</p>
+        <p>Surabaya, Jawa Timur 60238</p>
+        <p class="mt-3"><strong>WhatsApp:</strong> <span>+62 895-6390-68080</span></p>
+        <p><strong>Email:</strong> <span>halo@corporategifts.id</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
+    <p class="text-center mb-2" style="font-size:.85rem;opacity:.7;font-weight:600;">Partner Network</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
+      <a href="https://seminarkits.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
+      <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
+      <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
+      <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Hampers Malang</a>
+      <a href="https://vendorsouvenir.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Souvenir</a>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-2 pb-3">
+    <p>&copy; <span id="current-year">2026</span> <strong class="px-1 sitename">CorporateGifts.ID</strong> &minus; All Rights Reserved</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi%20pengadaan%20corporate%20gift" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp CS CorporateGifts.ID">
+  <i class="bi bi-whatsapp"></i>
+  <span class="wa-tooltip">Konsultasi Pengadaan Gratis</span>
+</a>
+```
+
 ---
 
-## Alur Kerja Setiap Migrasi Artikel (Checklist 5 Langkah Wajib)
+## Alur Kerja Setiap Migrasi Artikel (Checklist 6 Langkah Wajib)
 
-Setiap migrasi 1 artikel baru, jalankan alur 5 langkah berikut secara berurutan:
+Setiap migrasi 1 artikel baru, jalankan alur 6 langkah berikut secara berurutan:
 
 ```
 [1. Buat blog/<slug>.html (Clean URL, non-trailing slash)] 
@@ -337,9 +415,11 @@ Setiap migrasi 1 artikel baru, jalankan alur 5 langkah berikut secara berurutan:
 [4. Update _redirects (Wajib 3 Bagian: Blogger 301, Legacy .html 301, & Trailing Slash 301)] 
        ↓
 [5. Update llms.txt (Ringkasan 1 baris ke https://corporategifts.id/blog/<slug>)] 
+       ↓
+[6. Update sitemap.html (Sisipkan ke kategori kartu yang relevan & update counter)] 
 ```
 
-### Detail Update `_redirects` pada Langkah 4:
+### Detail Langkah 4: Update `_redirects` (Wajib 3 Bagian)
 Untuk setiap artikel yang dimigrasikan, tambahkan baris redirect pada **3 lokasi berbeda di file `_redirects`**:
 
 1. **Bagian Atas (Blogger 301 Redirects)**:
@@ -360,6 +440,19 @@ Untuk setiap artikel yang dimigrasikan, tambahkan baris redirect pada **3 lokasi
    /blog/<slug>/ /blog/<slug> 301
    ```
 
+### Detail Langkah 6: Update `sitemap.html`
+1. Tentukan kategori artikel yang cocok (contoh: *Seminar Kit & Konferensi*, *Souvenir Kantor & Alat Kerja*, *Merchandise Perusahaan & Apparel*, *Hampers & Parcel*, *Souvenir Wisuda & Akademik*, *Souvenir VIP & Eksekutif*, atau *Budgeting & Manajemen HR*).
+2. Sisipkan item baru di daftar `<ol class="sitemap-list">` kategori tersebut:
+   ```html
+   <li class="sitemap-item">
+     <span class="item-num">[Nomor Urut].</span>
+     <a href="/blog/[slug]" class="sitemap-link">[Judul Lengkap Artikel]</a>
+     <span class="badge-new-sitemap ms-2">BARU</span>
+   </li>
+   ```
+3. Perbarui badge jumlah halaman pada header kartu kategori terkait (contoh: `11 Halaman` &rarr; `12 Halaman`).
+4. Perbarui total halaman terindeks pada pill banner atas jika bertambah (`83+ Halaman Terindeks` &rarr; `84+ Halaman Terindeks`).
+
 ---
 
 ## Referensi Pemetaan Penulis (Author Mapping)
@@ -369,3 +462,4 @@ Untuk setiap artikel yang dimigrasikan, tambahkan baris redirect pada **3 lokasi
 | **Arinda Zakia** | `/penulis#arinda-zakia` | Senior Corporate Gifting Specialist & Content Strategist | `../assets/img/penulis/arinda-zakia.webp` |
 | **Sholikhatun Nikmah** | `/penulis#sholikhatun-nikmah` | Creative Product Designer & Bespoke Packaging Consultant | `../assets/img/penulis/sholikhatun-nikmah.webp` |
 | **Vendor Souvenir Kantor** | `/penulis#vendor-souvenir-kantor` | Editorial Team & Merchandise Production Specialist | `../assets/img/penulis/vendor-souvenir-kantor.png` |
+*(DILARANG menggunakan nama atau avatar lama "Amelia").*

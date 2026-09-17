@@ -3,6 +3,94 @@
 # Syntax: /source-path /destination-path [status-code]
 # ==============================================================================
 
+# ==============================================================================
+# Domain Canonicalization: www to non-www & HTTP to HTTPS (1:1 Path Preserved)
+# ==============================================================================
+https://www.corporategifts.id/* https://corporategifts.id/:splat 301!
+http://www.corporategifts.id/*  https://corporategifts.id/:splat 301!
+http://corporategifts.id/*      https://corporategifts.id/:splat 301!
+
+# ==============================================================================
+# Blogger Static Pages (/p/*.html) 301 Permanent Redirects
+# ==============================================================================
+# Portofolio
+/p/portofolio.html /portofolio 301
+/p/portofolio /portofolio 301
+/p/portofolio/* /portofolio 301
+
+# Souvenir Custom
+/p/souvenir-custom.html /produk/souvenir-custom 301
+/p/souvenir-custom /produk/souvenir-custom 301
+/p/souvenir-custom/* /produk/souvenir-custom 301
+/souvenir-custom /produk/souvenir-custom 301
+/souvenir-custom/ /produk/souvenir-custom 301
+/souvenir-custom/* /produk/souvenir-custom 301
+
+# Souvenir Kantor
+/p/souvenir-kantor.html /produk/souvenir-kantor 301
+/p/souvenir-kantor /produk/souvenir-kantor 301
+/p/souvenir-kantor/* /produk/souvenir-kantor 301
+/souvenir-kantor /produk/souvenir-kantor 301
+/souvenir-kantor/ /produk/souvenir-kantor 301
+/souvenir-kantor/* /produk/souvenir-kantor 301
+
+# Souvenir Promosi
+/p/souvenir-promosi.html /produk/souvenir-promosi 301
+/p/souvenir-promosi /produk/souvenir-promosi 301
+/p/souvenir-promosi/* /produk/souvenir-promosi 301
+/souvenir-promosi /produk/souvenir-promosi 301
+/souvenir-promosi/ /produk/souvenir-promosi 301
+/souvenir-promosi/* /produk/souvenir-promosi 301
+
+# Merchandise Perusahaan
+/p/merchandise-perusahaan.html /produk/merchandise 301
+/p/merchandise-perusahaan /produk/merchandise 301
+/p/merchandise-perusahaan/* /produk/merchandise 301
+/merchandise-perusahaan /produk/merchandise 301
+/merchandise-perusahaan/ /produk/merchandise 301
+/merchandise-perusahaan/* /produk/merchandise 301
+
+# Hampers & Parcel
+/p/hampers.html /produk/hampers 301
+/p/hampers /produk/hampers 301
+/p/hampers/* /produk/hampers 301
+/p/hampers-perusahaan.html /produk/hampers 301
+/p/hampers-perusahaan /produk/hampers 301
+/p/hampers-dan-parcel.html /produk/hampers 301
+/p/hampers-dan-parcel /produk/hampers 301
+/hampers /produk/hampers 301
+/hampers/ /produk/hampers 301
+/hampers/* /produk/hampers 301
+
+# Daftar Isi / Sitemap
+/p/daftar-isi.html /sitemap 301
+/p/daftar-isi /sitemap 301
+/p/daftar-isi/* /sitemap 301
+/daftar-isi /sitemap 301
+/daftar-isi/ /sitemap 301
+/daftar-isi/* /sitemap 301
+
+# Seminar Kit
+/p/seminarkit.html /produk/seminar-kit 301
+/p/seminarkit /produk/seminar-kit 301
+/p/seminarkit/* /produk/seminar-kit 301
+/seminarkit /produk/seminar-kit 301
+/seminarkit/ /produk/seminar-kit 301
+/seminarkit/* /produk/seminar-kit 301
+/p/seminar-kit.html /produk/seminar-kit 301
+/p/seminar-kit /produk/seminar-kit 301
+/p/seminar-kit/* /produk/seminar-kit 301
+/seminar-kit /produk/seminar-kit 301
+
+# Galeri
+/p/galeri.html /galeri 301
+/p/galeri /galeri 301
+/p/galeri/* /galeri 301
+
+# ==============================================================================
+# Blogger Blog Post 301 Permanent Redirects
+# ==============================================================================
+
 # Artikel 1: Panduan Lengkap Menyusun Seminar Kit Profesional
 /2025/09/panduan-menyusun-seminar-kit.html /blog/panduan-menyusun-seminar-kit 301
 /panduan-menyusun-seminar-kit /blog/panduan-menyusun-seminar-kit 301

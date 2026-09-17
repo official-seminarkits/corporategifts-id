@@ -67,8 +67,14 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
     - 3 Kartu rekomendasi artikel terkait ber-badge kategori pojok kiri atas, excerpt, author footer, dan tautan ke `/blog[slug]`. Verifikasi ketat bahwa file gambar di `assets/img/blog` benar-benar ada di disk.
 
 15. **Footer & Scripts**:
-    - Footer 4 kolom standar + Partner Network baris bawah + script auto-update tahun copyright.
-    - Floating WhatsApp button + Scroll-Top.
+    - Footer 4 kolom standar dengan link `Sitemap` (`<li><a href="/sitemap">Sitemap</a></li>`) di kolom Halaman.
+    - Partner Network baris bawah wajib tepat 5 situs resmi:
+      1. `https://seminarkits.id/` (SeminarKits.ID)
+      2. `https://vendormerchandise.web.id/` (Vendor Merchandise)
+      3. `https://vendorsouvenirkantor.web.id/` (Vendor Souvenir Kantor)
+      4. `https://hampersmalang.web.id/` (Vendor Hampers Malang)
+      5. `https://vendorsouvenir.web.id/` (Vendor Souvenir)
+    - Script auto-update tahun copyright, floating WhatsApp button (`.floating-wa`), dan Scroll-Top.
     - Skrip TOC toggle standar (`toggleTOC`) yang menangani `#toc-header` dan `e.stopPropagation()` pada `#toc-toggle-btn`.
 
 16. **Schemas (5 JSON-LD Blocks)**:
@@ -78,11 +84,11 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
     - `BreadcrumbList`: 3 tingkat (Beranda `https://corporategifts.id/` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`)
     - `FAQPage`: Array Question/Answer yang sinkron 1:1 dengan accordion.
 
-17. **Full 5-Step Sync Checklist**:
-    - `blog/<slug>.html` (artikel detail dengan Clean URLs tanpa .html dan tanpa trailing slash).
-    - `blog.html` (disisipkan sesuai urutan tanggal update kronologis menurun, link kartu ke `/blog/<slug>`, kapasitas 30 kartu per halaman).
-    - `sitemap.xml` (`<loc>https://corporategifts.id/blog/<slug></loc>` dan `<lastmod>YYYY-MM-DD</lastmod>`).
-    - `_redirects` (WAJIB update di 3 bagian setiap kali migrasi 1 artikel):
+17. **Full 6-Step Sync Checklist (Wajib Setiap Migrasi 1 Artikel)**:
+    - **Step 1**: `blog/<slug>.html` (artikel detail dengan Clean URLs tanpa .html dan tanpa trailing slash).
+    - **Step 2**: `blog.html` (disisipkan sesuai urutan tanggal update kronologis menurun, link kartu ke `/blog/<slug>`, pagination dinamis client-side).
+    - **Step 3**: `sitemap.xml` (`<loc>https://corporategifts.id/blog/<slug></loc>` dan `<lastmod>YYYY-MM-DD</lastmod>`).
+    - **Step 4**: `_redirects` (WAJIB update di 3 bagian setiap kali migrasi 1 artikel):
       1. **Bagian Blogger 301 Redirects** (bagian atas file):
          ```
          # [Judul Artikel]
@@ -98,7 +104,15 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
          ```
          /blog/<slug>/ /blog/<slug> 301
          ```
-    - `llms.txt` (ringkasan 1 baris di bawah `Blog & Artikel` dengan URL `https://corporategifts.id/blog/<slug>`).
+    - **Step 5**: `llms.txt` (ringkasan 1 baris di bawah `Blog & Artikel` dengan URL `https://corporategifts.id/blog/<slug>`).
+    - **Step 6**: `sitemap.html` (WAJIB disisipkan pada kategori kartu sitemap yang relevan, update nomor urut item `N.`, link ke `/blog/<slug>`, update badge jumlah artikel di header kategori, dan update total counter halaman di banner).
 
-18. **Date Source of Truth**:
+18. **Author Standard**:
+    - Penulis resmi 3 orang:
+      1. **Arinda Zakia** (`/penulis#arinda-zakia`, avatar `../assets/img/penulis/arinda-zakia.webp`)
+      2. **Sholikhatun Nikmah** (`/penulis#sholikhatun-nikmah`, avatar `../assets/img/penulis/sholikhatun-nikmah.webp`)
+      3. **Vendor Souvenir Kantor** (`/penulis#vendor-souvenir-kantor`, avatar `../assets/img/penulis/vendor-souvenir-kantor.png`)
+    - DILARANG menggunakan nama atau avatar lama "Amelia".
+
+19. **Date Source of Truth**:
     - Selalu gunakan nilai dari kolom Excel **Tanggal Update** (kolom kanan) untuk tanggal artikel, meta bar, schema JSON-LD, kartu `blog.html`, dan `sitemap.xml`.
