@@ -7,5 +7,9 @@ Thumbs.db
 *.tmp
 *.log
 
+# Temporary scripts & scratchpad
+scratch/
+
 # Node dependencies (if applicable)
 node_modules/
+
