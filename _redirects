@@ -474,12 +474,26 @@ http://corporategifts.id/*      https://corporategifts.id/:splat 301!
 /produk/souvenir-promosi.html /produk/souvenir-promosi 301
 
 # Layanan Pages Legacy .html 301
-/layanan/cetak-dan-kustomisasi-logo.html /layanan/cetak-dan-kustomisasi-logo 301
-/layanan/custom-packaging-dan-hampers.html /layanan/custom-packaging-dan-hampers 301
-/layanan/desain-mockup-dan-sampling.html /layanan/desain-mockup-dan-sampling 301
-/layanan/distribusi-logistik-cabang.html /layanan/distribusi-logistik-cabang 301
-/layanan/layanan-produksi-kilat.html /layanan/layanan-produksi-kilat 301
-/layanan/pengadaan-resmi-faktur-pajak.html /layanan/pengadaan-resmi-faktur-pajak 301
+/layanan/pengadaan-souvenir-kantor.html /layanan/pengadaan-souvenir-kantor 301
+/layanan/paket-seminar-kit-dan-konferensi.html /layanan/paket-seminar-kit-dan-konferensi 301
+/layanan/corporate-gift-eksklusif-dan-vip.html /layanan/corporate-gift-eksklusif-dan-vip 301
+/layanan/hampers-dan-parcel-perusahaan.html /layanan/hampers-dan-parcel-perusahaan 301
+/layanan/merchandise-promosi-dan-branding.html /layanan/merchandise-promosi-dan-branding 301
+/layanan/kustomisasi-khusus-dan-bespoke.html /layanan/kustomisasi-khusus-dan-bespoke 301
+
+# Deprecated Layanan URL 301 Mappings
+/layanan/cetak-dan-kustomisasi-logo /layanan/kustomisasi-khusus-dan-bespoke 301
+/layanan/cetak-dan-kustomisasi-logo.html /layanan/kustomisasi-khusus-dan-bespoke 301
+/layanan/desain-mockup-dan-sampling /layanan/pengadaan-souvenir-kantor 301
+/layanan/desain-mockup-dan-sampling.html /layanan/pengadaan-souvenir-kantor 301
+/layanan/custom-packaging-dan-hampers /layanan/hampers-dan-parcel-perusahaan 301
+/layanan/custom-packaging-dan-hampers.html /layanan/hampers-dan-parcel-perusahaan 301
+/layanan/pengadaan-resmi-faktur-pajak /layanan/corporate-gift-eksklusif-dan-vip 301
+/layanan/pengadaan-resmi-faktur-pajak.html /layanan/corporate-gift-eksklusif-dan-vip 301
+/layanan/distribusi-logistik-cabang /layanan/merchandise-promosi-dan-branding 301
+/layanan/distribusi-logistik-cabang.html /layanan/merchandise-promosi-dan-branding 301
+/layanan/layanan-produksi-kilat /layanan/paket-seminar-kit-dan-konferensi 301
+/layanan/layanan-produksi-kilat.html /layanan/paket-seminar-kit-dan-konferensi 301
 
 # Blog Articles Legacy .html 301
 /blog/agenda-dan-kalender-2026-media-branding-perusahaan.html /blog/agenda-dan-kalender-2026-media-branding-perusahaan 301
@@ -613,12 +627,18 @@ http://corporategifts.id/*      https://corporategifts.id/:splat 301!
 /galeri/ /galeri 301
 /katalog/ /katalog 301
 /layanan/ /layanan 301
-/layanan/cetak-dan-kustomisasi-logo/ /layanan/cetak-dan-kustomisasi-logo 301
-/layanan/custom-packaging-dan-hampers/ /layanan/custom-packaging-dan-hampers 301
-/layanan/desain-mockup-dan-sampling/ /layanan/desain-mockup-dan-sampling 301
-/layanan/distribusi-logistik-cabang/ /layanan/distribusi-logistik-cabang 301
-/layanan/layanan-produksi-kilat/ /layanan/layanan-produksi-kilat 301
-/layanan/pengadaan-resmi-faktur-pajak/ /layanan/pengadaan-resmi-faktur-pajak 301
+/layanan/pengadaan-souvenir-kantor/ /layanan/pengadaan-souvenir-kantor 301
+/layanan/paket-seminar-kit-dan-konferensi/ /layanan/paket-seminar-kit-dan-konferensi 301
+/layanan/corporate-gift-eksklusif-dan-vip/ /layanan/corporate-gift-eksklusif-dan-vip 301
+/layanan/hampers-dan-parcel-perusahaan/ /layanan/hampers-dan-parcel-perusahaan 301
+/layanan/merchandise-promosi-dan-branding/ /layanan/merchandise-promosi-dan-branding 301
+/layanan/kustomisasi-khusus-dan-bespoke/ /layanan/kustomisasi-khusus-dan-bespoke 301
+/layanan/cetak-dan-kustomisasi-logo/ /layanan/kustomisasi-khusus-dan-bespoke 301
+/layanan/custom-packaging-dan-hampers/ /layanan/hampers-dan-parcel-perusahaan 301
+/layanan/desain-mockup-dan-sampling/ /layanan/pengadaan-souvenir-kantor 301
+/layanan/distribusi-logistik-cabang/ /layanan/merchandise-promosi-dan-branding 301
+/layanan/layanan-produksi-kilat/ /layanan/paket-seminar-kit-dan-konferensi 301
+/layanan/pengadaan-resmi-faktur-pajak/ /layanan/corporate-gift-eksklusif-dan-vip 301
 /minta-penawaran/ /minta-penawaran 301
 /penulis/ /penulis 301
 /sitemap/ /sitemap 301
