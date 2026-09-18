@@ -93,8 +93,8 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
          ```
          # [Judul Artikel]
          /<YYYY>/<MM>/<slug>.html /blog/<slug> 301
+         /<slug>/ /blog/<slug> 301
          /<slug> /blog/<slug> 301
-         /<slug>/* /blog/<slug> 301
          ```
       2. **Bagian `# Legacy .html to Clean URLs (Non-Trailing Slash) 301 Redirects`** (di bawah header `# Blog Detail Pages Legacy .html 301`):
          ```
