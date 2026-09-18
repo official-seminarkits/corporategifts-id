@@ -2,7 +2,7 @@
 
 ## Blog Migration Standard Architecture & Immutable Rules
 All migrated blog detail articles MUST strictly follow the exact HTML blueprint and classes defined in `PANDUAN_MIGRASI_BLOG.md` and `.agents/rules/blog-migration-rules.md`.
-The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Artikel #56) & `blog/tren-seminar-kit-korporat-terbaru-2026.html` (Artikel #57).
+The reference baseline gold standards are `blog/hampers-bengkulu.html` and `blog/souvenir-event-perusahaan-jakarta.html`.
 
 #### Key Standards & Component Specifications:
 
@@ -23,11 +23,12 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
 5. **Article Wrap & Header**:
    - Wrap: `<section class="py-5"><div class="container" data-aos="fade-up"><div class="row g-5"><div class="col-lg-8"><article class="article-detail-wrap">`
    - Badge kategori: `<span class="badge px-3 py-2 rounded-pill fw-semibold" style="background: rgba(22, 163, 74, 0.1); color: var(--accent-color, #16a34a); font-size: 0.82rem;"><i class="[icon] me-1"></i> [Kategori]</span>`
-   - Title: `<h1>[Judul Lengkap]</h1>`
+   - Title: `<h1>[Judul Lengkap]</h1>` (tanpa inline styles berlebih).
    - Meta bar: Author thumbnail 44x44 (wajib dari `../assets/img/penulis/[slug].webp`), nama penulis link ke `/penulis#[slug]`, job title `Senior Corporate Gifting Specialist`, dan tanggal update + waktu baca rata kanan (`<div class="text-muted ms-auto">`).
 
-6. **Featured Image**:
-   - `.article-featured-img` dengan image WebP lokal (`width="1200" height="675" class="img-fluid"`) + caption paragraph italic di bawahnya.
+6. **Featured Image & In-Body Images**:
+   - Featured: `.article-featured-img` dengan image WebP lokal (`width="1200" height="675" class="img-fluid"`) + caption paragraph italic di bawahnya.
+   - In-Body: `.article-inbody-img.my-4` dengan image WebP lokal (`width="800" height="450" class="img-fluid rounded-4 shadow-sm w-100"`) + caption paragraph italic di bawahnya.
 
 7. **Table of Contents (TOC)**:
    - Container: `.table-of-contents`
@@ -37,11 +38,11 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
 8. **Body Content, Callouts, & Tables**:
    - Paragraf pertama diawali: `<strong><a href="/" class="text-success text-decoration-none fw-bold">Corporate Gifts ID</a></strong> - ...`
    - **Poin Kunci / Highlight**: `<div class="article-key-points"><h3 class="h6 fw-bold text-dark mb-2"><i class="bi bi-lightbulb-fill text-success me-2"></i> Poin Kunci ...:</h3><ul class="mb-0 small text-muted ps-3" style="line-height: 1.7;"><li><strong>Label:</strong> Deskripsi.</li></ul></div>`
-   - **Callout Baca Juga**: `<div class="article-baca-juga"><span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">Baca Juga</span><a href="/blog[slug]" class="hover-green">[Judul Artikel] <i class="bi bi-arrow-right ms-1"></i></a></div>`
+   - **Callout Baca Juga**: `<div class="article-baca-juga"><span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">Baca Juga</span><a href="/blog/[slug]" class="hover-green">[Judul Artikel] <i class="bi bi-arrow-right ms-1"></i></a></div>`
    - **Tabel Responsif**: Wajib dibungkus `<div class="tbl-wrap"><table class="tbl-corporategifts"><thead>...</thead><tbody><tr><td data-label="Kolom">...</td></tr></tbody></table></div>`. DILARANG menyisipkan inline `<style>` untuk tabel di head.
    - **HTML Semantik Murni**: Dilarang meninggalkan karakter markdown `*` (*italic*) atau `**` (**bold**). Wajib dikonversi ke tag HTML `<em>...</em>` atau `<strong>...</strong>`.
    - **Zero Em-Dashes**: Dilarang menggunakan karakter em-dash (`—` / `&mdash;`), gunakan tanda strip `-`.
-   - **Internal Links**: Wajib menyematkan tautan internal natural ke produk (`/produk...`), katalog (`/katalog`), RFQ (`/minta-penawaran`), atau artikel blog relevan (`/blog[slug]`).
+   - **Internal Links**: Wajib menyematkan tautan internal natural ke produk (`/produk...`), katalog (`/katalog`), RFQ (`/minta-penawaran`), atau artikel blog relevan (`/blog/[slug]`).
 
 9. **FAQ Accordion**:
    - `.article-faq-compact my-4` dengan container `#faq-section` dan `#blogFaqAccordion` (`.accordion.accordion-flush`), minimal 5 item FAQ relevan yang sinkron 1:1 dengan schema `FAQPage`.
@@ -54,7 +55,7 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
     - `.article-author-box.mt-4` dengan foto 90x90 dari `../assets/img/penulis/[slug].webp`, nama penulis link ke `/penulis#[slug]`, badge spesialisasi berwarna, bio penulis, dan link profil lengkap.
 
 12. **Share Bar**:
-    - `.article-share-bar` dengan tombol share WhatsApp, LinkedIn, Facebook, dan Copy Link dengan alert JS.
+    - `.article-share-bar` dengan tombol `.btn-share.btn-wa`, `.btn-share.btn-li`, `.btn-share.btn-fb`, dan `.btn-share.btn-copy` dengan alert JS.
 
 13. **Sidebar Kanan (3 Widget Standar Wajib)**:
     - Widget 1: Kategori Produk Kami (6 link produk ke `/produk...`).
@@ -64,25 +65,27 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
 14. **Section Artikel Terkait (3 Rekomendasi)**:
     - `<section class="py-5 bg-light border-top"><div class="container" data-aos="fade-up">`
     - Section header dengan baris "Rekomendasi Wawasan" + "Artikel Terkait Lainnya" + tombol "Lihat Semua Artikel" (`/blog`).
-    - 3 Kartu rekomendasi artikel terkait ber-badge kategori pojok kiri atas, excerpt, author footer, dan tautan ke `/blog[slug]`. Verifikasi ketat bahwa file gambar di `assets/img/blog` benar-benar ada di disk.
+    - 3 Kartu rekomendasi artikel terkait ber-badge kategori pojok kiri atas, excerpt, author footer lengkap (avatar 30x30, nama penulis, dan tombol "Baca ->"), dan tautan ke `/blog/[slug]`. Verifikasi ketat bahwa file gambar di `assets/img/blog` benar-benar ada di disk.
 
 15. **Footer & Scripts**:
-    - Footer 4 kolom standar dengan link `Sitemap` (`<li><a href="/sitemap">Sitemap</a></li>`) di kolom Halaman.
+    - Footer 4 kolom standar: About (Logo dengan bg putih, bio, social links), Halaman (8 link), Produk (6 link), Contact (`Jawa Timur, Indonesia` + WA & Website).
     - Partner Network baris bawah wajib tepat 5 situs resmi:
       1. `https://seminarkits.id/` (SeminarKits.ID)
       2. `https://vendormerchandise.web.id/` (Vendor Merchandise)
       3. `https://vendorsouvenirkantor.web.id/` (Vendor Souvenir Kantor)
       4. `https://hampersmalang.web.id/` (Vendor Hampers Malang)
       5. `https://vendorsouvenir.web.id/` (Vendor Souvenir)
-    - Script auto-update tahun copyright, floating WhatsApp button (`.floating-wa`), dan Scroll-Top.
+    - Script auto-update tahun copyright `document.getElementById('year').textContent = new Date().getFullYear();`.
+    - Floating WhatsApp button: `<a href="..." class="floating-wa d-flex align-items-center justify-content-center" target="_blank" rel="noopener" aria-label="Konsultasi via WhatsApp"><i class="bi bi-whatsapp"></i><span class="wa-tooltip">Chat via WhatsApp</span></a>`.
+    - Scroll-Top: `<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Kembali ke atas"><i class="bi bi-arrow-up-short"></i></a>`.
     - Skrip TOC toggle standar (`toggleTOC`) yang menangani `#toc-header` dan `e.stopPropagation()` pada `#toc-toggle-btn`.
 
-16. **Schemas (5 JSON-LD Blocks)**:
-    - `LocalBusiness & Organization`: `@id: "https://corporategifts.id/#localbusiness"`
-    - `Article (Utama)`: `@id` berakhiran `#article` (`https://corporategifts.id/blog/<slug>#article`), `mainEntityOfPage` bernilai `https://corporategifts.id/blog/<slug>`
-    - `Article (Ringkasan Eksekutif)`: `@id` berakhiran `#summary` (`https://corporategifts.id/blog/<slug>#summary`), `about` bernilai `https://corporategifts.id/blog/<slug>#article`
-    - `BreadcrumbList`: 3 tingkat (Beranda `https://corporategifts.id/` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`)
-    - `FAQPage`: Array Question/Answer yang sinkron 1:1 dengan accordion.
+16. **Schemas (5 JSON-LD Blocks Bebas Warning Google)**:
+    - `LocalBusiness & Organization`: `@id: "https://corporategifts.id/#localbusiness"`. Wajib memuat `address` lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`) serta `geo` (`latitude: -7.2575`, `longitude: 112.7521`).
+    - `Article (Utama)`: `@id` berakhiran `#article` (`https://corporategifts.id/blog/<slug>#article`), `mainEntityOfPage` bernilai `https://corporategifts.id/blog/<slug>`, dan properti `image` ImageObject / array URL gambar.
+    - `Article (Ringkasan Eksekutif)`: `@id` berakhiran `#summary` (`https://corporategifts.id/blog/<slug>#summary`), `about` bernilai `https://corporategifts.id/blog/<slug>#article`, dan WAJIB memuat properti `image` (URL gambar featured artikel, `width: 1200`, `height: 675`) agar bebas Google warning *"Kolom image tidak ada"*.
+    - `BreadcrumbList`: 3 tingkat (Beranda `https://corporategifts.id/` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`).
+    - `FAQPage`: Array Question/Answer yang sinkron 1:1 dengan accordion FAQ.
 
 17. **Full 6-Step Sync Checklist (Wajib Setiap Migrasi 1 Artikel)**:
     - **Step 1**: `blog/<slug>.html` (artikel detail dengan Clean URLs tanpa .html dan tanpa trailing slash).
@@ -116,3 +119,7 @@ The reference baseline implementation is `blog/souvenir-kantor-pajak.html` (Arti
 
 19. **Date Source of Truth**:
     - Selalu gunakan nilai dari kolom Excel **Tanggal Update** (kolom kanan) untuk tanggal artikel, meta bar, schema JSON-LD, kartu `blog.html`, dan `sitemap.xml`.
+
+20. **Execution & Tool Constraints**:
+    - DILARANG membuat file script python (`.py`) untuk migrasi atau validasi karena memperlambat alur kerja. Gunakan tool bawaan IDE secara langsung.
+    - Wajib memverifikasi keberadaan file fisik gambar lokal di `assets/img/blog/` sebelum menuliskan path-nya.

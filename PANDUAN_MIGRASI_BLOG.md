@@ -1,13 +1,13 @@
 # SOP & Panduan Lengkap Migrasi Artikel Blog
 **Project**: CorporateGifts.ID  
 **Target Hosting**: Cloudflare Pages  
-**Template Acuan**: `blog/souvenir-kantor-pajak.html` (Artikel #56) & `blog/tren-seminar-kit-korporat-terbaru-2026.html` (Artikel #57)
+**Template Acuan Standar Emas**: `blog/hampers-bengkulu.html` & `blog/souvenir-event-perusahaan-jakarta.html`
 
 ---
 
 ## Standar Desain, Font, dan Komponen Resmi
 
-Sebelum memulai migrasi, wajib mengikuti standar teknis berikut:
+Sebelum memulai migrasi, wajib mengikuti standar teknis berikut yang persis sama dengan acuan `blog/hampers-bengkulu.html`:
 
 ### 1. Standar Font Google
 Seluruh halaman wajib memuat kombinasi resmi **Poppins** (untuk Judul/Headings) dan **Inter** (untuk Teks Body/Navigasi/Meta):
@@ -29,7 +29,7 @@ Tag body wajib menggunakan class:
 ```html
 <body class="blog-detail-page">
 ```
-*(Catatan: Jangan gunakan `blog-details-page` agar styling CSS `.blog-detail-page` di `main.min.css` aktif dengan sempurna).*
+*(Catatan: DILARANG menggunakan `blog-details-page` agar styling CSS `.blog-detail-page` di `main.min.css` aktif dengan sempurna).*
 
 ### 3. Header Navigasi Standar Lengkap
 ```html
@@ -106,7 +106,7 @@ Tag body wajib menggunakan class:
       </a>
       <div>
         <a href="/penulis#[slug-penulis]" class="text-dark d-block fw-bold text-decoration-none" style="font-size: 0.88rem;">[Nama Penulis]</a>
-        <span class="text-muted" style="font-size: 0.76rem;">[Jabatan / Spesialisasi Penulis]</span>
+        <span class="text-muted" style="font-size: 0.76rem;">Senior Corporate Gifting Specialist</span>
       </div>
     </div>
     <div class="text-muted ms-auto">
@@ -118,7 +118,26 @@ Tag body wajib menggunakan class:
 ```
 *(Catatan: Tanggal yang digunakan selalu mengambil nilai dari kolom **Tanggal Update** / kolom sebelah kanan di Excel).*
 
-### 6. Table of Contents (TOC) Standar
+### 6. Featured Image & In-Body Image Standar
+```html
+<!-- Featured Image (Atas TOC) -->
+<div class="article-featured-img">
+  <img src="../assets/img/blog/[slug-gambar-1].webp" 
+       alt="[Alt Text Deskriptif] | CorporateGifts.ID" 
+       class="img-fluid" loading="lazy" width="1200" height="675">
+  <p class="text-muted text-center small mt-2 fst-italic">[Caption Ringkas Gambar Featured]</p>
+</div>
+
+<!-- In-Body Image (Di Tengah Konten) -->
+<div class="article-inbody-img my-4">
+  <img src="../assets/img/blog/[slug-gambar-2].webp" 
+       alt="[Alt Text Deskriptif] | CorporateGifts.ID" 
+       class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" width="800" height="450">
+  <p class="text-muted text-center small mt-2 fst-italic">[Caption Ringkas In-Body Image]</p>
+</div>
+```
+
+### 7. Table of Contents (TOC) Standar
 ```html
 <div class="table-of-contents">
   <div class="d-flex justify-content-between align-items-center" id="toc-header" style="cursor: pointer; user-select: none;">
@@ -139,25 +158,40 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 7. Kotak Poin Kunci & Callout Baca Juga
+### 8. Article Body, Poin Kunci & Callout Baca Juga
 ```html
-<!-- Box Poin Kunci / Ringkasan Eksekutif -->
-<div class="article-key-points">
-  <h3 class="h6 fw-bold text-dark mb-2"><i class="bi bi-lightbulb-fill text-success me-2"></i> Poin Kunci [Topik]:</h3>
-  <ul class="mb-0 small text-muted ps-3" style="line-height: 1.7;">
-    <li><strong>[Label 1]:</strong> [Deskripsi 1]</li>
-    <li><strong>[Label 2]:</strong> [Deskripsi 2]</li>
-  </ul>
-</div>
+<div class="article-body">
+  <p>
+    <strong><a href="/" class="text-success text-decoration-none fw-bold">Corporate Gifts ID</a></strong> - [Paragraf pembuka artikel...]
+  </p>
 
-<!-- Strip Callout Baca Juga -->
-<div class="article-baca-juga">
-  <span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">Baca Juga</span>
-  <a href="/blog/[slug-artikel-terkait]" class="hover-green">[Judul Artikel Terkait] <i class="bi bi-arrow-right ms-1"></i></a>
+  <!-- Box Poin Kunci / Ringkasan Eksekutif -->
+  <div class="article-key-points">
+    <h3 class="h6 fw-bold text-dark mb-2"><i class="bi bi-lightbulb-fill text-success me-2"></i> Poin Kunci [Topik]:</h3>
+    <ul class="mb-0 small text-muted ps-3" style="line-height: 1.7;">
+      <li><strong>[Label 1]:</strong> [Deskripsi 1]</li>
+      <li><strong>[Label 2]:</strong> [Deskripsi 2]</li>
+    </ul>
+  </div>
+
+  <!-- Strip Callout Baca Juga -->
+  <div class="article-baca-juga">
+    <span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">Baca Juga</span>
+    <a href="/blog/[slug-artikel-terkait]" class="hover-green">[Judul Artikel Terkait] <i class="bi bi-arrow-right ms-1"></i></a>
+  </div>
+
+  <!-- Heading Konten Semantik Standar (Tanpa inline classes yang merusak) -->
+  <h2 id="section-1">Judul Sub Bab H2</h2>
+  <p>Paragraf teks...</p>
+  
+  <h3>1. Judul Sub Bab H3</h3>
+  <ul>
+    <li><strong>Item 1:</strong> Deskripsi item.</li>
+  </ul>
 </div>
 ```
 
-### 8. Tabel Responsif Standar
+### 9. Tabel Responsif Standar
 ```html
 <div class="tbl-wrap">
   <table class="tbl-corporategifts">
@@ -177,12 +211,16 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 9. Komponen FAQ Standar (Bootstrap Accordion)
+### 10. Komponen FAQ Standar (Bootstrap Accordion)
 ```html
 <div class="article-faq-compact my-4" id="faq-section">
-  <h3 class="h5 fw-bold text-dark mb-3"><i class="bi bi-question-circle-fill text-success me-2"></i> Pertanyaan Seputar [Topik] (FAQ)</h3>
+  <h3 class="h5 fw-bold text-dark mb-3">
+    <i class="bi bi-question-circle-fill text-success me-2"></i> Pertanyaan Seputar [Topik] (FAQ)
+  </h3>
+  
   <div class="accordion accordion-flush" id="blogFaqAccordion">
 
+    <!-- FAQ Item 1 -->
     <div class="accordion-item border-bottom">
       <h4 class="accordion-header" id="faqHead1">
         <button class="accordion-button collapsed py-2 px-3 fw-semibold text-dark bg-white" type="button"
@@ -199,13 +237,28 @@ Tag body wajib menggunakan class:
       </div>
     </div>
 
-    <!-- FAQ Item selanjutnya (border-bottom pada semua item kecuali item terakhir) -->
+    <!-- FAQ Item 2 s/d Item Terakhir (Item terakhir tanpa class border-bottom) -->
+    <div class="accordion-item">
+      <h4 class="accordion-header" id="faqHead5">
+        <button class="accordion-button collapsed py-2 px-3 fw-semibold text-dark bg-white" type="button"
+          data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false"
+          aria-controls="faqCollapse5" style="font-size: 0.88rem;">
+          5. [Pertanyaan 5]
+        </button>
+      </h4>
+      <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHead5"
+        data-bs-parent="#blogFaqAccordion">
+        <div class="accordion-body py-2 px-3 text-muted" style="line-height: 1.6; font-size: 0.84rem;">
+          [Jawaban 5]
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
 ```
 
-### 10. Bottom RFQ CTA Banner & Author Box
+### 11. Bottom RFQ CTA Banner, Author Box & Share Bar Standar
 ```html
 <!-- Bottom RFQ CTA Banner -->
 <div class="card border-0 mt-5 shadow-sm text-center text-md-start blog-cta-banner">
@@ -234,7 +287,7 @@ Tag body wajib menggunakan class:
     <h3 class="h6 fw-bold text-dark mb-1">
       Ditulis oleh: <a href="/penulis#[slug-penulis]" class="text-dark text-decoration-none hover-green">[Nama Penulis]</a>
     </h3>
-    <span class="badge bg-success-subtle text-success px-2 py-1 rounded-pill small fw-semibold mb-2 d-inline-block">[Spesialisasi]</span>
+    <span class="badge bg-success-subtle text-success px-2 py-1 rounded-pill small fw-semibold mb-2 d-inline-block">[Spesialisasi Penulis]</span>
     <p class="small text-muted mb-2">
       [Bio Penulis]
     </p>
@@ -244,7 +297,7 @@ Tag body wajib menggunakan class:
   </div>
 </div>
 
-<!-- Share Bar -->
+<!-- Share Bar (Wajib Menggunakan Class .btn-share) -->
 <div class="article-share-bar">
   <div class="fw-semibold small text-dark">Bagikan Artikel Ini:</div>
   <div class="article-share-buttons">
@@ -256,52 +309,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 11. Sidebar Kanan (3 Widget Standar Wajib)
-```html
-<div class="col-lg-4">
-  <div class="sidebar position-sticky" style="top: 100px;">
-
-    <!-- Widget 1: Kategori Produk Terkait -->
-    <div class="card border-0 rounded-4 p-4 shadow-sm bg-white mb-4">
-      <h3 class="h6 fw-bold text-dark mb-3"><i class="bi bi-grid-fill text-success me-2"></i> Kategori Produk Kami</h3>
-      <ul class="list-unstyled mb-0" style="font-size: 0.92rem;">
-        <li class="py-2 border-bottom"><a href="/produk/souvenir-kantor" class="text-decoration-none text-dark d-flex justify-content-between"><span>Souvenir Kantor</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
-        <li class="py-2 border-bottom"><a href="/produk/souvenir-custom" class="text-decoration-none text-dark d-flex justify-content-between"><span>Souvenir Custom VIP</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
-        <li class="py-2 border-bottom"><a href="/produk/merchandise" class="text-decoration-none text-dark d-flex justify-content-between"><span>Merchandise Perusahaan</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
-        <li class="py-2 border-bottom"><a href="/produk/seminar-kit" class="text-decoration-none text-dark d-flex justify-content-between"><span>Paket Seminar Kit</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
-        <li class="py-2 border-bottom"><a href="/produk/hampers" class="text-decoration-none text-dark d-flex justify-content-between"><span>Hampers &amp; Parcel</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
-        <li class="pt-2"><a href="/produk/souvenir-promosi" class="text-decoration-none text-dark d-flex justify-content-between"><span>Souvenir Promosi</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
-      </ul>
-    </div>
-
-    <!-- Widget 2: Bantuan Konsultasi Kilat -->
-    <div class="card border-0 rounded-4 p-4 text-center shadow-sm" style="background: color-mix(in srgb, var(--accent-color, #16a34a) 8%, transparent);">
-      <div class="mx-auto mb-3 text-success fs-1">
-        <i class="bi bi-headset"></i>
-      </div>
-      <h3 class="h6 fw-bold text-dark mb-2">Bantuan Konsultasi Kilat</h3>
-      <p class="small text-muted mb-3">Diskusikan kebutuhan souvenir kantor, seminar kit, dan penawaran resmi bersama kami.</p>
-      <div class="fw-bold text-success fs-6 mb-3">+62 895-6390-68080</div>
-      <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-success rounded-pill w-100 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
-        <i class="bi bi-whatsapp me-1"></i> Chat WhatsApp Sekarang
-      </a>
-    </div>
-
-    <!-- Widget 3: Unduh Katalog PDF -->
-    <div class="card border-0 rounded-4 p-4 shadow-sm bg-white mt-4 text-center">
-      <i class="bi bi-file-earmark-pdf text-danger fs-1 mb-2"></i>
-      <h3 class="h6 fw-bold text-dark mb-2">E-Katalog Resmi 2026</h3>
-      <p class="small text-muted mb-3">Unduh dokumen katalog resmi lengkap dengan aneka pilihan merchandise instansi, seminar kit, dan gift set siap custom logo.</p>
-      <a href="../assets/docs/katalog-corporategifts-id.pdf" download="Katalog-CorporateGifts-ID-2026.pdf" target="_blank" rel="noopener" class="btn btn-outline-dark rounded-pill w-100 py-2 small fw-semibold">
-        <i class="bi bi-download me-1"></i> Unduh Katalog (PDF)
-      </a>
-    </div>
-
-  </div>
-</div>
-```
-
-### 12. Section Rekomendasi Artikel Terkait (3 Kartu)
+### 12. Section Rekomendasi Artikel Terkait (3 Kartu Standar)
 ```html
 <section class="py-5 bg-light border-top">
   <div class="container" data-aos="fade-up">
@@ -315,88 +323,188 @@ Tag body wajib menggunakan class:
       </a>
     </div>
     <div class="row g-4">
-      <!-- Card 1, 2, 3 dengan badge position-relative, cover img, excerpt, author footer, dan link ke /blog/<slug> -->
+      <!-- Card Template 1, 2, 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+          <div class="position-relative">
+            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-success text-white" style="font-size:0.75rem;">[Kategori]</span>
+            <img src="../assets/img/blog/[img-terkait].webp" alt="[Judul] - CorporateGifts.ID" class="card-img-top" loading="lazy" width="400" height="225" style="height: 200px; object-fit: cover;">
+          </div>
+          <div class="card-body p-4 d-flex flex-column">
+            <p class="text-success small fw-semibold mb-2">[Sub Kategori]</p>
+            <h3 class="h6 fw-bold text-dark mb-2" style="line-height:1.4;">
+              <a href="/blog/[slug-terkait]" class="text-dark text-decoration-none hover-green">[Judul Artikel Terkait]</a>
+            </h3>
+            <p class="text-muted small mb-3 flex-grow-1" style="line-height:1.6; font-size:0.85rem;">
+              [Ringkasan deskripsi 1-2 kalimat].
+            </p>
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+              <div class="d-flex align-items-center">
+                <img src="../assets/img/penulis/[slug-penulis].webp" alt="[Penulis] - CorporateGifts.ID" class="rounded-circle me-2" width="30" height="30" style="object-fit:cover;">
+                <span class="small fw-semibold text-dark" style="font-size:0.82rem;">[Nama Penulis]</span>
+              </div>
+              <a href="/blog/[slug-terkait]" class="text-success small fw-bold text-decoration-none" aria-label="Baca artikel [Judul]">
+                Baca <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 ```
 
-### 13. Footer Standar Lengkap & Partner Network
+### 13. Footer Standar Lengkap, Floating WhatsApp & Scripts
 ```html
-<footer id="footer" class="footer dark-background">
-  <div class="container footer-top">
-    <div class="row gy-4">
-      <div class="col-lg-5 col-md-12 footer-about">
-        <a href="/" class="logo d-flex align-items-center">
-          <img src="../assets/img/logo-header.png" alt="CorporateGifts.ID Logo" style="max-height:40px;width:auto;" width="214" height="40" loading="lazy">
-        </a>
-        <p>Vendor terpercaya penyedia solusi corporate gift eksklusif, merchandise custom perusahaan, dan paket seminar kit terpadu untuk instansi B2B di seluruh Indonesia.</p>
-        <div class="social-links d-flex mt-4">
-          <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" aria-label="WhatsApp CorporateGifts.ID"><i class="bi bi-whatsapp"></i></a>
-          <a href="https://www.instagram.com/corporategifts.id" target="_blank" rel="noopener" aria-label="Instagram CorporateGifts.ID"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.facebook.com/corporategiftsid" target="_blank" rel="noopener" aria-label="Facebook CorporateGifts.ID"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.tiktok.com/@corporategifts.id" target="_blank" rel="noopener" aria-label="TikTok CorporateGifts.ID"><i class="bi bi-tiktok"></i></a>
+  <!-- ══ FOOTER ════════════════════════════════════════════════════════════════ -->
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+
+        <div class="col-lg-4 col-md-12 footer-about">
+          <a href="/" class="logo d-inline-flex align-items-center bg-white py-2 px-3 rounded mb-3">
+            <img src="../assets/img/logo-header.png" alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan"
+              style="max-height:40px;width:auto;" width="214" height="40" loading="lazy">
+          </a>
+          <p>Vendor corporate gift, souvenir perusahaan premium, dan merchandise kantor eksklusif untuk branding dan
+            promosi bisnis Anda. Melayani seluruh Indonesia.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/corporategifts.id" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/corporategiftsid" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.tiktok.com/@corporategifts.id" target="_blank" rel="noopener" aria-label="TikTok"><i
+                class="bi bi-tiktok"></i></a>
+          </div>
         </div>
-      </div>
 
-      <div class="col-lg-2 col-6 footer-links">
-        <h3>Halaman</h3>
-        <ul>
-          <li><a href="/">Beranda</a></li>
-          <li><a href="/tentang-kami">Tentang Kami</a></li>
-          <li><a href="/layanan">Layanan</a></li>
-          <li><a href="/katalog">Katalog</a></li>
-          <li><a href="/portofolio">Portofolio</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/galeri">Galeri</a></li>
-          <li><a href="/sitemap">Sitemap</a></li>
-        </ul>
-      </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h3>Halaman</h3>
+          <ul>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/tentang-kami">Tentang Kami</a></li>
+            <li><a href="/layanan">Layanan</a></li>
+            <li><a href="/katalog">Katalog</a></li>
+            <li><a href="/portofolio">Portofolio</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/galeri">Galeri</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
 
-      <div class="col-lg-2 col-6 footer-links">
-        <h3>Kategori Produk</h3>
-        <ul>
-          <li><a href="/produk/souvenir-kantor">Souvenir Kantor</a></li>
-          <li><a href="/produk/souvenir-custom">Souvenir Custom</a></li>
-          <li><a href="/produk/merchandise">Merchandise</a></li>
-          <li><a href="/produk/seminar-kit">Seminar Kit</a></li>
-          <li><a href="/produk/hampers">Hampers &amp; Parcel</a></li>
-          <li><a href="/produk/souvenir-promosi">Souvenir Promosi</a></li>
-        </ul>
-      </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h3>Produk</h3>
+          <ul>
+            <li><a href="/produk/souvenir-kantor">Souvenir Kantor</a></li>
+            <li><a href="/produk/souvenir-custom">Souvenir Custom</a></li>
+            <li><a href="/produk/merchandise">Merchandise Perusahaan</a></li>
+            <li><a href="/produk/seminar-kit">Paket Seminar Kit</a></li>
+            <li><a href="/produk/hampers">Hampers &amp; Parcel</a></li>
+            <li><a href="/produk/souvenir-promosi">Paket Souvenir Promosi</a></li>
+          </ul>
+        </div>
 
-      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-        <h3>Hubungi Kami</h3>
-        <p>Gedung Maspion Square, Lt. 1</p>
-        <p>Jl. Ahmad Yani No. 73, Margorejo, Wonocolo</p>
-        <p>Surabaya, Jawa Timur 60238</p>
-        <p class="mt-3"><strong>WhatsApp:</strong> <span>+62 895-6390-68080</span></p>
-        <p><strong>Email:</strong> <span>halo@corporategifts.id</span></p>
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h3>Hubungi Kami</h3>
+          <p>Jawa Timur, Indonesia</p>
+          <p class="mt-3"><strong>WhatsApp:</strong>
+            <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" style="color:inherit;"> +62
+              895-6390-68080</a>
+          </p>
+          <p><strong>Website:</strong>
+            <a href="https://corporategifts.id" style="color:inherit;">corporategifts.id</a>
+          </p>
+        </div>
+
       </div>
     </div>
-  </div>
 
-  <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
-    <p class="text-center mb-2" style="font-size:.85rem;opacity:.7;font-weight:600;">Partner Network</p>
-    <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
-      <a href="https://seminarkits.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
-      <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
-      <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
-      <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Hampers Malang</a>
-      <a href="https://vendorsouvenir.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Souvenir</a>
+    <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
+      <p class="text-center mb-2" style="font-size:.85rem;opacity:.7;font-weight:600;">Partner Network</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
+        <a href="https://seminarkits.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
+        <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
+        <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
+        <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Hampers Malang</a>
+        <a href="https://vendorsouvenir.web.id/" target="_blank" rel="noopener"
+          style="color:rgba(255,255,255,.65);">Vendor Souvenir</a>
+      </div>
     </div>
-  </div>
 
-  <div class="container copyright text-center mt-2 pb-3">
-    <p>&copy; <span id="current-year">2026</span> <strong class="px-1 sitename">CorporateGifts.ID</strong> &minus; All Rights Reserved</p>
-  </div>
-</footer>
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span id="year"></span> <strong class="px-1 sitename">CorporateGifts.ID</strong> <span>- Vendor
+          Corporate Gift, Souvenir Perusahaan &amp; Merchandise Kantor. All Rights Reserved.</span></p>
+    </div>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi%20pengadaan%20corporate%20gift" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp CS CorporateGifts.ID">
-  <i class="bi bi-whatsapp"></i>
-  <span class="wa-tooltip">Konsultasi Pengadaan Gratis</span>
-</a>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20pengadaan%20corporate%20gift" 
+     class="floating-wa d-flex align-items-center justify-content-center" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Konsultasi via WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span class="wa-tooltip">Chat via WhatsApp</span>
+  </a>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Kembali ke atas"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/vendor/aos/aos.js" defer></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.min.js" defer></script>
+
+  <!-- Auto-update copyright year -->
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <!-- Table of Contents Toggle (Buka/Tutup) -->
+  <script>
+    (function() {
+      const tocHeader = document.getElementById('toc-header');
+      const tocList = document.getElementById('toc-list');
+      const tocBtnText = document.getElementById('toc-btn-text');
+      const tocBtnIcon = document.getElementById('toc-btn-icon');
+      const tocToggleBtn = document.getElementById('toc-toggle-btn');
+
+      if (tocHeader && tocList) {
+        function toggleTOC() {
+          const isClosed = tocList.classList.contains('d-none');
+          if (isClosed) {
+            tocList.classList.remove('d-none');
+            if (tocBtnText) tocBtnText.textContent = 'Tutup';
+            if (tocBtnIcon) tocBtnIcon.className = 'bi bi-chevron-up';
+            if (tocToggleBtn) tocToggleBtn.setAttribute('aria-expanded', 'true');
+          } else {
+            tocList.classList.add('d-none');
+            if (tocBtnText) tocBtnText.textContent = 'Buka';
+            if (tocBtnIcon) tocBtnIcon.className = 'bi bi-chevron-down';
+            if (tocToggleBtn) tocToggleBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+        tocHeader.addEventListener('click', toggleTOC);
+        if (tocToggleBtn) {
+          tocToggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleTOC();
+          });
+        }
+      }
+    })();
+  </script>
 ```
 
 ---
@@ -419,47 +527,13 @@ Setiap migrasi 1 artikel baru, jalankan alur 6 langkah berikut secara berurutan:
 [6. Update sitemap.html (Sisipkan ke kategori kartu yang relevan & update counter)] 
 ```
 
-### Detail Langkah 4: Update `_redirects` (Wajib 3 Bagian)
-Untuk setiap artikel yang dimigrasikan, tambahkan baris redirect pada **3 lokasi berbeda di file `_redirects`**:
-
-1. **Bagian Atas (Blogger 301 Redirects)**:
-   ```txt
-   # [Judul Artikel]
-   /<YYYY>/<MM>/<slug>.html /blog/<slug> 301
-   /<slug> /blog/<slug> 301
-   /<slug>/* /blog/<slug> 301
-   ```
-2. **Bagian Tengah (`# Legacy .html to Clean URLs 301 Redirects`)**:
-   Di bawah sub-header `# Blog Detail Pages Legacy .html 301`:
-   ```txt
-   /blog/<slug>.html /blog/<slug> 301
-   ```
-3. **Bagian Bawah (`# Trailing Slash to Non-Trailing Slash 301 Redirects`)**:
-   Di bawah sub-header `# Trailing Slash to Non-Trailing Slash 301 Redirects`:
-   ```txt
-   /blog/<slug>/ /blog/<slug> 301
-   ```
-
-### Detail Langkah 6: Update `sitemap.html`
-1. Tentukan kategori artikel yang cocok (contoh: *Seminar Kit & Konferensi*, *Souvenir Kantor & Alat Kerja*, *Merchandise Perusahaan & Apparel*, *Hampers & Parcel*, *Souvenir Wisuda & Akademik*, *Souvenir VIP & Eksekutif*, atau *Budgeting & Manajemen HR*).
-2. Sisipkan item baru di daftar `<ol class="sitemap-list">` kategori tersebut:
-   ```html
-   <li class="sitemap-item">
-     <span class="item-num">[Nomor Urut].</span>
-     <a href="/blog/[slug]" class="sitemap-link">[Judul Lengkap Artikel]</a>
-     <span class="badge-new-sitemap ms-2">BARU</span>
-   </li>
-   ```
-3. Perbarui badge jumlah halaman pada header kartu kategori terkait (contoh: `11 Halaman` &rarr; `12 Halaman`).
-4. Perbarui total halaman terindeks pada pill banner atas jika bertambah (`83+ Halaman Terindeks` &rarr; `84+ Halaman Terindeks`).
-
 ---
 
 ## Referensi Pemetaan Penulis (Author Mapping)
 
 | Nama Penulis di Excel | Target Anchor di `/penulis` | Jabatan Standar | Avatar Lokal |
 | :--- | :--- | :--- | :--- |
-| **Arinda Zakia** | `/penulis#arinda-zakia` | Senior Corporate Gifting Specialist & Content Strategist | `../assets/img/penulis/arinda-zakia.webp` |
-| **Sholikhatun Nikmah** | `/penulis#sholikhatun-nikmah` | Creative Product Designer & Bespoke Packaging Consultant | `../assets/img/penulis/sholikhatun-nikmah.webp` |
-| **Vendor Souvenir Kantor** | `/penulis#vendor-souvenir-kantor` | Editorial Team & Merchandise Production Specialist | `../assets/img/penulis/vendor-souvenir-kantor.png` |
+| **Arinda Zakia** | `/penulis#arinda-zakia` | Senior Corporate Gifting Specialist | `../assets/img/penulis/arinda-zakia.webp` |
+| **Sholikhatun Nikmah** | `/penulis#sholikhatun-nikmah` | Senior Corporate Gifting Specialist | `../assets/img/penulis/sholikhatun-nikmah.webp` |
+| **Vendor Souvenir Kantor** | `/penulis#vendor-souvenir-kantor` | Senior Corporate Gifting Specialist | `../assets/img/penulis/vendor-souvenir-kantor.png` |
 *(DILARANG menggunakan nama atau avatar lama "Amelia").*
