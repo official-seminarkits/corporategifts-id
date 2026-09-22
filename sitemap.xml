@@ -260,7 +260,7 @@
   </url>
   <url>
     <loc>https://corporategifts.id/blog</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -279,6 +279,18 @@
   <url>
     <loc>https://corporategifts.id/minta-penawaran</loc>
     <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://corporategifts.id/blog/budget-merchandise-event-bandung</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://corporategifts.id/blog/merchandise-gathering-perusahaan-bandung</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1557,6 +1569,18 @@
   <url>
     <loc>https://corporategifts.id/blog/souvenir-unik-custom</loc>
     <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://corporategifts.id/blog/souvenir-acara-kantor</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://corporategifts.id/blog/merchandise-gathering-perusahaan-bandung</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
