@@ -55,9 +55,12 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!-- Preload critical woff2 fonts to eliminate FOUT -->
+  <!-- Preload critical woff2 fonts to eliminate FOUT & CLS -->
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" crossorigin type="font/woff2">
+  <!-- Preload ALL Poppins variants used (500, 600, 700) to prevent font-swap CLS -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
 
   <!-- ===== CRITICAL CSS INLINE: Eliminates render-blocking CSS ===== -->
   <style>
@@ -168,9 +171,12 @@
     /* d-none d-lg-block */
     @media(max-width:991.98px){.d-lg-block-custom{display:none!important}}
     .img-fluid{max-width:100%;height:auto}
-    /* about section critical above-fold on mobile */
+    /* about section: reserve image space to prevent CLS */
     .about-section{padding:60px 0;background-color:var(--background-color)}
-    .about-section .about-img-wrap img{width:100%;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.1)}
+    .about-section .about-img-wrap{position:relative}
+    .about-section .about-img-wrap img{width:100%;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.1);aspect-ratio:600/400;object-fit:cover;display:block}
+    /* Reserve space for about-badge-card to prevent position shift */
+    .about-section .about-badge-card{position:absolute;bottom:-20px;right:-10px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,.1);display:flex;align-items:center;gap:12px;min-width:200px}
     .gy-5{--bs-gutter-y:3rem}
     .g-5{--bs-gutter-x:3rem;--bs-gutter-y:3rem}
     /* scroll-top & floating-wa placeholder to prevent CLS */
@@ -178,9 +184,9 @@
     .scroll-top.active{display:flex}
   </style>
 
-  <!-- Non-blocking: Fonts (defer via print trick) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <!-- Non-blocking: Fonts (display=optional eliminates font-swap CLS entirely) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
 
   <!-- Non-blocking: All external CSS (loaded async after critical CSS) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -944,7 +950,11 @@
           <article class="case" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-4 align-items-center">
               <div class="col-lg-6"><a href="/portofolio" class="shot"><img
-                    src="assets/img/portfolio/souvenir-set.webp" alt="Souvenir Kantor Custom untuk BUMN"
+                    src="assets/img/portfolio/souvenir-set.webp"
+                    srcset="assets/img/portfolio/souvenir-set-700w.webp 700w,
+                            assets/img/portfolio/souvenir-set.webp 800w"
+                    sizes="(max-width: 991px) 100vw, 50vw"
+                    alt="Souvenir Kantor Custom untuk BUMN"
                     class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
               <div class="col-lg-6">
                 <div class="copy"><span class="cat">Souvenir Kantor · BUMN</span>
