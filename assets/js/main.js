@@ -84,6 +84,7 @@
 
   /**
    * Animation on scroll function and init
+   * Deferred with requestIdleCallback to avoid blocking LCP
    */
   function aosInit() {
     if (typeof AOS !== 'undefined') {
@@ -95,10 +96,18 @@
       });
     }
   }
+  // Defer AOS until browser is idle to minimize render delay
+  function deferredAosInit() {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(aosInit, { timeout: 2000 });
+    } else {
+      setTimeout(aosInit, 300);
+    }
+  }
   if (document.readyState === 'complete') {
-    aosInit();
+    deferredAosInit();
   } else {
-    window.addEventListener('load', aosInit);
+    window.addEventListener('load', deferredAosInit);
   }
 
   /**
@@ -219,13 +228,25 @@
   }
 
   /**
-   * Initiate glightbox
+   * Initiate glightbox - lazy init on user interaction
    */
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({
-      selector: '.glightbox'
-    });
+  function initGLightbox() {
+    if (typeof GLightbox !== 'undefined') {
+      GLightbox({ selector: '.glightbox' });
+    }
   }
+  // Only init GLightbox when user first interacts or scrolls
+  var _glightboxInited = false;
+  function lazyInitGLightbox() {
+    if (_glightboxInited) return;
+    _glightboxInited = true;
+    initGLightbox();
+  }
+  ['scroll', 'click', 'touchstart'].forEach(function(ev) {
+    window.addEventListener(ev, lazyInitGLightbox, { once: true, passive: true });
+  });
+  // Fallback: init after 3s anyway
+  setTimeout(lazyInitGLightbox, 3000);
 
   /**
    * Frequently Asked Questions Toggle
