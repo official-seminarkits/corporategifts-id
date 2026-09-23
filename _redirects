@@ -71,6 +71,46 @@
 # Blogger Blog Post 301 Permanent Redirects
 # ==============================================================================
 
+# 8 Souvenir Perusahaan BUMN Eksklusif 2026
+/2026/05/souvenir-bumn-eksklusif.html /blog/souvenir-bumn-eksklusif 301
+/souvenir-bumn-eksklusif/ /blog/souvenir-bumn-eksklusif 301
+/souvenir-bumn-eksklusif /blog/souvenir-bumn-eksklusif 301
+
+# 10 Inspirasi Souvenir Kantor untuk Gathering Perusahaan
+/2025/10/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan.html /blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan 301
+/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan/ /blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan 301
+/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan /blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan 301
+
+# Cara Memilih Vendor Souvenir Mitra Sekolah Negeri
+/2026/06/cara-memilih-vendor-souvenir-mitra-sekolah-negeri.html /blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri 301
+/cara-memilih-vendor-souvenir-mitra-sekolah-negeri/ /blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri 301
+/cara-memilih-vendor-souvenir-mitra-sekolah-negeri /blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri 301
+
+# Karyawan Resign Dini? Ini Pentingnya Welcome Kit!
+/2026/02/pentingnya-welcome-kit-untuk-karyawan.html /blog/pentingnya-welcome-kit-untuk-karyawan 301
+/pentingnya-welcome-kit-untuk-karyawan/ /blog/pentingnya-welcome-kit-untuk-karyawan 301
+/pentingnya-welcome-kit-untuk-karyawan /blog/pentingnya-welcome-kit-untuk-karyawan 301
+
+# Kenapa Custom Logo pada Souvenir Menjadi Kunci Branding
+/2025/09/custom-logo-souvenir-seminar-kunci-branding.html /blog/custom-logo-souvenir-seminar-kunci-branding 301
+/custom-logo-souvenir-seminar-kunci-branding/ /blog/custom-logo-souvenir-seminar-kunci-branding 301
+/custom-logo-souvenir-seminar-kunci-branding /blog/custom-logo-souvenir-seminar-kunci-branding 301
+
+# Souvenir Tumbler untuk Marketing Promosi yang Efektif
+/2025/09/souvenir-tumbler-untuk-marketing-strategi-promosi.html /blog/souvenir-tumbler-untuk-marketing-strategi-promosi 301
+/souvenir-tumbler-untuk-marketing-strategi-promosi/ /blog/souvenir-tumbler-untuk-marketing-strategi-promosi 301
+/souvenir-tumbler-untuk-marketing-strategi-promosi /blog/souvenir-tumbler-untuk-marketing-strategi-promosi 301
+
+# 5 Pilihan Merchandise Hotel dan Hospitality untuk Bisnis
+/2026/09/merchandise-hotel-dan-hospitality.html /blog/merchandise-hotel-dan-hospitality 301
+/merchandise-hotel-dan-hospitality/ /blog/merchandise-hotel-dan-hospitality 301
+/merchandise-hotel-dan-hospitality /blog/merchandise-hotel-dan-hospitality 301
+
+# Merchandise Hotel Eksklusif untuk Tamu, Client, dan Partner
+/2026/09/merchandise-hotel-tamu-client-partner.html /blog/merchandise-hotel-tamu-client-partner 301
+/merchandise-hotel-tamu-client-partner/ /blog/merchandise-hotel-tamu-client-partner 301
+/merchandise-hotel-tamu-client-partner /blog/merchandise-hotel-tamu-client-partner 301
+
 # Artikel 1: Panduan Lengkap Menyusun Seminar Kit Profesional
 /2025/09/panduan-menyusun-seminar-kit.html /blog/panduan-menyusun-seminar-kit 301
 /panduan-menyusun-seminar-kit /blog/panduan-menyusun-seminar-kit 301
@@ -1542,6 +1582,15 @@
 /blog/souvenir-ulang-tahun-perusahaan-sesuai-anggaran-procurement.html /blog/souvenir-ulang-tahun-perusahaan-sesuai-anggaran-procurement 301
 /blog/laser-engraving-pulpen-metal.html /blog/laser-engraving-pulpen-metal 301
 /blog/isi-seminar-kit-korporat-yang-wajib-ada-di-setiap-acara.html /blog/isi-seminar-kit-korporat-yang-wajib-ada-di-setiap-acara 301
+/blog/souvenir-bumn-eksklusif.html /blog/souvenir-bumn-eksklusif 301
+/blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan.html /blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan 301
+/blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri.html /blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri 301
+/blog/pentingnya-welcome-kit-untuk-karyawan.html /blog/pentingnya-welcome-kit-untuk-karyawan 301
+/blog/custom-logo-souvenir-seminar-kunci-branding.html /blog/custom-logo-souvenir-seminar-kunci-branding 301
+/blog/souvenir-tumbler-untuk-marketing-strategi-promosi.html /blog/souvenir-tumbler-untuk-marketing-strategi-promosi 301
+/blog/merchandise-hotel-dan-hospitality.html /blog/merchandise-hotel-dan-hospitality 301
+/blog/merchandise-hotel-tamu-client-partner.html /blog/merchandise-hotel-tamu-client-partner 301
+
 
 # ==============================================================================
 # Trailing Slash to Non-Trailing Slash 301 Redirects
@@ -1781,6 +1830,15 @@
 /blog/souvenir-ulang-tahun-perusahaan-sesuai-anggaran-procurement/ /blog/souvenir-ulang-tahun-perusahaan-sesuai-anggaran-procurement 301
 /blog/laser-engraving-pulpen-metal/ /blog/laser-engraving-pulpen-metal 301
 /blog/isi-seminar-kit-korporat-yang-wajib-ada-di-setiap-acara/ /blog/isi-seminar-kit-korporat-yang-wajib-ada-di-setiap-acara 301
+/blog/souvenir-bumn-eksklusif/ /blog/souvenir-bumn-eksklusif 301
+/blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan/ /blog/inspirasi-souvenir-kantor-unik-untuk-gathering-perusahaan 301
+/blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri/ /blog/cara-memilih-vendor-souvenir-mitra-sekolah-negeri 301
+/blog/pentingnya-welcome-kit-untuk-karyawan/ /blog/pentingnya-welcome-kit-untuk-karyawan 301
+/blog/custom-logo-souvenir-seminar-kunci-branding/ /blog/custom-logo-souvenir-seminar-kunci-branding 301
+/blog/souvenir-tumbler-untuk-marketing-strategi-promosi/ /blog/souvenir-tumbler-untuk-marketing-strategi-promosi 301
+/blog/merchandise-hotel-dan-hospitality/ /blog/merchandise-hotel-dan-hospitality 301
+/blog/merchandise-hotel-tamu-client-partner/ /blog/merchandise-hotel-tamu-client-partner 301
+
 
 /galeri/ /galeri 301
 /katalog/ /katalog 301
