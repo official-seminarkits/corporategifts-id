@@ -55,11 +55,11 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!-- Preload key Poppins & Inter woff2 for instant font availability (zero CLS with display=block) -->
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" crossorigin type="font/woff2">
+  <!-- Preload key Poppins & Inter woff2 for instant font availability -->
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" crossorigin type="font/woff2">
   <!-- ===== CRITICAL: Preload Bootstrap Icons font (desktop only) to prevent icon font-swap CLS ===== -->
   <!-- On mobile we skip preload (font-display:block in @font-face still prevents CLS without eager fetch) -->
   <link rel="preload" as="font" href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a" crossorigin type="font/woff2" media="(min-width: 1200px)">
@@ -112,11 +112,19 @@
     .justify-content-between{justify-content:space-between!important}
     .position-relative{position:relative!important}
     .me-auto{margin-right:auto!important}
+    .me-1{margin-right:.25rem!important}
     .text-nowrap{white-space:nowrap!important}
+    @media(min-width:992px){
+      .d-lg-block{display:block!important}
+      .d-lg-none{display:none!important}
+      .d-lg-flex{display:flex!important}
+    }
     @media(min-width:1200px){
       .me-xl-0{margin-right:0!important}
       .mx-xl-auto{margin-left:auto!important;margin-right:auto!important}
       .d-xl-none{display:none!important}
+      .d-xl-block{display:block!important}
+      .d-xl-flex{display:flex!important}
     }
     /* === Bootstrap Icons: font-display:block prevents FOIT/FOUT icon-swap CLS === */
     @font-face{
@@ -124,6 +132,13 @@
       src:url("assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a") format("woff2");
       font-display:block;
     }
+    .bi::before,[class^="bi-"]::before,[class*=" bi-"]::before{display:inline-block;font-family:bootstrap-icons!important;font-style:normal;font-weight:normal!important;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    .bi-whatsapp::before{content:"\f618"}
+    .bi-chevron-down::before{content:"\f282"}
+    .bi-gift::before{content:"\f3ec"}
+    .bi-check2-circle::before{content:"\f26d"}
+    .bi-arrow-right::before{content:"\f138"}
+    .bi-list::before{content:"\f479"}
     /* === Header === */
     .sticky-top{position:sticky;top:0;z-index:997}
     /* Lock header min-height to prevent nav CLS when icon font loads */
@@ -131,6 +146,12 @@
     .header .logo{line-height:1}
     /* Lock logo aspect-ratio to prevent unsized-image CLS */
     .header .logo img{max-height:40px!important;margin-right:8px;width:auto;aspect-ratio:214/40;height:40px}
+    @media(min-width:1200px) and (max-width:1399px){
+      .header .logo img{max-height:36px!important;height:36px}
+      .navmenu a,.navmenu a:focus{padding:14px 10px!important;font-size:14.5px!important}
+      .navmenu li{margin:0 1px!important}
+      .header .btn-getstarted,.header .btn-getstarted:focus{font-size:13.5px!important;padding:7px 16px!important;margin:0 0 0 12px!important}
+    }
     @media(max-width:576px){.header .logo img{max-height:38px!important;height:38px}}
     .header .btn-getstarted,.header .btn-getstarted:focus{color:var(--contrast-color);background:var(--accent-color);font-size:14px;padding:8px 22px;margin:0 0 0 20px;border-radius:50px;transition:.3s;white-space:nowrap!important;flex-shrink:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
     @media(max-width:1200px){.header .btn-getstarted{display:none!important}}
@@ -152,6 +173,7 @@
       .navmenu ul{margin:0;padding:0;display:flex;list-style:none;align-items:center;justify-content:center}
       .navmenu li{position:relative;margin:0 2px}
       .navmenu a,.navmenu a:focus{color:var(--nav-color);padding:18px 15px;font-size:16px;font-family:var(--nav-font);font-weight:400;display:flex;align-items:center;justify-content:space-between;white-space:nowrap;transition:.3s;position:relative}
+      .navmenu a i,.navmenu a:focus i{font-size:12px;line-height:0;margin-left:5px;transition:.3s}
       .navmenu li:hover>a,.navmenu .active,.navmenu .active:focus{color:var(--nav-hover-color)}
       .navmenu .dropdown ul{margin:0;padding:10px 0;background:var(--nav-dropdown-background-color);display:block;position:absolute;visibility:hidden;left:14px;top:130%;opacity:0;transition:.3s;border-radius:4px;z-index:99;box-shadow:0px 0px 30px rgba(0,0,0,.1)}
       .navmenu .dropdown ul li{min-width:200px}
@@ -171,6 +193,9 @@
     @media(max-width:576px){.hero-2 .hero-content .hero-title{font-size:1.8rem;line-height:1.25}}
     @media(max-width:390px){.hero-2 .hero-content .hero-title{font-size:1.62rem;line-height:1.26}}
     .hero-2 .hero-content .hero-description{font-size:.95rem;line-height:1.65;color:color-mix(in srgb,var(--default-color),transparent 28%);margin-bottom:22px;max-width:560px}
+    .hero-2 .hero-content .hero-list{list-style:none;padding:0;margin:0 0 28px 0}
+    .hero-2 .hero-content .hero-list li{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;color:color-mix(in srgb,var(--default-color),transparent 20%);line-height:1.5}
+    .hero-2 .hero-content .hero-list li i{color:var(--accent-color);font-size:18px;margin-top:2px;flex-shrink:0}
     .hero-2 .hero-content .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:34px}
     .hero-2 .hero-content .hero-actions .btn-primary{background:var(--accent-color);color:var(--contrast-color);padding:13px 26px;border:1.5px solid transparent;border-radius:8px;font-weight:600;font-size:15px;min-width:210px;min-height:52px;transition:.3s;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box}
     .hero-2 .hero-content .hero-actions .btn-ghost{border:1.5px solid color-mix(in srgb,var(--default-color),transparent 75%);color:var(--heading-color);padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;min-width:210px;min-height:52px;transition:.3s;background:var(--surface-color);display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box}
@@ -180,10 +205,8 @@
     @media(max-width:576px){.hero-2 .hero-content .hero-actions{display:flex;flex-direction:column;align-items:center;gap:12px}.hero-2 .hero-content .hero-actions .btn-primary,.hero-2 .hero-content .hero-actions .btn-ghost{width:100%;max-width:280px;min-width:0}}
     /* hero-2 desktop media */
     .hero-2 .hero-media{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;max-width:440px;margin:0 auto}
-    .hero-2 .hero-media .media-main{border-radius:20px;overflow:hidden;box-shadow:0 16px 36px color-mix(in srgb,var(--default-color),transparent 86%);background:#fff;width:100%;max-width:440px;max-height:440px;margin:0 auto;display:flex;align-items:center;justify-content:center}
-    .hero-2 .hero-media .media-main img{width:100%;height:auto;max-height:440px;object-fit:contain;display:block}
-    /* d-none d-lg-block */
-    @media(max-width:991.98px){.d-lg-block-custom{display:none!important}}
+    .hero-2 .hero-media .media-main{border-radius:20px;overflow:hidden;box-shadow:0 16px 36px color-mix(in srgb,var(--default-color),transparent 86%);background:#fff;width:100%;max-width:440px;max-height:440px;aspect-ratio:1/1;margin:0 auto;display:flex;align-items:center;justify-content:center}
+    .hero-2 .hero-media .media-main img{width:100%;height:auto;max-height:440px;aspect-ratio:1/1;object-fit:contain;display:block}
     .img-fluid{max-width:100%;height:auto}
     /* about section: reserve image space to prevent CLS */
     .about-section{padding:60px 0;background-color:var(--background-color)}
@@ -203,8 +226,9 @@
     #main{min-height:600px}
   </style>
 
-  <!-- Google Fonts: synchronous load (fonts preloaded above so FOIT is instant = zero CLS) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
+  <!-- Non-blocking: Fonts (display=optional eliminates font-swap CLS entirely) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
 
   <!-- Non-blocking: All external CSS (loaded async after critical CSS) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
