@@ -110,14 +110,18 @@
     .justify-content-between{justify-content:space-between!important}
     .position-relative{position:relative!important}
     .me-auto{margin-right:auto!important}
-    .mx-xl-auto{margin-left:auto!important;margin-right:auto!important}
-    @media(min-width:1200px){.me-xl-0{margin-right:0!important}}
-    @media(min-width:1200px){.d-xl-none{display:none!important}}
+    .text-nowrap{white-space:nowrap!important}
+    @media(min-width:1200px){
+      .me-xl-0{margin-right:0!important}
+      .mx-xl-auto{margin-left:auto!important;margin-right:auto!important}
+      .d-xl-none{display:none!important}
+    }
     /* === Header === */
     .sticky-top{position:sticky;top:0;z-index:997}
-    .header{--background-color:#ffffff;color:var(--default-color);background-color:var(--background-color);padding:15px 0;transition:all .5s;z-index:997}
+    .header{--background-color:#ffffff;color:var(--default-color);background-color:var(--background-color);padding:15px 0;transition:background-color .3s,box-shadow .3s;z-index:997}
     .header .logo{line-height:1}
     .header .logo img{max-height:40px!important;margin-right:8px;width:auto}
+    @media(max-width:576px){.header .logo img{max-height:38px!important}}
     .header .btn-getstarted,.header .btn-getstarted:focus{color:var(--contrast-color);background:var(--accent-color);font-size:14px;padding:8px 22px;margin:0 0 0 20px;border-radius:50px;transition:.3s;white-space:nowrap!important;flex-shrink:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
     @media(max-width:1200px){.header .btn-getstarted{display:none!important}}
     .scrolled .header{box-shadow:0px 0 18px rgba(0,0,0,.1)}
@@ -177,6 +181,9 @@
     .about-section .about-img-wrap img{width:100%;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.1);aspect-ratio:600/400;object-fit:cover;display:block}
     /* Reserve space for about-badge-card to prevent position shift */
     .about-section .about-badge-card{position:absolute;bottom:-20px;right:-10px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,.1);display:flex;align-items:center;gap:12px;min-width:200px}
+    .profile-features{display:flex;flex-direction:column;gap:16px;margin:24px 0}
+    .feature-item{display:flex;align-items:flex-start;gap:16px}
+    .feature-item .item-num{flex-shrink:0;font-size:1.25rem;font-weight:700;width:44px}
     .gy-5{--bs-gutter-y:3rem}
     .g-5{--bs-gutter-x:3rem;--bs-gutter-y:3rem}
     /* scroll-top & floating-wa placeholder to prevent CLS */
@@ -531,15 +538,15 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top" role="banner" aria-label="Header utama CorporateGifts.ID">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0" aria-label="CorporateGifts.ID - Halaman Beranda">
         <img src="assets/img/logo-header.png" alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan"
-          style="max-height:40px;width:auto;" width="214" height="40" decoding="async">
+          style="max-height:40px;width:auto;" width="214" height="40" decoding="async" loading="eager">
       </a>
 
-      <nav id="navmenu" class="navmenu mx-xl-auto">
+      <nav id="navmenu" class="navmenu mx-xl-auto" aria-label="Navigasi utama">
         <ul>
           <li><a href="/" class="active">Beranda</a></li>
           <li><a href="/tentang-kami">Tentang Kami</a></li>
@@ -560,19 +567,19 @@
           <li><a href="/blog">Blog</a></li>
           <li><a href="/galeri">Galeri</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navmenu" role="button" style="background:none;border:none;padding:0;cursor:pointer;"></button>
       </nav>
 
       <a class="btn-getstarted"
         href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift" target="_blank"
         rel="noopener">
-        <i class="bi bi-whatsapp me-1"></i> Hubungi Kami
+        <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> Hubungi Kami
       </a>
 
     </div>
   </header>
 
-  <main class="main">
+  <main id="main" class="main" role="main" aria-label="Konten utama">
 
     <!-- Hero Section -->
     <section id="hero" class="hero-2 section">
@@ -597,12 +604,12 @@
                 <li><i class="bi bi-check2-circle"></i> Pengiriman ke seluruh Indonesia</li>
               </ul>
 
-              <div class="hero-actions">
+              <div class="hero-actions" role="group" aria-label="Tombol aksi utama">
                 <a href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20souvenir%20kantor"
-                  class="btn-primary" target="_blank" rel="noopener">
-                  <i class="bi bi-whatsapp me-1"></i> Konsultasi Gratis
+                  class="btn-primary" target="_blank" rel="noopener" aria-label="Konsultasi Gratis via WhatsApp">
+                  <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> Konsultasi Gratis
                 </a>
-                <a href="/portofolio" class="btn-ghost">Lihat Portofolio <i class="bi bi-arrow-right"></i></a>
+                <a href="/portofolio" class="btn-ghost" aria-label="Lihat Portofolio CorporateGifts.ID">Lihat Portofolio <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
               </div>
 
             </div>

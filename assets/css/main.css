@@ -141,7 +141,8 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
-  transition: all 0.5s;
+  /* CLS-fix: never animate geometry (height/padding) — only safe composited props */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 997;
 }
 
@@ -455,7 +456,7 @@ h6 {
     background-color: var(--nav-dropdown-background-color);
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     box-shadow: none;
-    transition: all 0.5s ease-in-out;
+    /* CLS-fix: display:none/block cannot animate — removed non-composited transition */
   }
 
   .navmenu .dropdown ul ul {
