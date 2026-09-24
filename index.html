@@ -55,12 +55,14 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!-- Preload critical woff2 fonts to eliminate FOUT & CLS -->
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" crossorigin type="font/woff2">
-  <!-- Preload ALL Poppins variants used (500, 600, 700) to prevent font-swap CLS -->
+  <!-- Preload key Poppins & Inter woff2 for instant font availability (zero CLS with display=block) -->
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
   <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" crossorigin type="font/woff2">
+  <!-- ===== CRITICAL: Preload Bootstrap Icons font (desktop only) to prevent icon font-swap CLS ===== -->
+  <!-- On mobile we skip preload (font-display:block in @font-face still prevents CLS without eager fetch) -->
+  <link rel="preload" as="font" href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a" crossorigin type="font/woff2" media="(min-width: 1200px)">
 
   <!-- ===== CRITICAL CSS INLINE: Eliminates render-blocking CSS ===== -->
   <style>
@@ -116,12 +118,20 @@
       .mx-xl-auto{margin-left:auto!important;margin-right:auto!important}
       .d-xl-none{display:none!important}
     }
+    /* === Bootstrap Icons: font-display:block prevents FOIT/FOUT icon-swap CLS === */
+    @font-face{
+      font-family:"bootstrap-icons";
+      src:url("assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a") format("woff2");
+      font-display:block;
+    }
     /* === Header === */
     .sticky-top{position:sticky;top:0;z-index:997}
-    .header{--background-color:#ffffff;color:var(--default-color);background-color:var(--background-color);padding:15px 0;transition:background-color .3s,box-shadow .3s;z-index:997}
+    /* Lock header min-height to prevent nav CLS when icon font loads */
+    .header{--background-color:#ffffff;color:var(--default-color);background-color:var(--background-color);padding:15px 0;transition:background-color .3s,box-shadow .3s;z-index:997;min-height:70px}
     .header .logo{line-height:1}
-    .header .logo img{max-height:40px!important;margin-right:8px;width:auto}
-    @media(max-width:576px){.header .logo img{max-height:38px!important}}
+    /* Lock logo aspect-ratio to prevent unsized-image CLS */
+    .header .logo img{max-height:40px!important;margin-right:8px;width:auto;aspect-ratio:214/40;height:40px}
+    @media(max-width:576px){.header .logo img{max-height:38px!important;height:38px}}
     .header .btn-getstarted,.header .btn-getstarted:focus{color:var(--contrast-color);background:var(--accent-color);font-size:14px;padding:8px 22px;margin:0 0 0 20px;border-radius:50px;transition:.3s;white-space:nowrap!important;flex-shrink:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
     @media(max-width:1200px){.header .btn-getstarted{display:none!important}}
     .scrolled .header{box-shadow:0px 0 18px rgba(0,0,0,.1)}
@@ -189,11 +199,12 @@
     /* scroll-top & floating-wa placeholder to prevent CLS */
     .scroll-top,.floating-wa{display:none}
     .scroll-top.active{display:flex}
+    /* Reserve minimum height on main to prevent large content-paint CLS */
+    #main{min-height:600px}
   </style>
 
-  <!-- Non-blocking: Fonts (display=optional eliminates font-swap CLS entirely) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
+  <!-- Google Fonts: synchronous load (fonts preloaded above so FOIT is instant = zero CLS) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
 
   <!-- Non-blocking: All external CSS (loaded async after critical CSS) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -1666,8 +1677,6 @@
   <!-- Main JS File -->
   <script src="assets/js/main.min.js" defer></script>
 
-  <!-- Auto-update copyright year -->
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 
