@@ -1,7 +1,7 @@
 # Blog Detail Migration Rules & Standard Architecture
 
 ## 1. Scope & Baseline Standard
-Setiap artikel detail blog di `blog/<slug>.html` WAJIB mengikuti standar blueprint resmi yang mengacu 100% pada `blog/hampers-bengkulu.html` dan `blog/souvenir-event-perusahaan-jakarta.html`.
+Setiap artikel detail blog di `blog/<slug>.html` WAJIB mengikuti standar blueprint resmi yang mengacu 100% pada artikel gold standard: `blog/cara-undi-doorprize-bukber-perusahaan.html`, `blog/souvenir-tumbler-panduan-lengkap-untuk-pemula.html`, dan `blog/hamper-lifestyle-eksekutif-anniversary.html`.
 
 DILARANG mengubah atau memvariasikan struktur, tag pembungkus, kelas CSS, atau urutan elemen.
 

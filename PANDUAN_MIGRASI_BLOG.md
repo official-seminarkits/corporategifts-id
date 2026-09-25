@@ -1,7 +1,7 @@
 # SOP & Panduan Lengkap Migrasi Artikel Blog
 **Project**: CorporateGifts.ID  
 **Target Hosting**: Cloudflare Pages  
-**Template Acuan Standar Emas**: `blog/hampers-bengkulu.html` & `blog/souvenir-event-perusahaan-jakarta.html`
+**Template Acuan Standar Emas**: `blog/cara-undi-doorprize-bukber-perusahaan.html`, `blog/souvenir-tumbler-panduan-lengkap-untuk-pemula.html`, dan `blog/hamper-lifestyle-eksekutif-anniversary.html`
 
 ---
 
@@ -309,7 +309,52 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 12. Section Rekomendasi Artikel Terkait (3 Kartu Standar)
+### 12. Sidebar Kanan Standar (3 Widget Wajib)
+```html
+<div class="col-lg-4">
+  <div class="sidebar position-sticky" style="top: 100px;">
+
+    <!-- Widget 1: Kategori Produk Kami -->
+    <div class="card border-0 rounded-4 p-4 shadow-sm bg-white mb-4">
+      <h3 class="h6 fw-bold text-dark mb-3"><i class="bi bi-grid-fill text-success me-2"></i> Kategori Produk Kami</h3>
+      <ul class="list-unstyled mb-0" style="font-size: 0.92rem;">
+        <li class="py-2 border-bottom"><a href="/produk/souvenir-kantor" class="text-decoration-none text-dark d-flex justify-content-between"><span>Souvenir Kantor</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
+        <li class="py-2 border-bottom"><a href="/produk/souvenir-custom" class="text-decoration-none text-dark d-flex justify-content-between"><span>Souvenir Custom VIP</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
+        <li class="py-2 border-bottom"><a href="/produk/merchandise" class="text-decoration-none text-dark d-flex justify-content-between"><span>Merchandise Perusahaan</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
+        <li class="py-2 border-bottom"><a href="/produk/seminar-kit" class="text-decoration-none text-dark d-flex justify-content-between"><span>Paket Seminar Kit</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
+        <li class="py-2 border-bottom"><a href="/produk/hampers" class="text-decoration-none text-dark d-flex justify-content-between"><span>Hampers &amp; Parcel</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
+        <li class="pt-2"><a href="/produk/souvenir-promosi" class="text-decoration-none text-dark d-flex justify-content-between"><span>Paket Souvenir Promosi</span> <i class="bi bi-chevron-right text-muted"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Widget 2: Bantuan Konsultasi Kilat -->
+    <div class="card border-0 rounded-4 p-4 text-center shadow-sm" style="background: color-mix(in srgb, var(--accent-color, #16a34a) 8%, transparent);">
+      <div class="mx-auto mb-3 text-success fs-1">
+        <i class="bi bi-headset"></i>
+      </div>
+      <h3 class="h6 fw-bold text-dark mb-2">Konsultasi [Topik]?</h3>
+      <p class="small text-muted mb-3">Diskusikan kebutuhan souvenir kantor, gift set VIP, dan hampers perusahaan bersama kami.</p>
+      <div class="fw-bold text-success fs-6 mb-3">+62 895-6390-68080</div>
+      <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-success rounded-pill w-100 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
+        <i class="bi bi-whatsapp me-1"></i> Chat WhatsApp Sekarang
+      </a>
+    </div>
+
+    <!-- Widget 3: Unduh Katalog PDF -->
+    <div class="card border-0 rounded-4 p-4 shadow-sm bg-white mt-4 text-center">
+      <i class="bi bi-file-earmark-pdf text-danger fs-1 mb-2"></i>
+      <h3 class="h6 fw-bold text-dark mb-2">E-Katalog Resmi 2026</h3>
+      <p class="small text-muted mb-3">Unduh dokumen katalog resmi lengkap dengan aneka pilihan merchandise instansi, seminar kit, dan gift set siap custom logo.</p>
+      <a href="../assets/docs/katalog-corporategifts-id.pdf" download="Katalog-CorporateGifts-ID-2026.pdf" target="_blank" rel="noopener" class="btn btn-outline-dark rounded-pill w-100 py-2 small fw-semibold">
+        <i class="bi bi-download me-1"></i> Unduh Katalog (PDF)
+      </a>
+    </div>
+
+  </div>
+</div>
+```
+
+### 13. Section Rekomendasi Artikel Terkait (3 Kartu Standar)
 ```html
 <section class="py-5 bg-light border-top">
   <div class="container" data-aos="fade-up">
@@ -355,7 +400,7 @@ Tag body wajib menggunakan class:
 </section>
 ```
 
-### 13. Footer Standar Lengkap, Floating WhatsApp & Scripts
+### 14. Footer Standar Lengkap, Floating WhatsApp & Scripts
 ```html
   <!-- ══ FOOTER ════════════════════════════════════════════════════════════════ -->
   <footer id="footer" class="footer dark-background">

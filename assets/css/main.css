@@ -5093,8 +5093,9 @@ section,
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.services-5 .service-tile .tile-link:after {
-  content: "→";
+.services-5 .service-tile .tile-link i {
+  font-size: 16px;
+  line-height: 1;
   transition: transform 0.3s ease;
 }
 
@@ -5103,7 +5104,7 @@ section,
   box-shadow: 0 16px 36px color-mix(in srgb, var(--default-color) 12%, transparent);
 }
 
-.services-5 .service-tile:hover .tile-link:after {
+.services-5 .service-tile:hover .tile-link i {
   transform: translateX(4px);
 }
 

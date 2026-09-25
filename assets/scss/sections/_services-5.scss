@@ -88,8 +88,9 @@
       color: var(--accent-color);
       transition: color 0.3s ease, transform 0.3s ease;
 
-      &:after {
-        content: "→";
+      i {
+        font-size: 16px;
+        line-height: 1;
         transition: transform 0.3s ease;
       }
     }
@@ -98,7 +99,7 @@
       transform: translateY(-6px);
       box-shadow: 0 16px 36px color-mix(in srgb, var(--default-color) 12%, transparent);
 
-      .tile-link:after {
+      .tile-link i {
         transform: translateX(4px);
       }
     }
