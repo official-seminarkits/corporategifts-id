@@ -260,7 +260,7 @@
   </url>
   <url>
     <loc>https://corporategifts.id/blog</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2007,6 +2007,18 @@
   <url>
     <loc>https://corporategifts.id/blog/souvenir-kantor-ramah-lingkungan-surabaya</loc>
     <lastmod>2025-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://corporategifts.id/blog/gift-untuk-sales-gallery-dan-investor-property</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://corporategifts.id/blog/merchandise-event-property-open-house</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
