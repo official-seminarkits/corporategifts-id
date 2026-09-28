@@ -71,6 +71,16 @@
 # Blogger Blog Post 301 Permanent Redirects
 # ==============================================================================
 
+# Merchandise Meeting Jakarta dengan Kesan Profesional
+/2026/09/merchandise-kantor-untuk-meeting-jakarta.html /blog/merchandise-kantor-untuk-meeting-jakarta 301
+/merchandise-kantor-untuk-meeting-jakarta/ /blog/merchandise-kantor-untuk-meeting-jakarta 301
+/merchandise-kantor-untuk-meeting-jakarta /blog/merchandise-kantor-untuk-meeting-jakarta 301
+
+# Merchandise Kantor Jakarta Solusi Branding Perusahaan
+/2026/09/merchandise-kantor-jakarta.html /blog/merchandise-kantor-jakarta 301
+/merchandise-kantor-jakarta/ /blog/merchandise-kantor-jakarta 301
+/merchandise-kantor-jakarta /blog/merchandise-kantor-jakarta 301
+
 # Merchandise Premium untuk Membangun Loyalitas Klien
 /2025/09/merchandise-premium-untuk-membangun-loyalitas-klien.html /blog/merchandise-premium-untuk-membangun-loyalitas-klien 301
 /merchandise-premium-untuk-membangun-loyalitas-klien/ /blog/merchandise-premium-untuk-membangun-loyalitas-klien 301
@@ -1944,6 +1954,8 @@
 /blog/hamper-kuliner-premium-untuk-direksi-saat-anniversary.html /blog/hamper-kuliner-premium-untuk-direksi-saat-anniversary 301
 /blog/merchandise-property-launching.html /blog/merchandise-property-launching 301
 /blog/merchandise-perusahaan-property.html /blog/merchandise-perusahaan-property 301
+/blog/merchandise-kantor-jakarta.html /blog/merchandise-kantor-jakarta 301
+/blog/merchandise-kantor-untuk-meeting-jakarta.html /blog/merchandise-kantor-untuk-meeting-jakarta 301
 
 
 # ==============================================================================
@@ -1951,6 +1963,8 @@
 # ==============================================================================
 /404/ /404 301
 /blog/ /blog 301
+/blog/merchandise-kantor-jakarta/ /blog/merchandise-kantor-jakarta 301
+/blog/merchandise-kantor-untuk-meeting-jakarta/ /blog/merchandise-kantor-untuk-meeting-jakarta 301
 /blog/agenda-dan-kalender-2026-media-branding-perusahaan/ /blog/agenda-dan-kalender-2026-media-branding-perusahaan 301
 /blog/anggaran-souvenir-kickoff-meeting-panduan-biaya/ /blog/anggaran-souvenir-kickoff-meeting-panduan-biaya 301
 /blog/apa-itu-milestone-karyawan/ /blog/apa-itu-milestone-karyawan 301
