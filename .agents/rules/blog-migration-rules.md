@@ -81,7 +81,7 @@ DILARANG mengubah atau memvariasikan struktur, tag pembungkus, kelas CSS, atau u
   <!-- ======= 5 JSON-LD SCHEMAS ======= -->
   <!-- 1. LocalBusiness & Organization -->
   <!-- 2. Article (Utama) -->
-  <!-- 3. Article (Ringkasan Eksekutif) + WAJIB properti image -->
+  <!-- 3. Article (Ringkasan Eksekutif) + WAJIB properti image, author, publisher, datePublished, dateModified -->
   <!-- 4. BreadcrumbList (3 levels) -->
   <!-- 5. FAQPage (Sinkron 1:1) -->
 </head>

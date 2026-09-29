@@ -579,6 +579,9 @@ Setiap migrasi 1 artikel baru, jalankan alur 6 langkah berikut secara berurutan:
 | Nama Penulis di Excel | Target Anchor di `/penulis` | Jabatan Standar | Avatar Lokal |
 | :--- | :--- | :--- | :--- |
 | **Arinda Zakia** | `/penulis#arinda-zakia` | Senior Corporate Gifting Specialist | `../assets/img/penulis/arinda-zakia.webp` |
-| **Sholikhatun Nikmah** | `/penulis#sholikhatun-nikmah` | Senior Corporate Gifting Specialist | `../assets/img/penulis/sholikhatun-nikmah.webp` |
+| **Amelia** / **Sholikhatun Nikmah** | `/penulis#sholikhatun-nikmah` | Creative Product Designer & Bespoke Packaging Consultant | `../assets/img/penulis/sholikhatun-nikmah.webp` |
 | **Vendor Souvenir Kantor** | `/penulis#vendor-souvenir-kantor` | Senior Corporate Gifting Specialist | `../assets/img/penulis/vendor-souvenir-kantor.png` |
-*(DILARANG menggunakan nama atau avatar lama "Amelia").*
+
+> [!IMPORTANT]
+> **Aturan Wajib Pemetaan Penulis**:
+> Jika di data Excel kolom Penulis tertulis **"Amelia"**, wajib otomatis diganti/dimigrasikan ke **"Sholikhatun Nikmah"** dengan URL profil `/penulis#sholikhatun-nikmah` dan avatar `../assets/img/penulis/sholikhatun-nikmah.webp`. DILARANG memunculkan nama atau avatar lama "Amelia".
