@@ -9,7 +9,18 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
 1. **Fonts & Preconnect**:
    - Google Fonts `Poppins` (500, 600, 700) and `Inter` (400, 500, 600, 700) with preload and print media onload fallback.
 
-2. **Body Tag**:
+2. **GEO Meta Tags (Wajib Baku)**:
+   - Wajib menyertakan meta tag GEO selaras dengan kantor operasional Surabaya / Jawa Timur:
+     ```html
+     <!-- GEO Meta Tags -->
+     <meta name="geo.region" content="ID-JI">
+     <meta name="geo.placename" content="Surabaya, Jawa Timur, Indonesia">
+     <meta name="geo.position" content="-7.2575;112.7521">
+     <meta name="ICBM" content="-7.2575, 112.7521">
+     ```
+     *(Kecuali artikel berfokus target kota khusus seperti Jakarta `ID-JK` atau Bandung `ID-JB`)*.
+
+3. **Body Tag**:
    - `<body class="blog-detail-page">` (DILARANG menggunakan `blog-details-page`).
 
 3. **Header & Navigation (Wajib Lengkap)**:

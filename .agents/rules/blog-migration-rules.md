@@ -26,8 +26,8 @@ DILARANG mengubah atau memvariasikan struktur, tag pembungkus, kelas CSS, atau u
   <link rel="canonical" href="https://corporategifts.id/blog/[slug]">
 
   <!-- GEO Meta Tags -->
-  <meta name="geo.region" content="ID">
-  <meta name="geo.placename" content="Indonesia">
+  <meta name="geo.region" content="ID-JI">
+  <meta name="geo.placename" content="Surabaya, Jawa Timur, Indonesia">
   <meta name="geo.position" content="-7.2575;112.7521">
   <meta name="ICBM" content="-7.2575, 112.7521">
 
