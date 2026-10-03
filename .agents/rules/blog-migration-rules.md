@@ -482,7 +482,30 @@ DILARANG mengubah atau memvariasikan struktur, tag pembungkus, kelas CSS, atau u
 
 ---
 
-## 3. Checklist Sinkronisasi 6 Langkah Wajib
+## 3. Standar Optimasi Judul & Meta Title SEO-Friendly (Anti-Truncation)
+
+Google Search membatasi tampilan judul artikel pada lebar ~600px (sekitar 50 - 60 karakter). Judul yang terlalu panjang akan otomatis terpotong elipsis (`...`), menurunkan keterbacaan, dan merugikan CTR (*Click-Through Rate*).
+
+Wajib menerapkan aturan panjang karakter berikut:
+1. **Title Tag (`<title>`)**:
+   - **Batas Panjang**: Maksimal **50 - 60 karakter** (Batas absolut toleransi: **65 karakter** termasuk suffix ` | CorporateGifts.ID`).
+   - Suffix brand ` | CorporateGifts.ID` memiliki panjang 20 karakter, sehingga judul artikel/topik sebelum suffix idealnya **30 - 45 karakter**.
+   - **Perampingan Cerdas (*Smart Trimming*)**: Jika judul asli Blogger terlalu panjang atau bertele-tele (misal 70-100+ karakter), wajib dirampingkan secara cerdas dengan tetap mempertahankan kata kunci utama.
+   - *Contoh*:
+     - Asli Blogger: *"Tren Souvenir End Year yang Disukai Perusahaan dan Karyawan Tahun 2026"* (74 karakter)
+     - Title Tag Ideal: `<title>Tren Souvenir End Year Perusahaan 2026 | CorporateGifts.ID</title>` (63 karakter)
+2. **Heading 1 (`<h1>`)**:
+   - Diperbolehkan sedikit lebih deskriptif dibanding title tag, namun dianjurkan **maksimal 50 - 70 karakter**.
+   - Hindari judul H1 berbelit-belit agar tampilan hero header rapi, proporsional, dan tidak mendominasi layar ponsel di perangkat mobile.
+3. **Open Graph Title (`og:title`) & Twitter Title (`twitter:title`)**:
+   - Maksimal **50 - 60 karakter**. Buat padat, kuat, dan memikat untuk media sosial.
+4. **Meta Description (`<meta name="description">`)**:
+   - Panjang optimal **120 - 155 karakter** (maksimal 160 karakter).
+   - Wajib memuat ringkasan isi, keyword utama, dan ajakan bertindak (CTA).
+
+---
+
+## 4. Checklist Sinkronisasi 6 Langkah Wajib
 1. **`blog/<slug>.html`**: Terapkan kerangka blueprint di atas 1:1.
 2. **`blog.html`**: Sisipkan kartu artikel baru pada posisi tanggal update Excel (kolom kanan) secara kronologis menurun.
 3. **`sitemap.xml`**: Tambahkan `<loc>` dan `<lastmod>` (YYYY-MM-DD).

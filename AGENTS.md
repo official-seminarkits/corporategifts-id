@@ -23,20 +23,30 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
 3. **Body Tag**:
    - `<body class="blog-detail-page">` (DILARANG menggunakan `blog-details-page`).
 
-3. **Header & Navigation (Wajib Lengkap)**:
+4. **SEO Title & Meta Title Standard (Anti-Truncation & Maksimal 60-65 Karakter)**:
+   - **Title Tag (`<title>`)**: Wajib ringkas, padat, dan ramah SEO dengan batas maksimal **50 - 60 karakter** (batas absolut toleransi: **65 karakter** termasuk suffix ` | CorporateGifts.ID`).
+     - Suffix brand ` | CorporateGifts.ID` memiliki panjang 20 karakter, sehingga judul artikel/topik di title tag idealnya sepanjang **30 - 45 karakter**.
+     - Jika judul asli dari Blogger terlalu panjang atau bertele-tele (misal 70-90+ karakter), **WAJIB dirampingkan secara cerdas (*smart trimming*)** dengan tetap mempertahankan kata kunci utama. Dilarang membiarkan judul terpotong elipsis (`...`) di hasil pencarian Google SERP.
+     - Contoh: Judul asli *"Tren Merchandise Serah Terima Jabatan Bank Mandiri 2026 yang Berkesan"* (74 karakter) dirampingkan di title tag menjadi:
+       `<title>Merchandise Sertijab Bank Mandiri 2026 | CorporateGifts.ID</title>` (58 karakter) atau `<title>Tren Merchandise Sertijab Bank Mandiri | CorporateGifts.ID</title>` (61 karakter).
+   - **Heading 1 (`<h1>`)**: Boleh sedikit lebih lengkap dibanding `<title>`, namun dianjurkan **maksimal 50 - 70 karakter** agar tetap proporsional dan tidak memenuhi seluruh layar di tampilan mobile.
+   - **Open Graph Title (`og:title`) & Twitter Title (`twitter:title`)**: Buat padat, menarik, dan langsung pada inti pembahasan (maksimal **50 - 60 karakter**).
+   - **Meta Description**: Panjang optimal **120 - 155 karakter** (maksimal 160 karakter). Mengandung ringkasan manfaat, keyword utama, dan ajakan bertindak (CTA).
+
+5. **Header & Navigation (Wajib Lengkap)**:
    - Logo: `<a href="/" class="logo d-flex align-items-center me-auto me-xl-0"><img src="../assets/img/logo-header.png" alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan" style="max-height:40px;width:auto;" width="214" height="40" loading="lazy"></a>`
    - Menu Nav: `Beranda`, `Tentang Kami`, `Layanan`, `Katalog`, `Portofolio`, `<li class="dropdown"><a href="/produk"><span>Produk</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>...` (6 sub-menu produk: Souvenir Kantor, Souvenir Custom, Merchandise Perusahaan, Paket Seminar Kit, Hampers & Parcel, Paket Souvenir Promosi), `Blog` (active), dan `Galeri`.
    - Header CTA: `<a class="btn-getstarted" href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20..." target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1"></i> Hubungi Kami</a>`.
 
-4. **Main Tag Wrapping & Layout Hierarchy**:
+6. **Main Tag Wrapping & Layout Hierarchy**:
    - `<main id="main" class="main">` WAJIB membungkus `.breadcrumbs-bar`, `<section class="py-5"><div class="container" data-aos="fade-up"><div class="row g-5">` (detail artikel + sidebar), dan `<section class="py-5 bg-light border-top"><div class="container" data-aos="fade-up">` (rekomendasi artikel terkait), lalu ditutup `</main>` sebelum `<footer>`.
    - Kolom kiri: `<div class="col-lg-8"><article class="article-detail-wrap">...`.
    - Seluruh konten isi artikel, subjudul, callout, tabel, gambar in-body, dan accordion FAQ dibungkus dalam `<div class="article-body">...</div><!-- End Article Body Content -->`.
 
-5. **Breadcrumbs Bar**:
+7. **Breadcrumbs Bar**:
    - `<div class="breadcrumbs-bar py-3 bg-white" style="border-bottom: 1px solid #f1f5f9;"><div class="container"><nav aria-label="breadcrumb" class="m-0 p-0" style="background: transparent;"><ol class="breadcrumb m-0 p-0" style="background: transparent; font-size: 0.88rem;"><li class="breadcrumb-item"><a href="/" style="color: var(--accent-color, #15803d); text-decoration: none; font-weight: 500;">Beranda</a></li><li class="breadcrumb-item"><a href="/blog" style="color: var(--accent-color, #15803d); text-decoration: none; font-weight: 500;">Blog</a></li><li class="breadcrumb-item active" aria-current="page" style="color: #64748b; font-weight: 500;">[Topik / Judul]</li></ol></nav></div></div>`.
 
-6. **Article Header & Meta Bar**:
+8. **Article Header & Meta Bar**:
    - Header Wrap:
      ```html
      <div class="article-header">
@@ -63,16 +73,16 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
      </div>
      ```
 
-7. **Featured Image & In-Body Images**:
+9. **Featured Image & In-Body Images**:
    - Featured: `<div class="article-featured-img"><img src="../assets/img/blog/[img-1].webp" alt="..." class="img-fluid" loading="lazy" width="1200" height="675"><p class="text-muted text-center small mt-2 fst-italic">[Caption]</p></div>`.
    - In-Body: `<div class="article-inbody-img my-4"><img src="../assets/img/blog/[img-2].webp" alt="..." class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" width="800" height="450"><p class="text-muted text-center small mt-2 fst-italic">[Caption]</p></div>`.
 
-8. **Table of Contents (TOC)**:
+10. **Table of Contents (TOC)**:
    - Container: `.table-of-contents`
    - Header: `<div class="d-flex justify-content-between align-items-center" id="toc-header" style="cursor: pointer; user-select: none;"><h2 class="m-0 d-flex align-items-center"><i class="bi bi-list-nested text-success me-2"></i> Daftar Isi Artikel</h2><button type="button" class="btn btn-sm btn-light border px-2 py-1 text-muted d-inline-flex align-items-center gap-1" id="toc-toggle-btn" aria-expanded="true" aria-controls="toc-list" style="border-radius: 6px;"><span id="toc-btn-text">Tutup</span><i class="bi bi-chevron-up" id="toc-btn-icon"></i></button></div>`
    - List: `<div id="toc-list" class="mt-2"><ol class="mb-0">...</ol></div>`
 
-9. **Body Content, Callouts, & Tables**:
+11. **Body Content, Callouts, & Tables**:
    - Paragraf pertama diawali: `<strong><a href="/" class="text-success text-decoration-none fw-bold">Corporate Gifts ID</a></strong> - ...`
    - **Poin Kunci / Highlight**: `<div class="article-key-points"><h3 class="h6 fw-bold text-dark mb-2"><i class="bi bi-lightbulb-fill text-success me-2"></i> Poin Kunci ...:</h3><ul class="mb-0 small text-muted ps-3" style="line-height: 1.7;"><li><strong>Label:</strong> Deskripsi.</li></ul></div>`
    - **Callout Baca Juga**: `<div class="article-baca-juga"><span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">Baca Juga</span><a href="/blog/[slug]" class="hover-green">[Judul Artikel] <i class="bi bi-arrow-right ms-1"></i></a></div>`
@@ -81,7 +91,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
    - **Zero Em-Dashes**: Dilarang menggunakan karakter em-dash (`—` / `&mdash;`), gunakan tanda strip `-`.
    - **Internal Links**: Wajib menyematkan tautan internal natural ke produk (`/produk...`), katalog (`/katalog`), RFQ (`/minta-penawaran`), atau artikel blog relevan (`/blog/[slug]`).
 
-10. **FAQ Accordion**:
+12. **FAQ Accordion**:
     ```html
     <div class="article-faq-compact my-4" id="faq-section">
       <h3 class="h5 fw-bold text-dark mb-3">
@@ -105,7 +115,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </div>
     ```
 
-11. **Bottom RFQ CTA Banner**:
+13. **Bottom RFQ CTA Banner**:
     ```html
     <div class="card border-0 mt-5 shadow-sm text-center text-md-start blog-cta-banner">
       <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
@@ -125,7 +135,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </div>
     ```
 
-12. **Author Box**:
+14. **Author Box**:
     ```html
     <div class="article-author-box mt-4">
       <a href="/penulis#[slug-penulis]" class="flex-shrink-0 me-3">
@@ -146,7 +156,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </div>
     ```
 
-13. **Share Bar**:
+15. **Share Bar**:
     ```html
     <div class="article-share-bar">
       <div class="fw-semibold small text-dark">Bagikan Artikel Ini:</div>
@@ -159,7 +169,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </div>
     ```
 
-14. **Sidebar Kanan (3 Widget Standar Wajib)**:
+16. **Sidebar Kanan (3 Widget Standar Wajib)**:
     ```html
     <div class="col-lg-4">
       <div class="sidebar position-sticky" style="top: 100px;">
@@ -198,12 +208,12 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </div>
     ```
 
-15. **Section Artikel Terkait (3 Rekomendasi)**:
+17. **Section Artikel Terkait (3 Rekomendasi)**:
     - `<section class="py-5 bg-light border-top"><div class="container" data-aos="fade-up">`
     - Section header dengan baris "Rekomendasi Wawasan" + "Artikel Terkait Lainnya" + tombol "Lihat Semua Artikel" (`/blog`).
     - 3 Kartu rekomendasi artikel terkait ber-badge kategori pojok kiri atas, excerpt, author footer lengkap (avatar 30x30, nama penulis, dan tombol "Baca ->"), dan tautan ke `/blog/[slug]`. Verifikasi ketat bahwa file gambar di `assets/img/blog` benar-benar ada di disk.
 
-16. **Footer & Scripts (Wajib 100% Identik dengan Master Gold Standard)**:
+18. **Footer & Scripts (Wajib 100% Identik dengan Master Gold Standard)**:
     ```html
     <!-- ══ FOOTER ════════════════════════════════════════════════════════════════ -->
     <footer id="footer" class="footer dark-background">
@@ -333,14 +343,14 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </script>
     ```
 
-17. **Schemas (5 JSON-LD Blocks Bebas Warning Google)**:
+19. **Schemas (5 JSON-LD Blocks Bebas Warning Google)**:
     - `LocalBusiness`: `@id: "https://corporategifts.id/#localbusiness"`. Wajib memuat `name: "CorporateGifts.ID - Vendor Corporate Gift & Souvenir Perusahaan"`, `url: "https://corporategifts.id"`, `parentOrganization: {"@id": "https://corporategifts.id/#organization"}`, `address` lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`) serta `geo` (`latitude: -7.2575`, `longitude: 112.7521`).
     - `Article (Utama)`: `@id` berakhiran `#article` (`https://corporategifts.id/blog/<slug>#article`), `mainEntityOfPage` bernilai `https://corporategifts.id/blog/<slug>`, properti `image` ImageObject / array URL gambar, dan `publisher` WAJIB menggunakan `@type: "Organization"`, `@id: "https://corporategifts.id/#organization"`, `name: "CorporateGifts.ID"`, `url: "https://corporategifts.id"`. (DILARANG mencampur `@id: #localbusiness` ke dalam publisher agar bebas dari warning duplikat nama dan URL).
     - `Article (Ringkasan Eksekutif)`: `@id` berakhiran `#summary` (`https://corporategifts.id/blog/<slug>#summary`), `about` bernilai `https://corporategifts.id/blog/<slug>#article`, dan WAJIB memuat properti `image` (URL gambar featured artikel, `width: 1200`, `height: 675`), `author` (Person/Organization sesuai penulis), `publisher` (Organization CorporateGifts.ID dengan `@id: "https://corporategifts.id/#organization"`), `datePublished`, dan `dateModified` agar bebas Google warning *"Kolom author tidak ada"*, *"Kolom image tidak ada"*, dan *"Kolom name/url memiliki duplikat"*.
     - `BreadcrumbList`: 3 tingkat (Beranda `https://corporategifts.id` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`).
     - `FAQPage`: Array Question/Answer yang sinkron 1:1 dengan accordion FAQ.
 
-18. **Full 6-Step Sync Checklist (Wajib Setiap Migrasi 1 Artikel)**:
+20. **Full 6-Step Sync Checklist (Wajib Setiap Migrasi 1 Artikel)**:
     - **Step 1**: `blog/<slug>.html` (artikel detail dengan Clean URLs tanpa .html dan tanpa trailing slash).
     - **Step 2**: `blog.html` (disisipkan sesuai urutan tanggal update kronologis menurun, link kartu ke `/blog/<slug>`, pagination dinamis client-side).
     - **Step 3**: `sitemap.xml` (`<loc>https://corporategifts.id/blog/<slug></loc>` dan `<lastmod>YYYY-MM-DD</lastmod>`).

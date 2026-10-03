@@ -31,7 +31,28 @@ Tag body wajib menggunakan class:
 ```
 *(Catatan: DILARANG menggunakan `blog-details-page` agar styling CSS `.blog-detail-page` di `main.min.css` aktif dengan sempurna).*
 
-### 3. Header Navigasi Standar Lengkap
+### 3. Standar Optimasi Judul & Meta Title SEO-Friendly (Anti-Truncation)
+
+Google Search membatasi tampilan judul artikel pada lebar ~600px (sekitar 50 - 60 karakter). Judul yang terlalu panjang akan otomatis terpotong elipsis (`...`), menurunkan keterbacaan, dan merugikan CTR (*Click-Through Rate*).
+
+Wajib menerapkan aturan panjang karakter berikut:
+1. **Title Tag (`<title>`)**:
+   - **Batas Panjang**: Maksimal **50 - 60 karakter** (Batas absolut toleransi: **65 karakter** termasuk suffix ` | CorporateGifts.ID`).
+   - Suffix brand ` | CorporateGifts.ID` memiliki panjang 20 karakter, sehingga judul artikel/topik sebelum suffix idealnya **30 - 45 karakter**.
+   - **Perampingan Cerdas (*Smart Trimming*)**: Jika judul asli Blogger terlalu panjang atau bertele-tele (misal 70-100+ karakter), wajib dirampingkan secara cerdas dengan tetap mempertahankan kata kunci utama.
+   - *Contoh*:
+     - Asli Blogger: *"Tren Souvenir End Year yang Disukai Perusahaan dan Karyawan Tahun 2026"* (74 karakter)
+     - Title Tag Ideal: `<title>Tren Souvenir End Year Perusahaan 2026 | CorporateGifts.ID</title>` (63 karakter)
+2. **Heading 1 (`<h1>`)**:
+   - Diperbolehkan sedikit lebih deskriptif dibanding title tag, namun dianjurkan **maksimal 50 - 70 karakter**.
+   - Hindari judul H1 berbelit-belit agar tampilan hero header rapi, proporsional, dan tidak mendominasi layar ponsel di perangkat mobile.
+3. **Open Graph Title (`og:title`) & Twitter Title (`twitter:title`)**:
+   - Maksimal **50 - 60 karakter**. Buat padat, kuat, dan memikat untuk media sosial.
+4. **Meta Description (`<meta name="description">`)**:
+   - Panjang optimal **120 - 155 karakter** (maksimal 160 karakter).
+   - Wajib memuat ringkasan isi, keyword utama, dan ajakan bertindak (CTA).
+
+### 4. Header Navigasi Standar Lengkap
 ```html
   <!-- ══ HEADER ════════════════════════════════════════════════════════════════ -->
   <header id="header" class="header d-flex align-items-center sticky-top">
@@ -76,7 +97,7 @@ Tag body wajib menggunakan class:
   </header>
 ```
 
-### 4. Breadcrumbs Bar Standar
+### 5. Breadcrumbs Bar Standar
 ```html
 <div class="breadcrumbs-bar py-3 bg-white" style="border-bottom: 1px solid #f1f5f9;">
   <div class="container">
@@ -91,7 +112,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 5. Article Header & Meta Bar Standar
+### 6. Article Header & Meta Bar Standar
 ```html
 <div class="article-header">
   <span class="badge px-3 py-2 rounded-pill fw-semibold" style="background: rgba(22, 163, 74, 0.1); color: var(--accent-color, #16a34a); font-size: 0.82rem;">
@@ -118,7 +139,7 @@ Tag body wajib menggunakan class:
 ```
 *(Catatan: Tanggal yang digunakan selalu mengambil nilai dari kolom **Tanggal Update** / kolom sebelah kanan di Excel).*
 
-### 6. Featured Image & In-Body Image Standar
+### 7. Featured Image & In-Body Image Standar
 ```html
 <!-- Featured Image (Atas TOC) -->
 <div class="article-featured-img">
@@ -137,7 +158,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 7. Table of Contents (TOC) Standar
+### 8. Table of Contents (TOC) Standar
 ```html
 <div class="table-of-contents">
   <div class="d-flex justify-content-between align-items-center" id="toc-header" style="cursor: pointer; user-select: none;">
@@ -158,7 +179,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 8. Article Body, Poin Kunci & Callout Baca Juga
+### 9. Article Body, Poin Kunci & Callout Baca Juga
 ```html
 <div class="article-body">
   <p>
@@ -191,7 +212,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 9. Tabel Responsif Standar
+### 10. Tabel Responsif Standar
 ```html
 <div class="tbl-wrap">
   <table class="tbl-corporategifts">
@@ -211,7 +232,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 10. Komponen FAQ Standar (Bootstrap Accordion)
+### 11. Komponen FAQ Standar (Bootstrap Accordion)
 ```html
 <div class="article-faq-compact my-4" id="faq-section">
   <h3 class="h5 fw-bold text-dark mb-3">
@@ -258,7 +279,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 11. Bottom RFQ CTA Banner, Author Box & Share Bar Standar
+### 12. Bottom RFQ CTA Banner, Author Box & Share Bar Standar
 ```html
 <!-- Bottom RFQ CTA Banner -->
 <div class="card border-0 mt-5 shadow-sm text-center text-md-start blog-cta-banner">
@@ -309,7 +330,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 12. Sidebar Kanan Standar (3 Widget Wajib)
+### 13. Sidebar Kanan Standar (3 Widget Wajib)
 ```html
 <div class="col-lg-4">
   <div class="sidebar position-sticky" style="top: 100px;">
@@ -354,7 +375,7 @@ Tag body wajib menggunakan class:
 </div>
 ```
 
-### 13. Section Rekomendasi Artikel Terkait (3 Kartu Standar)
+### 14. Section Rekomendasi Artikel Terkait (3 Kartu Standar)
 ```html
 <section class="py-5 bg-light border-top">
   <div class="container" data-aos="fade-up">
@@ -400,7 +421,7 @@ Tag body wajib menggunakan class:
 </section>
 ```
 
-### 14. Footer Standar Lengkap, Floating WhatsApp & Scripts
+### 15. Footer Standar Lengkap, Floating WhatsApp & Scripts
 ```html
   <!-- ══ FOOTER ════════════════════════════════════════════════════════════════ -->
   <footer id="footer" class="footer dark-background">
