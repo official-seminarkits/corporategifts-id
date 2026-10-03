@@ -344,11 +344,11 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     ```
 
 19. **Schemas (5 JSON-LD Blocks Bebas Warning Google)**:
-    - `LocalBusiness`: `@id: "https://corporategifts.id/#localbusiness"`. Wajib memuat `name: "CorporateGifts.ID - Vendor Corporate Gift & Souvenir Perusahaan"`, `url: "https://corporategifts.id"`, `parentOrganization: {"@id": "https://corporategifts.id/#organization"}`, `address` lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`) serta `geo` (`latitude: -7.2575`, `longitude: 112.7521`).
-    - `Article (Utama)`: `@id` berakhiran `#article` (`https://corporategifts.id/blog/<slug>#article`), `mainEntityOfPage` bernilai `https://corporategifts.id/blog/<slug>`, properti `image` ImageObject / array URL gambar, dan `publisher` WAJIB menggunakan `@type: "Organization"`, `@id: "https://corporategifts.id/#organization"`, `name: "CorporateGifts.ID"`, `url: "https://corporategifts.id"`. (DILARANG mencampur `@id: #localbusiness` ke dalam publisher agar bebas dari warning duplikat nama dan URL).
-    - `Article (Ringkasan Eksekutif)`: `@id` berakhiran `#summary` (`https://corporategifts.id/blog/<slug>#summary`), `about` bernilai `https://corporategifts.id/blog/<slug>#article`, dan WAJIB memuat properti `image` (URL gambar featured artikel, `width: 1200`, `height: 675`), `author` (Person/Organization sesuai penulis), `publisher` (Organization CorporateGifts.ID dengan `@id: "https://corporategifts.id/#organization"`), `datePublished`, dan `dateModified` agar bebas Google warning *"Kolom author tidak ada"*, *"Kolom image tidak ada"*, dan *"Kolom name/url memiliki duplikat"*.
-    - `BreadcrumbList`: 3 tingkat (Beranda `https://corporategifts.id` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`).
-    - `FAQPage`: Array Question/Answer yang sinkron 1:1 dengan accordion FAQ.
+    - `LocalBusiness`: `@id: "https://corporategifts.id/#localbusiness"`. Wajib memuat `name: "CorporateGifts.ID"`, `alternateName: "Vendor Corporate Gift & Souvenir Perusahaan"`, `url: "https://corporategifts.id/"`, `logo`, `image`, `telephone: "+62895639068080"`, `priceRange: "Rp15.000 - Rp750.000"`, `address` lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`), `openingHoursSpecification`, serta `geo` (`latitude: -7.2575`, `longitude: 112.7521`).
+    - `Article (Utama)`: `@id` berakhiran `#article` (`https://corporategifts.id/blog/<slug>#article`), `mainEntityOfPage` bernilai `https://corporategifts.id/blog/<slug>`, properti `image` array 2 URL WebP (`...-1.webp` dan `...-2.webp`), author Person lengkap (`name`, `url`, `jobTitle`, `sameAs`), dan `publisher` merujuk ke `@id: "https://corporategifts.id/#localbusiness"`, `name: "CorporateGifts.ID"`, `url: "https://corporategifts.id/"`, `logo`.
+    - `Article (Ringkasan Eksekutif)`: `@id` berakhiran `#summary` (`https://corporategifts.id/blog/<slug>#summary`), `about` bernilai `https://corporategifts.id/blog/<slug>#article`, dan WAJIB memuat properti `image` (array 1 URL WebP gambar featured), `author`, `publisher` (merujuk ke `@id: "https://corporategifts.id/#localbusiness"`), `datePublished`, dan `dateModified`.
+    - `BreadcrumbList`: 3 tingkat ListItem (Beranda `https://corporategifts.id/` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`).
+    - `FAQPage`: Array Question/Answer yang sinkron 1:1 dengan seluruh item accordion FAQ di body halaman.
 
 20. **Full 6-Step Sync Checklist (Wajib Setiap Migrasi 1 Artikel)**:
     - **Step 1**: `blog/<slug>.html` (artikel detail dengan Clean URLs tanpa .html dan tanpa trailing slash).
@@ -373,16 +373,16 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     - **Step 5**: `llms.txt` (ringkasan 1 baris di bawah `Blog & Artikel` dengan URL `https://corporategifts.id/blog/<slug>`).
     - **Step 6**: `sitemap.html` (WAJIB disisipkan pada kategori kartu sitemap yang relevan, update nomor urut item `N.`, link ke `/blog/<slug>`, update badge jumlah artikel di header kategori, dan update total counter halaman di banner).
 
-19. **Author Standard**:
+21. **Author Standard**:
     - Penulis resmi 3 orang:
       1. **Arinda Zakia** (`/penulis#arinda-zakia`, avatar `../assets/img/penulis/arinda-zakia.webp`)
       2. **Sholikhatun Nikmah** (`/penulis#sholikhatun-nikmah`, avatar `../assets/img/penulis/sholikhatun-nikmah.webp`)
       3. **Vendor Souvenir Kantor** (`/penulis#vendor-souvenir-kantor`, avatar `../assets/img/penulis/vendor-souvenir-kantor.png`)
     - DILARANG menggunakan nama atau avatar lama "Amelia".
 
-20. **Date Source of Truth**:
+22. **Date Source of Truth**:
     - Selalu gunakan nilai dari kolom Excel **Tanggal Update** (kolom kanan) untuk tanggal artikel, meta bar, schema JSON-LD, kartu `blog.html`, dan `sitemap.xml`.
 
-21. **Execution & Tool Constraints**:
+23. **Execution & Tool Constraints**:
     - DILARANG membuat file script python (`.py`) untuk migrasi atau validasi karena memperlambat alur kerja. Gunakan tool bawaan IDE secara langsung.
     - Wajib memverifikasi keberadaan file fisik gambar lokal di `assets/img/blog/` sebelum menuliskan path-nya.
