@@ -47,8 +47,10 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- ===== CRITICAL: Preload LCP images FIRST (before CSS) ===== -->
-  <link rel="preload" as="image" href="assets/img/services/vendor-souvenir-perusahaan-400w.webp" type="image/webp" media="(max-width: 991px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/img/about/hero.webp" type="image/webp" media="(min-width: 992px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/services/vendor-souvenir-perusahaan-400w.webp" type="image/webp"
+    media="(max-width: 991px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/about/hero.webp" type="image/webp" media="(min-width: 992px)"
+    fetchpriority="high">
 
   <!-- Fonts Preconnect & DNS-Prefetch -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -56,184 +58,847 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <!-- Preload key Poppins & Inter woff2 for instant font availability -->
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" crossorigin type="font/woff2">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" crossorigin type="font/woff2">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" crossorigin type="font/woff2">
-  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"
+    crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2"
+    crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
+    crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+    crossorigin type="font/woff2">
   <!-- ===== CRITICAL: Preload Bootstrap Icons font (desktop only) to prevent icon font-swap CLS ===== -->
   <!-- On mobile we skip preload (font-display:block in @font-face still prevents CLS without eager fetch) -->
-  <link rel="preload" as="font" href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a" crossorigin type="font/woff2" media="(min-width: 1200px)">
+  <link rel="preload" as="font"
+    href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a" crossorigin
+    type="font/woff2" media="(min-width: 1200px)">
 
   <!-- ===== CRITICAL CSS INLINE: Eliminates render-blocking CSS ===== -->
   <style>
     /* === CSS Variables === */
-    :root{
-      --default-font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-      --heading-font:"Poppins",sans-serif;
-      --nav-font:"Inter",sans-serif;
-      --background-color:#e6f0e6;
-      --default-color:#3f3f46;
-      --heading-color:#27583b;
-      --accent-color:#15803d;
-      --surface-color:#ffffff;
-      --contrast-color:#ffffff;
-      --nav-color:#3f3f46;
-      --nav-hover-color:#15803d;
-      --nav-mobile-background-color:#ffffff;
-      --nav-dropdown-background-color:#ffffff;
-      --nav-dropdown-color:#3f3f46;
-      --nav-dropdown-hover-color:#15803d;
-      scroll-behavior:smooth;
+    :root {
+      --default-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --heading-font: "Poppins", sans-serif;
+      --nav-font: "Inter", sans-serif;
+      --background-color: #e6f0e6;
+      --default-color: #3f3f46;
+      --heading-color: #27583b;
+      --accent-color: #15803d;
+      --surface-color: #ffffff;
+      --contrast-color: #ffffff;
+      --nav-color: #3f3f46;
+      --nav-hover-color: #15803d;
+      --nav-mobile-background-color: #ffffff;
+      --nav-dropdown-background-color: #ffffff;
+      --nav-dropdown-color: #3f3f46;
+      --nav-dropdown-hover-color: #15803d;
+      scroll-behavior: smooth;
     }
-    .light-background{--background-color:#e6f0e6;--surface-color:#ffffff}
+
+    .light-background {
+      --background-color: #e6f0e6;
+      --surface-color: #ffffff
+    }
+
     /* === Base === */
-    *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;color:var(--default-color);background-color:var(--background-color);font-family:var(--default-font)}
-    a{color:var(--accent-color);text-decoration:none;transition:.3s}
-    a:hover{color:color-mix(in srgb,var(--accent-color),transparent 25%);text-decoration:none}
-    h1,h2,h3,h4,h5,h6{color:var(--heading-color);font-family:var(--heading-font)}
-    img{max-width:100%;height:auto}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: var(--default-font)
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: .3s
+    }
+
+    a:hover {
+      color: color-mix(in srgb, var(--accent-color), transparent 25%);
+      text-decoration: none
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--heading-color);
+      font-family: var(--heading-font)
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
     /* === Bootstrap Grid Minimal === */
-    .container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}
-    @media(min-width:576px){.container{max-width:540px}}
-    @media(min-width:768px){.container{max-width:720px}}
-    @media(min-width:992px){.container{max-width:960px}}
-    @media(min-width:1200px){.container{max-width:1140px}}
-    @media(min-width:1400px){.container{max-width:1320px}}
-    .row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1*var(--bs-gutter-y));margin-right:calc(-.5*var(--bs-gutter-x));margin-left:calc(-.5*var(--bs-gutter-x))}
-    .row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)*.5);padding-left:calc(var(--bs-gutter-x)*.5);margin-top:var(--bs-gutter-y)}
-    .col-lg-5{flex:0 0 auto;width:41.66667%}
-    .col-lg-6{flex:0 0 auto;width:50%}
-    .col-lg-7{flex:0 0 auto;width:58.33333%}
-    @media(max-width:991.98px){.col-lg-5,.col-lg-6,.col-lg-7{width:100%}}
-    .d-flex{display:flex!important}
-    .d-none{display:none!important}
-    .align-items-center{align-items:center!important}
-    .justify-content-between{justify-content:space-between!important}
-    .position-relative{position:relative!important}
-    .me-auto{margin-right:auto!important}
-    .me-1{margin-right:.25rem!important}
-    .text-nowrap{white-space:nowrap!important}
-    @media(min-width:992px){
-      .d-lg-block{display:block!important}
-      .d-lg-none{display:none!important}
-      .d-lg-flex{display:flex!important}
+    .container {
+      width: 100%;
+      padding-right: var(--bs-gutter-x, .75rem);
+      padding-left: var(--bs-gutter-x, .75rem);
+      margin-right: auto;
+      margin-left: auto
     }
-    @media(min-width:1200px){
-      .me-xl-0{margin-right:0!important}
-      .mx-xl-auto{margin-left:auto!important;margin-right:auto!important}
-      .d-xl-none{display:none!important}
-      .d-xl-block{display:block!important}
-      .d-xl-flex{display:flex!important}
+
+    @media(min-width:576px) {
+      .container {
+        max-width: 540px
+      }
     }
+
+    @media(min-width:768px) {
+      .container {
+        max-width: 720px
+      }
+    }
+
+    @media(min-width:992px) {
+      .container {
+        max-width: 960px
+      }
+    }
+
+    @media(min-width:1200px) {
+      .container {
+        max-width: 1140px
+      }
+    }
+
+    @media(min-width:1400px) {
+      .container {
+        max-width: 1320px
+      }
+    }
+
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc(-1*var(--bs-gutter-y));
+      margin-right: calc(-.5*var(--bs-gutter-x));
+      margin-left: calc(-.5*var(--bs-gutter-x))
+    }
+
+    .row>* {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      padding-right: calc(var(--bs-gutter-x)*.5);
+      padding-left: calc(var(--bs-gutter-x)*.5);
+      margin-top: var(--bs-gutter-y)
+    }
+
+    .col-lg-5 {
+      flex: 0 0 auto;
+      width: 41.66667%
+    }
+
+    .col-lg-6 {
+      flex: 0 0 auto;
+      width: 50%
+    }
+
+    .col-lg-7 {
+      flex: 0 0 auto;
+      width: 58.33333%
+    }
+
+    @media(max-width:991.98px) {
+
+      .col-lg-5,
+      .col-lg-6,
+      .col-lg-7 {
+        width: 100%
+      }
+    }
+
+    .d-flex {
+      display: flex !important
+    }
+
+    .d-none {
+      display: none !important
+    }
+
+    .align-items-center {
+      align-items: center !important
+    }
+
+    .justify-content-between {
+      justify-content: space-between !important
+    }
+
+    .position-relative {
+      position: relative !important
+    }
+
+    .me-auto {
+      margin-right: auto !important
+    }
+
+    .me-1 {
+      margin-right: .25rem !important
+    }
+
+    .text-nowrap {
+      white-space: nowrap !important
+    }
+
+    @media(min-width:992px) {
+      .d-lg-block {
+        display: block !important
+      }
+
+      .d-lg-none {
+        display: none !important
+      }
+
+      .d-lg-flex {
+        display: flex !important
+      }
+    }
+
+    @media(min-width:1200px) {
+      .me-xl-0 {
+        margin-right: 0 !important
+      }
+
+      .mx-xl-auto {
+        margin-left: auto !important;
+        margin-right: auto !important
+      }
+
+      .d-xl-none {
+        display: none !important
+      }
+
+      .d-xl-block {
+        display: block !important
+      }
+
+      .d-xl-flex {
+        display: flex !important
+      }
+    }
+
     /* === Bootstrap Icons: font-display:block prevents FOIT/FOUT icon-swap CLS === */
-    @font-face{
-      font-family:"bootstrap-icons";
-      src:url("assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a") format("woff2");
-      font-display:block;
+    @font-face {
+      font-family: "bootstrap-icons";
+      src: url("assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a") format("woff2");
+      font-display: block;
     }
-    .bi::before,[class^="bi-"]::before,[class*=" bi-"]::before{display:inline-block;font-family:bootstrap-icons!important;font-style:normal;font-weight:normal!important;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    .bi-whatsapp::before{content:"\f618"}
-    .bi-chevron-down::before{content:"\f282"}
-    .bi-gift::before{content:"\f3ec"}
-    .bi-check2-circle::before{content:"\f26d"}
-    .bi-arrow-right::before{content:"\f138"}
-    .bi-list::before{content:"\f479"}
+
+    .bi::before,
+    [class^="bi-"]::before,
+    [class*=" bi-"]::before {
+      display: inline-block;
+      font-family: bootstrap-icons !important;
+      font-style: normal;
+      font-weight: normal !important;
+      line-height: 1;
+      vertical-align: -.125em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .bi-whatsapp::before {
+      content: "\f618"
+    }
+
+    .bi-chevron-down::before {
+      content: "\f282"
+    }
+
+    .bi-gift::before {
+      content: "\f3ec"
+    }
+
+    .bi-check2-circle::before {
+      content: "\f26d"
+    }
+
+    .bi-arrow-right::before {
+      content: "\f138"
+    }
+
+    .bi-list::before {
+      content: "\f479"
+    }
+
     /* === Header === */
-    .sticky-top{position:sticky;top:0;z-index:997}
+    .sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 997
+    }
+
     /* Lock header min-height to prevent nav CLS when icon font loads */
-    .header{--background-color:#ffffff;color:var(--default-color);background-color:var(--background-color);padding:15px 0;transition:background-color .3s,box-shadow .3s;z-index:997;min-height:70px}
-    .header .logo{line-height:1}
+    .header {
+      --background-color: #ffffff;
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 15px 0;
+      transition: background-color .3s, box-shadow .3s;
+      z-index: 997;
+      min-height: 70px
+    }
+
+    .header .logo {
+      line-height: 1
+    }
+
     /* Lock logo aspect-ratio to prevent unsized-image CLS */
-    .header .logo img{max-height:40px!important;margin-right:8px;width:auto;aspect-ratio:214/40;height:40px}
-    @media(min-width:1200px) and (max-width:1399px){
-      .header .logo img{max-height:36px!important;height:36px}
-      .navmenu a,.navmenu a:focus{padding:14px 10px!important;font-size:14.5px!important}
-      .navmenu li{margin:0 1px!important}
-      .header .btn-getstarted,.header .btn-getstarted:focus{font-size:13.5px!important;padding:7px 16px!important;margin:0 0 0 12px!important}
+    .header .logo img {
+      max-height: 40px !important;
+      margin-right: 8px;
+      width: auto;
+      aspect-ratio: 214/40;
+      height: 40px
     }
-    @media(max-width:576px){.header .logo img{max-height:38px!important;height:38px}}
-    .header .btn-getstarted,.header .btn-getstarted:focus{color:var(--contrast-color);background:var(--accent-color);font-size:14px;padding:8px 22px;margin:0 0 0 20px;border-radius:50px;transition:.3s;white-space:nowrap!important;flex-shrink:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
-    @media(max-width:1200px){.header .btn-getstarted{display:none!important}}
-    .scrolled .header{box-shadow:0px 0 18px rgba(0,0,0,.1)}
+
+    @media(min-width:1200px) and (max-width:1399px) {
+      .header .logo img {
+        max-height: 36px !important;
+        height: 36px
+      }
+
+      .navmenu a,
+      .navmenu a:focus {
+        padding: 14px 10px !important;
+        font-size: 14.5px !important
+      }
+
+      .navmenu li {
+        margin: 0 1px !important
+      }
+
+      .header .btn-getstarted,
+      .header .btn-getstarted:focus {
+        font-size: 13.5px !important;
+        padding: 7px 16px !important;
+        margin: 0 0 0 12px !important
+      }
+    }
+
+    @media(max-width:576px) {
+      .header .logo img {
+        max-height: 38px !important;
+        height: 38px
+      }
+    }
+
+    .header .btn-getstarted,
+    .header .btn-getstarted:focus {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+      font-size: 14px;
+      padding: 8px 22px;
+      margin: 0 0 0 20px;
+      border-radius: 50px;
+      transition: .3s;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important
+    }
+
+    @media(max-width:1200px) {
+      .header .btn-getstarted {
+        display: none !important
+      }
+    }
+
+    .scrolled .header {
+      box-shadow: 0px 0 18px rgba(0, 0, 0, .1)
+    }
+
     /* === Mobile Nav === */
-    @media(max-width:1199px){
-      .mobile-nav-toggle{color:var(--nav-color);font-size:28px;line-height:0;margin-right:10px;cursor:pointer;transition:color .3s}
-      .navmenu{padding:0;z-index:9997}
-      .navmenu ul{display:none;list-style:none;position:absolute;inset:60px 20px 20px 20px;padding:10px 0;margin:0;border-radius:6px;background-color:var(--nav-mobile-background-color);overflow-y:auto;transition:.3s;z-index:9998;box-shadow:0px 0px 30px rgba(0,0,0,.1)}
-      .navmenu a,.navmenu a:focus{color:var(--nav-dropdown-color);padding:10px 20px;font-family:var(--nav-font);font-size:17px;font-weight:500;display:flex;align-items:center;justify-content:space-between;white-space:nowrap;transition:.3s}
-      .mobile-nav-active{overflow:hidden}
-      .mobile-nav-active .mobile-nav-toggle{color:#fff;position:absolute;font-size:32px;top:15px;right:15px;margin-right:0;z-index:9999}
-      .mobile-nav-active .navmenu{position:fixed;overflow:hidden;inset:0;background:rgba(33,37,41,.8);transition:.3s}
-      .mobile-nav-active .navmenu>ul{display:block}
+    @media(max-width:1199px) {
+      .mobile-nav-toggle {
+        color: var(--nav-color);
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color .3s
+      }
+
+      .navmenu {
+        padding: 0;
+        z-index: 9997
+      }
+
+      .navmenu ul {
+        display: none;
+        list-style: none;
+        position: absolute;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 6px;
+        background-color: var(--nav-mobile-background-color);
+        overflow-y: auto;
+        transition: .3s;
+        z-index: 9998;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, .1)
+      }
+
+      .navmenu a,
+      .navmenu a:focus {
+        color: var(--nav-dropdown-color);
+        padding: 10px 20px;
+        font-family: var(--nav-font);
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: .3s
+      }
+
+      .mobile-nav-active {
+        overflow: hidden
+      }
+
+      .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+        position: absolute;
+        font-size: 32px;
+        top: 15px;
+        right: 15px;
+        margin-right: 0;
+        z-index: 9999
+      }
+
+      .mobile-nav-active .navmenu {
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        background: rgba(33, 37, 41, .8);
+        transition: .3s
+      }
+
+      .mobile-nav-active .navmenu>ul {
+        display: block
+      }
     }
+
     /* Desktop Nav minimal */
-    @media(min-width:1200px){
-      .navmenu{padding:0;margin:0 auto}
-      .navmenu ul{margin:0;padding:0;display:flex;list-style:none;align-items:center;justify-content:center}
-      .navmenu li{position:relative;margin:0 2px}
-      .navmenu a,.navmenu a:focus{color:var(--nav-color);padding:18px 15px;font-size:16px;font-family:var(--nav-font);font-weight:400;display:flex;align-items:center;justify-content:space-between;white-space:nowrap;transition:.3s;position:relative}
-      .navmenu a i,.navmenu a:focus i{font-size:12px;line-height:0;margin-left:5px;transition:.3s}
-      .navmenu li:hover>a,.navmenu .active,.navmenu .active:focus{color:var(--nav-hover-color)}
-      .navmenu .dropdown ul{margin:0;padding:10px 0;background:var(--nav-dropdown-background-color);display:block;position:absolute;visibility:hidden;left:14px;top:130%;opacity:0;transition:.3s;border-radius:4px;z-index:99;box-shadow:0px 0px 30px rgba(0,0,0,.1)}
-      .navmenu .dropdown ul li{min-width:200px}
-      .navmenu .dropdown ul a{padding:10px 20px;font-size:15px;text-transform:none;color:var(--nav-dropdown-color)}
-      .navmenu .dropdown:hover>ul{opacity:1;top:100%;visibility:visible}
+    @media(min-width:1200px) {
+      .navmenu {
+        padding: 0;
+        margin: 0 auto
+      }
+
+      .navmenu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: center
+      }
+
+      .navmenu li {
+        position: relative;
+        margin: 0 2px
+      }
+
+      .navmenu a,
+      .navmenu a:focus {
+        color: var(--nav-color);
+        padding: 18px 15px;
+        font-size: 16px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: .3s;
+        position: relative
+      }
+
+      .navmenu a i,
+      .navmenu a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: .3s
+      }
+
+      .navmenu li:hover>a,
+      .navmenu .active,
+      .navmenu .active:focus {
+        color: var(--nav-hover-color)
+      }
+
+      .navmenu .dropdown ul {
+        margin: 0;
+        padding: 10px 0;
+        background: var(--nav-dropdown-background-color);
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: .3s;
+        border-radius: 4px;
+        z-index: 99;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, .1)
+      }
+
+      .navmenu .dropdown ul li {
+        min-width: 200px
+      }
+
+      .navmenu .dropdown ul a {
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        color: var(--nav-dropdown-color)
+      }
+
+      .navmenu .dropdown:hover>ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible
+      }
     }
+
     /* === Hero 2 Section === */
-    .section{padding:60px 0}
-    .hero-2{padding-top:50px;position:relative;overflow:hidden;background:radial-gradient(circle at 10% 10%,color-mix(in srgb,var(--accent-color),transparent 92%) 0%,var(--background-color) 55%);padding-bottom:70px}
-    .hero-2 .hero-content{position:relative;z-index:2}
-    .hero-2 .hero-content .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;background:var(--surface-color);border-radius:40px;border:1px solid color-mix(in srgb,var(--accent-color),transparent 75%);box-shadow:0 6px 18px color-mix(in srgb,var(--default-color),transparent 90%);margin-bottom:24px}
-    .hero-2 .hero-content .hero-badge i{color:var(--accent-color);font-size:.95rem}
-    .hero-2 .hero-content .hero-badge span{font-weight:500;color:var(--heading-color);font-size:.9rem}
-    .hero-2 .hero-content .hero-title{font-size:3.6rem;font-weight:600;line-height:1.15;margin-bottom:18px}
-    @media(max-width:992px){.hero-2 .hero-content .hero-title{font-size:2.85rem;line-height:1.2}}
-    @media(max-width:768px){.hero-2 .hero-content .hero-title{font-size:2.1rem;line-height:1.22}}
-    @media(max-width:576px){.hero-2 .hero-content .hero-title{font-size:1.8rem;line-height:1.25}}
-    @media(max-width:390px){.hero-2 .hero-content .hero-title{font-size:1.62rem;line-height:1.26}}
-    .hero-2 .hero-content .hero-description{font-size:.95rem;line-height:1.65;color:color-mix(in srgb,var(--default-color),transparent 28%);margin-bottom:22px;max-width:560px}
-    .hero-2 .hero-content .hero-list{list-style:none;padding:0;margin:0 0 28px 0}
-    .hero-2 .hero-content .hero-list li{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;color:color-mix(in srgb,var(--default-color),transparent 20%);line-height:1.5}
-    .hero-2 .hero-content .hero-list li i{color:var(--accent-color);font-size:18px;margin-top:2px;flex-shrink:0}
-    .hero-2 .hero-content .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:34px}
-    .hero-2 .hero-content .hero-actions .btn-primary{background:var(--accent-color);color:var(--contrast-color);padding:13px 26px;border:1.5px solid transparent;border-radius:8px;font-weight:600;font-size:15px;min-width:210px;min-height:52px;transition:.3s;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box}
-    .hero-2 .hero-content .hero-actions .btn-ghost{border:1.5px solid color-mix(in srgb,var(--default-color),transparent 75%);color:var(--heading-color);padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;min-width:210px;min-height:52px;transition:.3s;background:var(--surface-color);display:inline-flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box}
-    @media(max-width:992px){.hero-2{padding:40px 0 60px 0}}
-    @media(max-width:768px){.hero-2{text-align:center}.hero-2 .hero-actions{justify-content:center}}
-    @media(max-width:991px){.hero-2 .hero-content .hero-list{display:none!important}}
-    @media(max-width:576px){.hero-2 .hero-content .hero-actions{display:flex;flex-direction:column;align-items:center;gap:12px}.hero-2 .hero-content .hero-actions .btn-primary,.hero-2 .hero-content .hero-actions .btn-ghost{width:100%;max-width:280px;min-width:0}}
+    .section {
+      padding: 60px 0
+    }
+
+    .hero-2 {
+      padding-top: 50px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 10% 10%, color-mix(in srgb, var(--accent-color), transparent 92%) 0%, var(--background-color) 55%);
+      padding-bottom: 70px
+    }
+
+    .hero-2 .hero-content {
+      position: relative;
+      z-index: 2
+    }
+
+    .hero-2 .hero-content .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      background: var(--surface-color);
+      border-radius: 40px;
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+      box-shadow: 0 6px 18px color-mix(in srgb, var(--default-color), transparent 90%);
+      margin-bottom: 24px
+    }
+
+    .hero-2 .hero-content .hero-badge i {
+      color: var(--accent-color);
+      font-size: .95rem
+    }
+
+    .hero-2 .hero-content .hero-badge span {
+      font-weight: 500;
+      color: var(--heading-color);
+      font-size: .9rem
+    }
+
+    .hero-2 .hero-content .hero-title {
+      font-size: 3.6rem;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 18px
+    }
+
+    @media(max-width:992px) {
+      .hero-2 .hero-content .hero-title {
+        font-size: 2.85rem;
+        line-height: 1.2
+      }
+    }
+
+    @media(max-width:768px) {
+      .hero-2 .hero-content .hero-title {
+        font-size: 2.1rem;
+        line-height: 1.22
+      }
+    }
+
+    @media(max-width:576px) {
+      .hero-2 .hero-content .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.25
+      }
+    }
+
+    @media(max-width:390px) {
+      .hero-2 .hero-content .hero-title {
+        font-size: 1.62rem;
+        line-height: 1.26
+      }
+    }
+
+    .hero-2 .hero-content .hero-description {
+      font-size: .95rem;
+      line-height: 1.65;
+      color: color-mix(in srgb, var(--default-color), transparent 28%);
+      margin-bottom: 22px;
+      max-width: 560px
+    }
+
+    .hero-2 .hero-content .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px 0
+    }
+
+    .hero-2 .hero-content .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      line-height: 1.5
+    }
+
+    .hero-2 .hero-content .hero-list li i {
+      color: var(--accent-color);
+      font-size: 18px;
+      margin-top: 2px;
+      flex-shrink: 0
+    }
+
+    .hero-2 .hero-content .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 34px
+    }
+
+    .hero-2 .hero-content .hero-actions .btn-primary {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 13px 26px;
+      border: 1.5px solid transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      min-width: 210px;
+      min-height: 52px;
+      transition: .3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-sizing: border-box
+    }
+
+    .hero-2 .hero-content .hero-actions .btn-ghost {
+      border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 75%);
+      color: var(--heading-color);
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      min-width: 210px;
+      min-height: 52px;
+      transition: .3s;
+      background: var(--surface-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-sizing: border-box
+    }
+
+    @media(max-width:992px) {
+      .hero-2 {
+        padding: 40px 0 60px 0
+      }
+    }
+
+    @media(max-width:768px) {
+      .hero-2 {
+        text-align: center
+      }
+
+      .hero-2 .hero-actions {
+        justify-content: center
+      }
+    }
+
+    @media(max-width:991px) {
+      .hero-2 .hero-content .hero-list {
+        display: none !important
+      }
+    }
+
+    @media(max-width:576px) {
+      .hero-2 .hero-content .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px
+      }
+
+      .hero-2 .hero-content .hero-actions .btn-primary,
+      .hero-2 .hero-content .hero-actions .btn-ghost {
+        width: 100%;
+        max-width: 280px;
+        min-width: 0
+      }
+    }
+
     /* hero-2 desktop media */
-    .hero-2 .hero-media{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;max-width:440px;margin:0 auto}
-    .hero-2 .hero-media .media-main{border-radius:20px;overflow:hidden;box-shadow:0 16px 36px color-mix(in srgb,var(--default-color),transparent 86%);background:#fff;width:100%;max-width:440px;max-height:440px;aspect-ratio:1/1;margin:0 auto;display:flex;align-items:center;justify-content:center}
-    .hero-2 .hero-media .media-main img{width:100%;height:auto;max-height:440px;aspect-ratio:1/1;object-fit:contain;display:block}
-    .img-fluid{max-width:100%;height:auto}
+    .hero-2 .hero-media {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 440px;
+      margin: 0 auto
+    }
+
+    .hero-2 .hero-media .media-main {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px color-mix(in srgb, var(--default-color), transparent 86%);
+      background: #fff;
+      width: 100%;
+      max-width: 440px;
+      max-height: 440px;
+      aspect-ratio: 1/1;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-2 .hero-media .media-main img {
+      width: 100%;
+      height: auto;
+      max-height: 440px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      display: block
+    }
+
+    .img-fluid {
+      max-width: 100%;
+      height: auto
+    }
+
     /* about section: reserve image space to prevent CLS */
-    .about-section{padding:60px 0;background-color:var(--background-color)}
-    .about-section .about-img-wrap{position:relative}
-    .about-section .about-img-wrap img{width:100%;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.1);aspect-ratio:600/400;object-fit:cover;display:block}
+    .about-section {
+      padding: 60px 0;
+      background-color: var(--background-color)
+    }
+
+    .about-section .about-img-wrap {
+      position: relative
+    }
+
+    .about-section .about-img-wrap img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .1);
+      aspect-ratio: 600/400;
+      object-fit: cover;
+      display: block
+    }
+
     /* Reserve space for about-badge-card to prevent position shift */
-    .about-section .about-badge-card{position:absolute;bottom:-20px;right:-10px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,.1);display:flex;align-items:center;gap:12px;min-width:200px}
-    .profile-features{display:flex;flex-direction:column;gap:16px;margin:24px 0}
-    .feature-item{display:flex;align-items:flex-start;gap:16px}
-    .feature-item .item-num{flex-shrink:0;font-size:1.25rem;font-weight:700;width:44px}
-    .gy-5{--bs-gutter-y:3rem}
-    .g-5{--bs-gutter-x:3rem;--bs-gutter-y:3rem}
+    .about-section .about-badge-card {
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 200px
+    }
+
+    .profile-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px
+    }
+
+    .feature-item .item-num {
+      flex-shrink: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      width: 44px
+    }
+
+    .gy-5 {
+      --bs-gutter-y: 3rem
+    }
+
+    .g-5 {
+      --bs-gutter-x: 3rem;
+      --bs-gutter-y: 3rem
+    }
+
     /* scroll-top & floating-wa placeholder to prevent CLS */
-    .scroll-top,.floating-wa{display:none}
-    .scroll-top.active{display:flex}
+    .scroll-top,
+    .floating-wa {
+      display: none
+    }
+
+    .scroll-top.active {
+      display: flex
+    }
+
     /* Reserve minimum height on main to prevent large content-paint CLS */
-    #main{min-height:600px}
+    #main {
+      min-height: 600px
+    }
   </style>
 
   <!-- Non-blocking: Fonts (display=optional eliminates font-swap CLS entirely) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=optional"
+      rel="stylesheet">
+  </noscript>
 
   <!-- Non-blocking: All external CSS (loaded async after critical CSS) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/css/main.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print"
+    onload="this.media='all'">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -281,14 +946,14 @@
       "https://corporategifts.id/assets/img/gallery/Hampers-Eksklusif-Desain-Spesial.webp"
     ],
     "description": "Vendor corporate gift, souvenir perusahaan premium, merchandise kantor eksklusif, hampers, dan seminar kit dengan kustomisasi logo perusahaan di Surabaya, melayani pengiriman ke seluruh Indonesia.",
-    "telephone": "+62895639068080",
+    "telephone": "+6281252225479",
     "email": "info@corporategifts.id",
     "priceRange": "Rp15.000 - Rp750.000",
     "paymentAccepted": "Cash, Bank Transfer, Invoice B2B",
     "currenciesAccepted": "IDR",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+62895639068080",
+      "telephone": "+6281252225479",
       "contactType": "customer service",
       "areaServed": "ID",
       "availableLanguage": ["Indonesian", "English"]
@@ -325,7 +990,7 @@
       "name": "Indonesia"
     },
     "sameAs": [
-      "https://wa.me/62895639068080",
+      "https://wa.me/6281252225479",
       "https://www.instagram.com/corporategifts.id",
       "https://www.facebook.com/corporategiftsid",
       "https://www.tiktok.com/@corporategifts.id"
@@ -527,7 +1192,7 @@
         "name": "Berapa minimum order souvenir kantor di CorporateGifts.ID?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Minimum order bervariasi tergantung jenis produk. Hubungi admin kami melalui WhatsApp di +62 895-6390-68080 untuk informasi MOQ dan penawaran terbaik."
+          "text": "Minimum order bervariasi tergantung jenis produk. Hubungi admin kami melalui WhatsApp di +62 812-5222-5479 untuk informasi MOQ dan penawaran terbaik."
         }
       },
       {
@@ -573,10 +1238,12 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top" role="banner" aria-label="Header utama CorporateGifts.ID">
+  <header id="header" class="header d-flex align-items-center sticky-top" role="banner"
+    aria-label="Header utama CorporateGifts.ID">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0" aria-label="CorporateGifts.ID - Halaman Beranda">
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0"
+        aria-label="CorporateGifts.ID - Halaman Beranda">
         <img src="assets/img/logo-header.png" alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan"
           style="max-height:40px;width:auto;" width="214" height="40" decoding="async" loading="eager">
       </a>
@@ -602,11 +1269,12 @@
           <li><a href="/blog">Blog</a></li>
           <li><a href="/galeri">Galeri</a></li>
         </ul>
-        <button class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navmenu" role="button" style="background:none;border:none;padding:0;cursor:pointer;"></button>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Buka menu navigasi" aria-expanded="false"
+          aria-controls="navmenu" role="button" style="background:none;border:none;padding:0;cursor:pointer;"></button>
       </nav>
 
       <a class="btn-getstarted"
-        href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift" target="_blank"
+        href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift" target="_blank"
         rel="noopener">
         <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> Hubungi Kami
       </a>
@@ -628,7 +1296,8 @@
                 <i class="bi bi-gift"></i>
                 <span>Vendor Souvenir Terpercaya</span>
               </div>
-              <h1 class="hero-title"><span class="text-nowrap">CorporateGifts ID:</span> Vendor Corporate Gift &amp; Souvenir Perusahaan</h1>
+              <h1 class="hero-title"><span class="text-nowrap">CorporateGifts ID:</span> Vendor Corporate Gift &amp;
+                Souvenir Perusahaan</h1>
               <p class="hero-description">Souvenir kantor eksklusif, merchandise
                 perusahaan berkualitas, dan hampers premium semua dapat dikustomisasi sesuai identitas brand Anda.
                 Mitra terpercaya 500+ perusahaan di Indonesia.</p>
@@ -640,11 +1309,12 @@
               </ul>
 
               <div class="hero-actions" role="group" aria-label="Tombol aksi utama">
-                <a href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20souvenir%20kantor"
+                <a href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20souvenir%20kantor"
                   class="btn-primary" target="_blank" rel="noopener" aria-label="Konsultasi Gratis via WhatsApp">
                   <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> Konsultasi Gratis
                 </a>
-                <a href="/portofolio" class="btn-ghost" aria-label="Lihat Portofolio CorporateGifts.ID">Lihat Portofolio <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="/portofolio" class="btn-ghost" aria-label="Lihat Portofolio CorporateGifts.ID">Lihat Portofolio
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
               </div>
 
             </div>
@@ -654,7 +1324,8 @@
             <div class="hero-media">
               <figure class="media-main">
                 <img src="assets/img/about/hero.webp" class="img-fluid"
-                  alt="Corporate Gift Premium - Souvenir Perusahaan Eksklusif" width="440" height="440" fetchpriority="high" decoding="async">
+                  alt="Corporate Gift Premium - Souvenir Perusahaan Eksklusif" width="440" height="440"
+                  fetchpriority="high" decoding="async">
               </figure>
             </div>
           </div>
@@ -674,12 +1345,10 @@
           <!-- Image Column -->
           <div class="col-lg-5">
             <div class="about-img-wrap position-relative">
-              <img src="assets/img/services/vendor-souvenir-perusahaan.webp"
-                srcset="assets/img/services/vendor-souvenir-perusahaan-400w.webp 400w,
+              <img src="assets/img/services/vendor-souvenir-perusahaan.webp" srcset="assets/img/services/vendor-souvenir-perusahaan-400w.webp 400w,
                         assets/img/services/vendor-souvenir-perusahaan.webp 800w"
-                sizes="(max-width: 991px) 400px, 600px"
-                alt="Profil Vendor CorporateGifts.ID"
-                class="img-fluid" width="600" height="400" fetchpriority="high" decoding="async" loading="eager">
+                sizes="(max-width: 991px) 400px, 600px" alt="Profil Vendor CorporateGifts.ID" class="img-fluid"
+                width="600" height="400" fetchpriority="high" decoding="async" loading="eager">
               <div class="about-badge-card">
                 <div class="badge-icon"><i class="bi bi-shield-check"></i></div>
                 <div>
@@ -805,7 +1474,7 @@
               <h2>Hadirkan Kesan Tak Terlupakan di Setiap Momen Bisnis</h2>
               <p>Dari souvenir seminar hingga hampers eksklusif direksi kami kerjakan dengan standar kualitas
                 tertinggi dan desain yang mencerminkan nilai brand Anda.</p>
-              <a href="https://wa.me/62895639068080?text=Saya%20ingin%20konsultasi%20layanan%20corporate%20gift"
+              <a href="https://wa.me/6281252225479?text=Saya%20ingin%20konsultasi%20layanan%20corporate%20gift"
                 class="btn-outline-cta" target="_blank" rel="noopener">Konsultasi Sekarang <i
                   class="bi bi-arrow-right"></i></a>
             </div>
@@ -860,10 +1529,9 @@
                     <span class="step-num">02</span>
                     <div class="icon-wrap"><i class="bi bi-briefcase"></i></div>
                     <h3><a href="/produk/merchandise">Merchandise Perusahaan</a></h3>
-                    <p>Merchandise eksklusif untuk karyawan, klien, dan mitra bisnis — dari kaos bordir, jaket, hingga
+                    <p>Merchandise eksklusif untuk karyawan, klien, dan mitra bisnis - dari kaos bordir, jaket, hingga
                       powerbank custom dengan desain branding Anda.</p>
-                    <a href="/produk/merchandise" class="read-link">Selengkapnya <i
-                        class="bi bi-arrow-right"></i></a>
+                    <a href="/produk/merchandise" class="read-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div><!-- End Slide Item -->
 
@@ -885,8 +1553,7 @@
                     <h3><a href="/produk/seminar-kit">Seminar Kit</a></h3>
                     <p>Paket seminar kit lengkap: tas seminar, notebook, pulpen, lanyard, dan aksesoris lainnya untuk
                       event perusahaan dan instansi.</p>
-                    <a href="/produk/seminar-kit" class="read-link">Selengkapnya <i
-                        class="bi bi-arrow-right"></i></a>
+                    <a href="/produk/seminar-kit" class="read-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div><!-- End Slide Item -->
 
@@ -991,15 +1658,13 @@
 
           <article class="case" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-4 align-items-center">
-              <div class="col-lg-6"><a href="/portofolio" class="shot"><img
-                    src="assets/img/portfolio/souvenir-set.webp"
+              <div class="col-lg-6"><a href="/portofolio" class="shot"><img src="assets/img/portfolio/souvenir-set.webp"
                     srcset="assets/img/portfolio/souvenir-set-700w.webp 700w,
-                            assets/img/portfolio/souvenir-set.webp 800w"
-                    sizes="(max-width: 991px) 100vw, 50vw"
-                    alt="Souvenir Kantor Custom untuk BUMN"
-                    class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
+                            assets/img/portfolio/souvenir-set.webp 800w" sizes="(max-width: 991px) 100vw, 50vw"
+                    alt="Souvenir Kantor Custom untuk BUMN" class="img-fluid" loading="lazy" width="600" height="396"
+                    decoding="async"></a></div>
               <div class="col-lg-6">
-                <div class="copy"><span class="cat">Souvenir Kantor · BUMN</span>
+                <div class="copy"><span class="cat">Souvenir Kantor Â· BUMN</span>
                   <h3>Paket Souvenir Custom BUMN</h3>
                   <p>Pengerjaan 2.000 pcs souvenir eksklusif berupa tumbler stainless, notebook, dan pulpen metal dengan
                     laser engraving logo untuk salah satu BUMN terkemuka di Indonesia.</p>
@@ -1013,9 +1678,10 @@
             <div class="row g-4 align-items-center">
               <div class="col-lg-6 order-lg-2"><a href="/portofolio" class="shot"><img
                     src="assets/img/portfolio/Hampers-Eksklusif-Desain-Spesial.webp"
-                    alt="Hampers Lebaran Perusahaan Perbankan" class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
+                    alt="Hampers Lebaran Perusahaan Perbankan" class="img-fluid" loading="lazy" width="600" height="396"
+                    decoding="async"></a></div>
               <div class="col-lg-6 order-lg-1">
-                <div class="copy"><span class="cat">Hampers Premium · Perbankan</span>
+                <div class="copy"><span class="cat">Hampers Premium Â· Perbankan</span>
                   <h3>Hampers Lebaran Bank Swasta Nasional</h3>
                   <p>Produksi 5.000 pcs hampers Lebaran premium dengan gift box full-custom branding untuk nasabah dan
                     mitra strategis salah satu bank swasta nasional terkemuka.</p>
@@ -1031,7 +1697,7 @@
                     src="assets/img/portfolio/Goodie-Bag-Seminar-Pameran.webp" alt="Seminar Kit Instansi Pendidikan"
                     class="img-fluid" loading="lazy" width="600" height="396" decoding="async"></a></div>
               <div class="col-lg-6">
-                <div class="copy"><span class="cat">Seminar Kit · Pendidikan</span>
+                <div class="copy"><span class="cat">Seminar Kit Â· Pendidikan</span>
                   <h3>Seminar Kit Universitas Negeri</h3>
                   <p>Penyediaan 3.000 pcs seminar kit lengkap tas seminar, notebook, pulpen, dan lanyard untuk acara
                     konferensi nasional salah satu universitas negeri ternama.</p>
@@ -1185,7 +1851,8 @@
             <div class="col-lg-3 col-md-6 isotope-item filter-merchandise">
               <div class="gallery-item">
                 <img src="assets/img/gallery/merchandise-perusahaan.webp" class="img-fluid"
-                  alt="Merchandise Jaket &amp; Kaos Perusahaan" loading="lazy" width="400" height="260" decoding="async">
+                  alt="Merchandise Jaket &amp; Kaos Perusahaan" loading="lazy" width="400" height="260"
+                  decoding="async">
                 <div class="gallery-caption">
                   <h3>Merchandise Perusahaan</h3>
                   <p>Polo shirt &amp; apparel bordir custom</p>
@@ -1450,7 +2117,7 @@
               </div>
 
               <div class="text-center pt-2">
-                <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID%2C%20saya%20ingin%20konsultasi%20pengadaan%20souvenir%20kantor"
+                <a href="https://wa.me/6281252225479?text=Halo%20CorporateGifts.ID%2C%20saya%20ingin%20konsultasi%20pengadaan%20souvenir%20kantor"
                   target="_blank" rel="noopener" class="btn-adv-cta">
                   <i class="bi bi-whatsapp me-2"></i> Konsultasi Pengadaan
                 </a>
@@ -1470,7 +2137,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>FAQ – Pertanyaan Umum</h2>
+        <h2>FAQ - Pertanyaan Umum</h2>
         <p>Jawaban atas pertanyaan yang sering diajukan tentang corporate gift dan souvenir perusahaan</p>
       </div><!-- End Section Title -->
 
@@ -1527,7 +2194,7 @@
               <div class="faq-item">
                 <h3>Berapa lama proses produksi souvenir custom?</h3>
                 <div class="faq-content">
-                  <p>Proses produksi umumnya membutuhkan 7–14 hari kerja tergantung jenis produk, jumlah pesanan, dan
+                  <p>Proses produksi umumnya membutuhkan 7 - 14 hari kerja tergantung jenis produk, jumlah pesanan, dan
                     kompleksitas desain. Untuk kebutuhan mendesak dengan timeline lebih cepat, silakan diskusikan dengan
                     admin kami.</p>
                 </div>
@@ -1574,11 +2241,11 @@
               <h2>Siap Hadirkan Corporate Gift Eksklusif untuk Perusahaan Anda?</h2>
               <p>Konsultasikan kebutuhan souvenir, merchandise, dan corporate gift Anda bersama tim kami. Gratis
                 konsultasi, tanpa biaya tambahan.</p>
-              <a href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift%20untuk%20perusahaan%20saya"
+              <a href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift%20untuk%20perusahaan%20saya"
                 class="btn-main" target="_blank" rel="noopener">
                 <i class="bi bi-whatsapp me-1"></i> Chat WhatsApp Sekarang
               </a>
-              <span class="note"><i class="bi bi-clock"></i> Respon cepat &mdash; biasanya dalam 1 jam</span>
+              <span class="note"><i class="bi bi-clock"></i> Respon cepat - biasanya dalam 1 jam</span>
             </div>
           </div>
         </div>
@@ -1603,7 +2270,7 @@
           <p>Vendor corporate gift, souvenir perusahaan premium, dan merchandise kantor eksklusif untuk branding dan
             promosi bisnis Anda. Melayani seluruh Indonesia.</p>
           <div class="social-links d-flex mt-4">
-            <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+            <a href="https://wa.me/6281252225479" target="_blank" rel="noopener" aria-label="WhatsApp"><i
                 class="bi bi-whatsapp"></i></a>
             <a href="https://www.instagram.com/corporategifts.id" target="_blank" rel="noopener"
               aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -1614,7 +2281,7 @@
           </div>
         </div>
 
-                <div class="col-lg-2 col-6 footer-links">
+        <div class="col-lg-2 col-6 footer-links">
           <h3>Halaman</h3>
           <ul>
             <li><a href="/">Beranda</a></li>
@@ -1644,8 +2311,7 @@
           <h3>Hubungi Kami</h3>
           <p>Jawa Timur, Indonesia</p>
           <p class="mt-3"><strong>WhatsApp:</strong>
-            <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" style="color:inherit;"> +62
-              895-6390-68080</a>
+            <a href="https://wa.me/6281252225479" target="_blank" rel="noopener" style="color:inherit;"> +62 812-5222-5479</a>
           </p>
           <p><strong>Website:</strong>
             <a href="https://corporategifts.id" style="color:inherit;">corporategifts.id</a>
@@ -1655,13 +2321,11 @@
       </div>
     </div>
 
-        <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
+    <div class="container py-3" style="border-top:1px solid rgba(255,255,255,.1)">
       <p class="text-center mb-2" style="font-size:.85rem;opacity:.7;font-weight:600;">Partner Network</p>
       <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
         <a href="https://seminarkits.id/" target="_blank" rel="noopener"
           style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
-        <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener"
-          style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
         <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener"
           style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
         <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener"
@@ -1672,14 +2336,14 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>&copy; <span id="year"></span> <strong class="px-1 sitename">CorporateGifts.ID</strong> <span>&mdash; Vendor
+      <p>&copy; <span id="year"></span> <strong class="px-1 sitename">CorporateGifts.ID</strong> <span>- Vendor
           Corporate Gift, Souvenir Perusahaan &amp; Merchandise Kantor. All Rights Reserved.</span></p>
     </div>
 
   </footer>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift"
+  <a href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20corporate%20gift"
     class="floating-wa d-flex align-items-center justify-content-center" target="_blank" rel="noopener"
     aria-label="Konsultasi via WhatsApp">
     <i class="bi bi-whatsapp"></i>

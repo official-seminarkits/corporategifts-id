@@ -36,7 +36,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
 5. **Header & Navigation (Wajib Lengkap)**:
    - Logo: `<a href="/" class="logo d-flex align-items-center me-auto me-xl-0"><img src="../assets/img/logo-header.png" alt="CorporateGifts.ID - Vendor Corporate Gift &amp; Souvenir Perusahaan" style="max-height:40px;width:auto;" width="214" height="40" loading="lazy"></a>`
    - Menu Nav: `Beranda`, `Tentang Kami`, `Layanan`, `Katalog`, `Portofolio`, `<li class="dropdown"><a href="/produk"><span>Produk</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>...` (6 sub-menu produk: Souvenir Kantor, Souvenir Custom, Merchandise Perusahaan, Paket Seminar Kit, Hampers & Parcel, Paket Souvenir Promosi), `Blog` (active), dan `Galeri`.
-   - Header CTA: `<a class="btn-getstarted" href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20..." target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1"></i> Hubungi Kami</a>`.
+   - Header CTA: `<a class="btn-getstarted" href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20..." target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1"></i> Hubungi Kami</a>`.
 
 6. **Main Tag Wrapping & Layout Hierarchy**:
    - `<main id="main" class="main">` WAJIB membungkus `.breadcrumbs-bar`, `<section class="py-5"><div class="container" data-aos="fade-up"><div class="row g-5">` (detail artikel + sidebar), dan `<section class="py-5 bg-light border-top"><div class="container" data-aos="fade-up">` (rekomendasi artikel terkait), lalu ditutup `</main>` sebelum `<footer>`.
@@ -88,7 +88,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
    - **Callout Baca Juga**: `<div class="article-baca-juga"><span class="badge bg-success text-white px-2 py-1 rounded-pill small fw-bold">Baca Juga</span><a href="/blog/[slug]" class="hover-green">[Judul Artikel] <i class="bi bi-arrow-right ms-1"></i></a></div>`
    - **Tabel Responsif**: Wajib dibungkus `<div class="tbl-wrap"><table class="tbl-corporategifts"><thead>...</thead><tbody><tr><td data-label="Kolom">...</td></tr></tbody></table></div>`. DILARANG menyisipkan inline `<style>` untuk tabel di head.
    - **HTML Semantik Murni**: Dilarang meninggalkan karakter markdown `*` (*italic*) atau `**` (**bold**). Wajib dikonversi ke tag HTML `<em>...</em>` atau `<strong>...</strong>`.
-   - **Zero Em-Dashes**: Dilarang menggunakan karakter em-dash (`—` / `&mdash;`), gunakan tanda strip `-`.
+   - **Zero Em-Dashes**: Dilarang menggunakan karakter em-dash (`â€”` / `&mdash;`), gunakan tanda strip `-`.
    - **Internal Links**: Wajib menyematkan tautan internal natural ke produk (`/produk...`), katalog (`/katalog`), RFQ (`/minta-penawaran`), atau artikel blog relevan (`/blog/[slug]`).
 
 12. **FAQ Accordion**:
@@ -127,7 +127,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
           <a href="/minta-penawaran" class="btn btn-success rounded-pill px-4 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
             <i class="bi bi-pencil-square me-1"></i> Minta Penawaran
           </a>
-          <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi%20..." target="_blank" rel="noopener" class="btn btn-outline-success rounded-pill px-3 py-2 fw-semibold">
+          <a href="https://wa.me/6281252225479?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi%20..." target="_blank" rel="noopener" class="btn btn-outline-success rounded-pill px-3 py-2 fw-semibold">
             <i class="bi bi-whatsapp me-1"></i> WhatsApp CS
           </a>
         </div>
@@ -190,8 +190,8 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
           <div class="mx-auto mb-3 text-success fs-1"><i class="bi bi-headset"></i></div>
           <h3 class="h6 fw-bold text-dark mb-2">Konsultasi [Topik]?</h3>
           <p class="small text-muted mb-3">Diskusikan kebutuhan souvenir kantor, gift set VIP, dan hampers perusahaan bersama kami.</p>
-          <div class="fw-bold text-success fs-6 mb-3">+62 895-6390-68080</div>
-          <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-success rounded-pill w-100 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
+          <div class="fw-bold text-success fs-6 mb-3">+62 812-5222-5479</div>
+          <a href="https://wa.me/6281252225479?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-success rounded-pill w-100 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
             <i class="bi bi-whatsapp me-1"></i> Chat WhatsApp Sekarang
           </a>
         </div>
@@ -215,7 +215,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
 
 18. **Footer & Scripts (Wajib 100% Identik dengan Master Gold Standard)**:
     ```html
-    <!-- ══ FOOTER ════════════════════════════════════════════════════════════════ -->
+    <!-- â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
     <footer id="footer" class="footer dark-background">
       <div class="container footer-top">
         <div class="row gy-4">
@@ -225,7 +225,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
             </a>
             <p>Vendor corporate gift, souvenir perusahaan premium, dan merchandise kantor eksklusif untuk branding dan promosi bisnis Anda. Melayani seluruh Indonesia.</p>
             <div class="social-links d-flex mt-4">
-              <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              <a href="https://wa.me/6281252225479" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
               <a href="https://www.instagram.com/corporategifts.id" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
               <a href="https://www.facebook.com/corporategiftsid" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
               <a href="https://www.tiktok.com/@corporategifts.id" target="_blank" rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
@@ -262,7 +262,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
             <h3>Hubungi Kami</h3>
             <p>Jawa Timur, Indonesia</p>
             <p class="mt-3"><strong>WhatsApp:</strong>
-              <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" style="color:inherit;"> +62 895-6390-68080</a>
+              <a href="https://wa.me/6281252225479" target="_blank" rel="noopener" style="color:inherit;"> +62 812-5222-5479</a>
             </p>
             <p><strong>Website:</strong>
               <a href="https://corporategifts.id" style="color:inherit;">corporategifts.id</a>
@@ -275,7 +275,6 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
         <p class="text-center mb-2" style="font-size:.85rem;opacity:.7;font-weight:600;">Partner Network</p>
         <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
           <a href="https://seminarkits.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
-          <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
           <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
           <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Hampers Malang</a>
           <a href="https://vendorsouvenir.web.id/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.65);">Vendor Souvenir</a>
@@ -288,7 +287,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi%20[topik]" class="floating-wa d-flex align-items-center justify-content-center" target="_blank" rel="noopener" aria-label="Konsultasi via WhatsApp">
+    <a href="https://wa.me/6281252225479?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi%20[topik]" class="floating-wa d-flex align-items-center justify-content-center" target="_blank" rel="noopener" aria-label="Konsultasi via WhatsApp">
       <i class="bi bi-whatsapp"></i>
       <span class="wa-tooltip">Chat via WhatsApp</span>
     </a>
@@ -344,7 +343,7 @@ The reference baseline gold standards are `blog/cara-undi-doorprize-bukber-perus
     ```
 
 19. **Schemas (5 JSON-LD Blocks Bebas Warning Google)**:
-    - `LocalBusiness`: `@id: "https://corporategifts.id/#localbusiness"`. Wajib memuat `name: "CorporateGifts.ID"`, `alternateName: "Vendor Corporate Gift & Souvenir Perusahaan"`, `url: "https://corporategifts.id/"`, `logo`, `image`, `telephone: "+62895639068080"`, `priceRange: "Rp15.000 - Rp750.000"`, `address` lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`), `openingHoursSpecification`, serta `geo` (`latitude: -7.2575`, `longitude: 112.7521`).
+    - `LocalBusiness`: `@id: "https://corporategifts.id/#localbusiness"`. Wajib memuat `name: "CorporateGifts.ID"`, `alternateName: "Vendor Corporate Gift & Souvenir Perusahaan"`, `url: "https://corporategifts.id/"`, `logo`, `image`, `telephone: "+6281252225479"`, `priceRange: "Rp15.000 - Rp750.000"`, `address` lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`), `openingHoursSpecification`, serta `geo` (`latitude: -7.2575`, `longitude: 112.7521`).
     - `Article (Utama)`: `@id` berakhiran `#article` (`https://corporategifts.id/blog/<slug>#article`), `mainEntityOfPage` bernilai `https://corporategifts.id/blog/<slug>`, properti `image` array 2 URL WebP (`...-1.webp` dan `...-2.webp`), author Person lengkap (`name`, `url`, `jobTitle`, `sameAs`), dan `publisher` merujuk ke `@id: "https://corporategifts.id/#localbusiness"`, `name: "CorporateGifts.ID"`, `url: "https://corporategifts.id/"`, `logo`.
     - `Article (Ringkasan Eksekutif)`: `@id` berakhiran `#summary` (`https://corporategifts.id/blog/<slug>#summary`), `about` bernilai `https://corporategifts.id/blog/<slug>#article`, dan WAJIB memuat properti `image` (array 1 URL WebP gambar featured), `author`, `publisher` (merujuk ke `@id: "https://corporategifts.id/#localbusiness"`), `datePublished`, dan `dateModified`.
     - `BreadcrumbList`: 3 tingkat ListItem (Beranda `https://corporategifts.id/` > Blog `https://corporategifts.id/blog` > Judul `https://corporategifts.id/blog/<slug>`).

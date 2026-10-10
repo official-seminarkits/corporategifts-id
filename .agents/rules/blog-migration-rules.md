@@ -46,7 +46,7 @@ Setiap artikel blog wajib memuat 5 schema terpisah dalam tag `<script type="appl
    - `url`: `"https://corporategifts.id/"`
    - `logo`: `"https://corporategifts.id/assets/img/logo-header.png"`
    - `image`: `"https://corporategifts.id/assets/img/services/vendor-souvenir-perusahaan.webp"`
-   - `telephone`: `"+62895639068080"`
+   - `telephone`: `"+6281252225479"`
    - `priceRange`: `"Rp15.000 - Rp750.000"`
    - `address`: Wajib lengkap (`streetAddress: "Jl. Basuki Rahmat No. 12-18, Tegalsari"`, `addressLocality: "Surabaya"`, `addressRegion: "Jawa Timur"`, `postalCode: "60261"`, `addressCountry: "ID"`).
    - `openingHoursSpecification`: Weekdays (08:30-17:30) & Saturday (09:00-15:00).

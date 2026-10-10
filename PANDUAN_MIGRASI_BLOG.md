@@ -54,7 +54,7 @@ Wajib menerapkan aturan panjang karakter berikut:
 
 ### 4. Header Navigasi Standar Lengkap
 ```html
-  <!-- ══ HEADER ════════════════════════════════════════════════════════════════ -->
+  <!-- â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
@@ -88,7 +88,7 @@ Wajib menerapkan aturan panjang karakter berikut:
       </nav>
 
       <a class="btn-getstarted"
-        href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20souvenir%20kantor%20perusahaan" target="_blank"
+        href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20souvenir%20kantor%20perusahaan" target="_blank"
         rel="noopener">
         <i class="bi bi-whatsapp me-1"></i> Hubungi Kami
       </a>
@@ -292,7 +292,7 @@ Wajib menerapkan aturan panjang karakter berikut:
       <a href="/minta-penawaran" class="btn btn-success rounded-pill px-4 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
         <i class="bi bi-pencil-square me-1"></i> Minta Penawaran
       </a>
-      <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-outline-success rounded-pill px-3 py-2 fw-semibold">
+      <a href="https://wa.me/6281252225479?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-outline-success rounded-pill px-3 py-2 fw-semibold">
         <i class="bi bi-whatsapp me-1"></i> WhatsApp CS
       </a>
     </div>
@@ -355,8 +355,8 @@ Wajib menerapkan aturan panjang karakter berikut:
       </div>
       <h3 class="h6 fw-bold text-dark mb-2">Konsultasi [Topik]?</h3>
       <p class="small text-muted mb-3">Diskusikan kebutuhan souvenir kantor, gift set VIP, dan hampers perusahaan bersama kami.</p>
-      <div class="fw-bold text-success fs-6 mb-3">+62 895-6390-68080</div>
-      <a href="https://wa.me/62895639068080?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-success rounded-pill w-100 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
+      <div class="fw-bold text-success fs-6 mb-3">+62 812-5222-5479</div>
+      <a href="https://wa.me/6281252225479?text=Halo%20CorporateGifts.ID,%20saya%20ingin%20konsultasi" target="_blank" rel="noopener" class="btn btn-success rounded-pill w-100 py-2 fw-semibold" style="background: var(--accent-color, #16a34a); border-color: var(--accent-color, #16a34a);">
         <i class="bi bi-whatsapp me-1"></i> Chat WhatsApp Sekarang
       </a>
     </div>
@@ -423,7 +423,7 @@ Wajib menerapkan aturan panjang karakter berikut:
 
 ### 15. Footer Standar Lengkap, Floating WhatsApp & Scripts
 ```html
-  <!-- ══ FOOTER ════════════════════════════════════════════════════════════════ -->
+  <!-- â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
@@ -437,7 +437,7 @@ Wajib menerapkan aturan panjang karakter berikut:
           <p>Vendor corporate gift, souvenir perusahaan premium, dan merchandise kantor eksklusif untuk branding dan
             promosi bisnis Anda. Melayani seluruh Indonesia.</p>
           <div class="social-links d-flex mt-4">
-            <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+            <a href="https://wa.me/6281252225479" target="_blank" rel="noopener" aria-label="WhatsApp"><i
                 class="bi bi-whatsapp"></i></a>
             <a href="https://www.instagram.com/corporategifts.id" target="_blank" rel="noopener"
               aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -478,8 +478,7 @@ Wajib menerapkan aturan panjang karakter berikut:
           <h3>Hubungi Kami</h3>
           <p>Jawa Timur, Indonesia</p>
           <p class="mt-3"><strong>WhatsApp:</strong>
-            <a href="https://wa.me/62895639068080" target="_blank" rel="noopener" style="color:inherit;"> +62
-              895-6390-68080</a>
+            <a href="https://wa.me/6281252225479" target="_blank" rel="noopener" style="color:inherit;"> +62 812-5222-5479</a>
           </p>
           <p><strong>Website:</strong>
             <a href="https://corporategifts.id" style="color:inherit;">corporategifts.id</a>
@@ -494,8 +493,6 @@ Wajib menerapkan aturan panjang karakter berikut:
       <div class="d-flex flex-wrap justify-content-center gap-3" style="font-size:.82rem;">
         <a href="https://seminarkits.id/" target="_blank" rel="noopener"
           style="color:rgba(255,255,255,.65);">SeminarKits.ID</a>
-        <a href="https://vendormerchandise.web.id/" target="_blank" rel="noopener"
-          style="color:rgba(255,255,255,.65);">Vendor Merchandise</a>
         <a href="https://vendorsouvenirkantor.web.id/" target="_blank" rel="noopener"
           style="color:rgba(255,255,255,.65);">Vendor Souvenir Kantor</a>
         <a href="https://hampersmalang.web.id/" target="_blank" rel="noopener"
@@ -513,7 +510,7 @@ Wajib menerapkan aturan panjang karakter berikut:
   </footer>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/62895639068080?text=Halo%2C%20saya%20ingin%20konsultasi%20pengadaan%20corporate%20gift" 
+  <a href="https://wa.me/6281252225479?text=Halo%2C%20saya%20ingin%20konsultasi%20pengadaan%20corporate%20gift" 
      class="floating-wa d-flex align-items-center justify-content-center" 
      target="_blank" 
      rel="noopener" 
@@ -581,15 +578,15 @@ Setiap migrasi 1 artikel baru, jalankan alur 6 langkah berikut secara berurutan:
 
 ```
 [1. Buat blog/<slug>.html (Clean URL, non-trailing slash)] 
-       ↓
+       â†“
 [2. Update blog.html (urut tanggal update kronologis menurun, link ke /blog/<slug>)] 
-       ↓
+       â†“
 [3. Update sitemap.xml (<loc>https://corporategifts.id/blog/<slug></loc>)] 
-       ↓
+       â†“
 [4. Update _redirects (Wajib 3 Bagian: Blogger 301, Legacy .html 301, & Trailing Slash 301)] 
-       ↓
+       â†“
 [5. Update llms.txt (Ringkasan 1 baris ke https://corporategifts.id/blog/<slug>)] 
-       ↓
+       â†“
 [6. Update sitemap.html (Sisipkan ke kategori kartu yang relevan & update counter)] 
 ```
 

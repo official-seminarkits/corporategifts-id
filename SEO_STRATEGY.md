@@ -1,4 +1,4 @@
-# Master SEO Strategy & Playbook &mdash; CorporateGifts.ID
+﻿# Master SEO Strategy & Playbook &mdash; CorporateGifts.ID
 
 Dokumen strategi Search Engine Optimization (SEO) komprehensif untuk website **[CorporateGifts.ID](https://corporategifts.id)** sebagai referensi panduan teknis, arsitektur kata kunci, optimasi on-page, strategi konten, dan optimasi konversi B2B (Business-to-Business).
 
@@ -14,7 +14,7 @@ Dokumen strategi Search Engine Optimization (SEO) komprehensif untuk website **[
 | **Basis Wilayah (HQ)** | Jawa Timur, Indonesia (Surabaya, Sidoarjo, Gresik, Malang, & sekitarnya) |
 | **Cakupan Distribusi** | Pengiriman Nasional B2B ke Seluruh Wilayah Indonesia (Sabang &mdash; Merauke) |
 | **Target Transaksi** | B2B Procurement, Corporate Order, Tender Pengadaan, Event Organizer, Dinas/BUMN |
-| **Primary Conversion Goal** | Inbound Lead Generation via WhatsApp Business (`+62 895-6390-68080`) & Form Quotation |
+| **Primary Conversion Goal** | Inbound Lead Generation via WhatsApp Business (`+62 812-5222-5479`) & Form Quotation |
 
 ---
 
@@ -24,17 +24,17 @@ Pencarian produk corporate gift memiliki karakteristik spesifik di mana pencari 
 
 ```
 [Kebutuhan Acara / Agenda Korporasi]
-               │
-               ▼
+               â”‚
+               â–¼
 [Pencarian Vendor & Rekomendasi di Google]
-               │
-               ▼
+               â”‚
+               â–¼
 [Halaman Landing Page Produk / Katalog CorporateGifts.ID]
-               │
-               ▼
+               â”‚
+               â–¼
 [Konsultasi Mockup Desain & Surat Penawaran (PO / Quotation)]
-               │
-               ▼
+               â”‚
+               â–¼
 [Persetujuan Manajemen & Pembelian Massal]
 ```
 
@@ -122,23 +122,23 @@ Setiap halaman pada website CorporateGifts.ID memiliki target fokus kata kunci, 
 Pola URL website terstruktur logis dan berhirarki rapi (Clean URLs tanpa .html):
 ```
 https://corporategifts.id/
-├── /
-├── /tentang-kami
-├── /layanan
-├── /katalog
-├── /portofolio
-├── /galeri
-├── /produk
-│   ├── /produk/souvenir-kantor
-│   ├── /produk/souvenir-custom
-│   ├── /produk/merchandise
-│   ├── /produk/seminar-kit
-│   ├── /produk/hampers
-│   └── /produk/souvenir-promosi
-├── /blog
-│   └── /blog/<slug>
-├── /minta-penawaran
-└── /penulis
+â”œâ”€â”€ /
+â”œâ”€â”€ /tentang-kami
+â”œâ”€â”€ /layanan
+â”œâ”€â”€ /katalog
+â”œâ”€â”€ /portofolio
+â”œâ”€â”€ /galeri
+â”œâ”€â”€ /produk
+â”‚   â”œâ”€â”€ /produk/souvenir-kantor
+â”‚   â”œâ”€â”€ /produk/souvenir-custom
+â”‚   â”œâ”€â”€ /produk/merchandise
+â”‚   â”œâ”€â”€ /produk/seminar-kit
+â”‚   â”œâ”€â”€ /produk/hampers
+â”‚   â””â”€â”€ /produk/souvenir-promosi
+â”œâ”€â”€ /blog
+â”‚   â””â”€â”€ /blog/<slug>
+â”œâ”€â”€ /minta-penawaran
+â””â”€â”€ /penulis
 ```
 
 ### B. Heading Hierarchy Rule (Standar H1 - H3)
@@ -190,7 +190,7 @@ Letakkan script ini di `<head>` atau sebelum penutup `</body>`:
   "image": "https://corporategifts.id/assets/img/logo-header.png",
   "@id": "https://corporategifts.id/#localbusiness",
   "url": "https://corporategifts.id",
-  "telephone": "+62895639068080",
+  "telephone": "+6281252225479",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -292,13 +292,13 @@ Struktur internal link dirancang menggunakan model **Hub-and-Spoke**:
 
 ```
                   [ / (Hub Utama) ]
-                          │
-      ┌───────────────────┼───────────────────┐
-      ▼                   ▼                   ▼
+                          â”‚
+      â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+      â–¼                   â–¼                   â–¼
  [ /produk ]         [ /layanan ]        [ /katalog ]
-      │
-  ┌───┴───┬───────────┬───────────┬───────┬───────────┐
-  ▼       ▼           ▼           ▼       ▼           ▼
+      â”‚
+  â”Œâ”€â”€â”€â”´â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+  â–¼       â–¼           â–¼           â–¼       â–¼           â–¼
 [kantor] [vip] [merchandise] [seminar] [hampers] [promosi]
 ```
 

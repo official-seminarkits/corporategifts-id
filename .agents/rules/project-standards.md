@@ -13,7 +13,6 @@
   `Beranda`, `Tentang Kami`, `Layanan`, `Katalog`, `Portofolio`, `Blog`, `Galeri`, `Sitemap` (`<li><a href="/sitemap">Sitemap</a></li>`).
 - **Partner Network (Tepat 5 Domain Resmi)**:
   1. `https://seminarkits.id/` (SeminarKits.ID)
-  2. `https://vendormerchandise.web.id/` (Vendor Merchandise)
   3. `https://vendorsouvenirkantor.web.id/` (Vendor Souvenir Kantor)
   4. `https://hampersmalang.web.id/` (Vendor Hampers Malang)
   5. `https://vendorsouvenir.web.id/` (Vendor Souvenir)
@@ -21,7 +20,7 @@
 
 ## 3. Floating WhatsApp & Kontak
 - Class tombol WhatsApp mengambang: `.floating-wa` dengan tooltip child `.wa-tooltip`.
-- Nomor resmi: `+62 895-6390-68080` (`https://wa.me/62895639068080`).
+- Nomor resmi: `+62 812-5222-5479` (`https://wa.me/6281252225479`).
 
 ## 4. Halaman Error 404
 - File `404.html` wajib memuat tag `<meta name="robots" content="noindex, nofollow">` untuk mencegah pengindeksan error di search engine.
